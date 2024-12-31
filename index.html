@@ -27,18 +27,22 @@
 
         .indent {
             margin-left: 20px;
+            padding-left: 24px;
             position: relative;
+            min-height: 24px;
         }
 
         .indent::before {
-            content: "└──   ";
+            content: "└── ";
             position: absolute;
-            left: -20px;
+            left: 0;
         }
 
         a {
             color: #0366d6;
             text-decoration: none;
+            display: inline-block;
+            padding: 2px 0;
         }
 
         a:hover {
@@ -50,12 +54,12 @@
     <div class="tree">
         <div class="folder">weblogs</div>
         <div class="indent">
-            <a href="./weblogs/">View Weblogs</a>
+            <a href="./weblogs/">view weblogs</a>
         </div>
         
         <div class="file">projects</div>
         <div class="indent">
-            <a href="https://github.com/SarahLacard">github</a>
+            <a href="https://github.com/SarahLacard">github</a><br>
             <a href="https://newyears25.pages.dev/">new years 2025</a>
         </div>
     </div>
