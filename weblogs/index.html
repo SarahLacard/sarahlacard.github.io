@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sarah's Weblogs</title>
+    <title>weblogs</title>
     <style>
         body {
             font-family: monospace;
@@ -17,13 +17,24 @@
             margin-left: 20px;
         }
 
+        .entry {
+            position: relative;
+            padding-left: 28px;
+        }
+
         .entry::before {
             content: "📝 ";
+            position: absolute;
+            left: 0;
+            width: 24px;
+            display: inline-block;
         }
 
         a {
             color: #0366d6;
             text-decoration: none;
+            display: inline-block;
+            padding: 2px 0;
         }
 
         a:hover {
@@ -32,16 +43,22 @@
 
         .back {
             margin-bottom: 20px;
+            position: relative;
+            padding-left: 40px;
         }
 
         .back::before {
             content: "<── ";
+            position: absolute;
+            left: 0;
+            width: 40px;
+            display: inline-block;
         }
     </style>
 </head>
 <body>
     <div class="back">
-        <a href="../">Back to Home</a>
+        <a href="../">back to index</a>
     </div>
     
     <div class="entries">

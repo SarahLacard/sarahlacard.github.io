@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sarah Lacard</title>
+    <title>lacard</title>
     <style>
         body {
             font-family: monospace;
@@ -19,23 +19,28 @@
 
         .folder::before {
             content: "📁 ";
+            display: inline-block;
+            width: 24px;
         }
 
         .file::before {
             content: "📄 ";
+            display: inline-block;
+            width: 24px;
         }
 
         .indent {
             margin-left: 20px;
-            padding-left: 24px;
+            padding-left: 40px;
             position: relative;
-            min-height: 24px;
         }
 
         .indent::before {
-            content: "└──>  ";
+            content: "└──> ";
             position: absolute;
             left: 0;
+            width: 40px;
+            display: inline-block;
         }
 
         a {
@@ -43,6 +48,7 @@
             text-decoration: none;
             display: inline-block;
             padding: 2px 0;
+            margin-left: 4px;
         }
 
         a:hover {
@@ -54,13 +60,13 @@
     <div class="tree">
         <div class="folder">weblogs</div>
         <div class="indent">
-            <a href="./weblogs/"> view weblogs</a>
+            <a href="./weblogs/">view weblogs</a>
         </div>
         
         <div class="file">projects</div>
         <div class="indent">
-            <a href="https://github.com/SarahLacard"> github</a><br>
-            <a href="https://newyears25.pages.dev/"> new years 2025</a>
+            <a href="https://github.com/SarahLacard">github</a><br>
+            <a href="https://newyears25.pages.dev/">new years 2025</a>
         </div>
     </div>
 </body>

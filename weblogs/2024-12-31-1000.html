@@ -17,16 +17,26 @@
             white-space: pre-wrap;
             word-wrap: break-word;
             margin-top: 20px;
+            margin-left: 0;
+            padding-left: 0;
         }
         .back {
             margin-bottom: 20px;
+            position: relative;
+            padding-left: 40px;
         }
         .back::before {
-            content: "⬅️ ";
+            content: "<── ";
+            position: absolute;
+            left: 0;
+            width: 40px;
+            display: inline-block;
         }
         a {
             color: #0366d6;
             text-decoration: none;
+            display: inline-block;
+            padding: 2px 0;
         }
         a:hover {
             text-decoration: underline;
@@ -35,7 +45,7 @@
 </head>
 <body>
     <div class="back">
-        <a href="./">Back to Weblogs</a>
+        <a href="./">back to weblogs</a>
     </div>
     <pre>
 [2024-12-31 10:00]
