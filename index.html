@@ -1,9 +1,62 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sarah Lacard</title>
+    <style>
+        body {
+            font-family: monospace;
+            line-height: 1.6;
+            margin: 40px;
+            background-color: #fff;
+            color: #333;
+        }
+
+        .tree {
+            margin-left: 20px;
+        }
+
+        .folder::before {
+            content: "📁 ";
+        }
+
+        .file::before {
+            content: "📄 ";
+        }
+
+        .indent {
+            margin-left: 20px;
+            position: relative;
+        }
+
+        .indent::before {
+            content: "└── ";
+            position: absolute;
+            left: -20px;
+        }
+
+        a {
+            color: #0366d6;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-    <h1>Sarah Lacard</h1>
+    <div class="tree">
+        <div class="folder">weblogs</div>
+        <div class="indent">
+            <a href="./weblogs/">View Weblogs</a>
+        </div>
+        
+        <div class="file">projects</div>
+        <div class="indent">
+            <a href="https://github.com/SarahLacard">GitHub Projects</a>
+        </div>
+    </div>
 </body>
 </html>
