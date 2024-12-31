@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sarah's Weblogs</title>
+    <style>
+        body {
+            font-family: monospace;
+            line-height: 1.6;
+            margin: 40px;
+            background-color: #fff;
+            color: #333;
+        }
+
+        .entries {
+            margin-left: 20px;
+        }
+
+        .entry::before {
+            content: "📝 ";
+        }
+
+        a {
+            color: #0366d6;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .back {
+            margin-bottom: 20px;
+        }
+
+        .back::before {
+            content: "⬅️ ";
+        }
+    </style>
+</head>
+<body>
+    <div class="back">
+        <a href="../">Back to Home</a>
+    </div>
+    
+    <div class="entries">
+        <div class="entry">
+            <a href="./2024-12-31-1000.html">2024-12-31 10:00</a>
+        </div>
+    </div>
+</body>
+</html> 
