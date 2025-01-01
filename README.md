@@ -4,8 +4,8 @@ Central hub for Sarah's projects and development work.
 
 ## Quick Start
 1. Clone the repository
-2. Run build.ps1 to generate the site
-3. Open index.html in your browser
+2. Content is automatically built by GitHub Actions on push
+3. View the site at sarahlacard.github.io
 
 ## Project Structure
 - _posts/: Weblog entries
@@ -13,14 +13,17 @@ Central hub for Sarah's projects and development work.
 - _raw-data/: Raw data files
 - _templates/: HTML templates
 - weblogs/, dialogues/: Generated HTML output
-- build.ps1: Build script
+- build.ps1: Build script (runs via GitHub Actions)
 - .github/workflows/: GitHub Actions configuration
 
 ## Build Process
-The site uses a PowerShell build script (build.ps1) that:
-1. Converts .txt files to HTML using templates
-2. Updates index.html with new entries
-3. Generates proper directory structure
+The site uses GitHub Actions to:
+1. Run build.ps1 automatically when changes are pushed
+2. Convert .txt files to HTML using templates
+3. Update index.html with new entries
+4. Generate proper directory structure
+
+Note: Local builds are not necessary unless testing changes.
 
 ## Projects
 - [newyears25](https://github.com/sarahlacard/newyears25): Development branch (dev-test)
@@ -28,6 +31,11 @@ The site uses a PowerShell build script (build.ps1) that:
 
 ## Contributing
 1. Create content in appropriate directory (_posts/, _dialogues/, etc.)
-2. Run build.ps1 to generate HTML
-3. Commit and push changes
-4. GitHub Actions will automatically rebuild the site
+2. Commit and push changes
+3. GitHub Actions will automatically rebuild the site
+4. Check Actions tab for build status
+
+## Data Usage Notes
+- Batch commits to minimize transfers
+- Use direct Ethernet for large file transfers between machines
+- Test changes locally before pushing when possible
