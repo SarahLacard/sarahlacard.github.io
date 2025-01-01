@@ -2,7 +2,7 @@
 Write-Host "Building site entries..."
 
 # Ensure directories exist
-@("weblogs", "dialogues", "raw-data") | ForEach-Object {
+@("weblogs", "dialogues", "_raw-data") | ForEach-Object {
     if (-not (Test-Path $_)) {
         New-Item -ItemType Directory -Path $_
     }
@@ -67,7 +67,7 @@ function Process-Section {
 # Process each section
 $weblogEntries = Process-Section "_posts" "weblogs" '(<div class="folder">weblogs</div>\s*<div class="indent">)(.*?)(\s*</div>\s*\s*<div class="folder">dialogues</div>)'
 $dialogueEntries = Process-Section "_dialogues" "dialogues" '(<div class="folder">dialogues</div>\s*<div class="indent">)(.*?)(\s*</div>\s*\s*<div class="folder">raw data</div>)'
-$rawDataEntries = Process-Section "_raw-data" "raw-data" '(<div class="folder">raw data</div>\s*<div class="indent">)(.*?)(\s*</div>\s*\s*<div class="file">)'
+$rawDataEntries = Process-Section "_raw-data" "_raw-data" '(<div class="folder">raw data</div>\s*<div class="indent">)(.*?)(\s*</div>\s*\s*<div class="file">)'
 
 # Update index.html
 $indexHtml = Get-Content -Raw "index.html"
