@@ -27,21 +27,23 @@
             position: relative;
             padding-left: 44px;
         }
-        .back::before {
-            content: "<──  ";
-            position: absolute;
-            left: 0;
-            width: 44px;
-            display: inline-block;
-        }
-        a {
+        .back a {
             color: #0366d6;
             text-decoration: none;
             display: inline-block;
             padding: 2px 0;
         }
-        a:hover {
+        .back a:hover {
             text-decoration: underline;
+        }
+        .back a::before {
+            content: "<──  ";
+            color: #333;
+            position: absolute;
+            left: 0;
+            width: 44px;
+            display: inline-block;
+            text-decoration: none;
         }
     </style>
 </head>
