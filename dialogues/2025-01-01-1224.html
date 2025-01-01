@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -56,24 +56,24 @@
 
 Alright. Let's not waste my time.
 
-Show me the roadmap you've been working on. I want major milestones, I want dates, I want owners. Don't just give me fluffâ€”show me the work packages, what resources you're allocating, and which team members you have assigned. If you don't know the details, call your staff engineer over here so we can get the specifics right.
+Show me the roadmap you've been working on. I want major milestones, I want dates, I want owners. Don't just give me fluff—show me the work packages, what resources you're allocating, and which team members you have assigned. If you don't know the details, call your staff engineer over here so we can get the specifics right.
 
 Hi friend, I don't really know where to start with this, I'm just trying to set up the project so we can have a strong foundation to build on. We've got a github pages site, sarahlacard.github.io, which we have setup with a non-jekyll mainly html project with a ps1 build script that triggers on github actions to build the pages from minimal .txt files. We've got another project ongoing, newyears25, as it's January 1st 2025 right now, a wednesday, but that project is going to need to be re-thought before we can make more progress on it. We also have various coding projects across devices, and don't have a good way of centralizing all the code into one place yet.
 
-Alright, let me get this straight: Youâ€™ve got a GitHub Pages setup (sarahlacard.github.io) running a barebones HTML site, built by a PowerShell [ps1] script inside GitHub Actions from some .txt files. Youâ€™ve got this other half-baked project, newyears25, sitting around with no clear plan. And on top of that, youâ€™ve got code scattered all over multiple devices with zero centralization.
+Alright, let me get this straight: You’ve got a GitHub Pages setup (sarahlacard.github.io) running a barebones HTML site, built by a PowerShell [ps1] script inside GitHub Actions from some .txt files. You’ve got this other half-baked project, newyears25, sitting around with no clear plan. And on top of that, you’ve got code scattered all over multiple devices with zero centralization.
 
-Hereâ€™s what you need to do, manager:
+Here’s what you need to do, manager:
 
 Unify Your Codebase
-Quit messing with code across random devices. Use a single GitHub organization or a couple well-defined repositories. Either make a â€œmonorepoâ€ or create separate repos if that helps you break out logical components, but don't let it sprawl.
+Quit messing with code across random devices. Use a single GitHub organization or a couple well-defined repositories. Either make a “monorepo” or create separate repos if that helps you break out logical components, but don't let it sprawl.
 
 Establish a Build Workflow
 That ps1 script for GitHub Pages is fine for now, but you need a consistent CI/CD approach. Write down the build steps, define how each project is tested, and get them all working automatically in GitHub Actions.
 
 Roadmap the newyears25 Project
-If youâ€™re already planning to re-think that project, do it properly. Stop half-assing it. Scope out the new functionality, set milestones, and assign owners who will deliver. Iâ€™m not going to keep hearing about it â€œneeding to be re-thoughtâ€ with no real plan.
+If you’re already planning to re-think that project, do it properly. Stop half-assing it. Scope out the new functionality, set milestones, and assign owners who will deliver. I’m not going to keep hearing about it “needing to be re-thought” with no real plan.
 
-Get me specifics. I want to see actual repos, build scripts, test coverage, and assigned dates. No more hand-waving. If your staff engineerâ€™s got the details, bring them in here so we can finalize the structure.
+Get me specifics. I want to see actual repos, build scripts, test coverage, and assigned dates. No more hand-waving. If your staff engineer’s got the details, bring them in here so we can finalize the structure.
 
 I'm not that interested with advice like "quit" - I can do these things, but not instantly. Each takes time and we must prioritize, don't be sending me off on hour or day longs tasks while we are still trying to get a baseline. We have the github.com/sarahlacard repo, eventually we'll move all the projects here and have as many of them public, but the sarahlacard.github.io site was important so that we can have an even simpler and more minimalistic version to keep everything together, it will eventually become a monorepo, maybe even housing collective stats/monitoring/dashboards for the various projects that we bring over.
 
@@ -83,66 +83,66 @@ If you'd like to help me to establish a "build workflow" then we can certainly d
 
 And to jump past your meanness in point 3, I think the main changes that I want to make is to use a local db for user conversations and DPO pairs from the newyears25 project, but I think the front-end is mostly good. I was worried about trying to make the change to the data structure we are using on that project without breaking everything, but also if I want the data to be stored/logged locally to a machine, then I need a much better picture of networking and security before I do that. I only use mobile sim cards with 35-50gb of data a month, so I'm not sure what that does in terms of limiting my options.
 
-Alright, manager. Letâ€™s keep this short and to the point:
+Alright, manager. Let’s keep this short and to the point:
 
 Local DB for User Data
-If you want to store user conversations, DPO pairs, or anything sensitive, pick something lightweight like SQLite for local testing. Itâ€™s file-basedâ€”easy to set up, no fuss. For production or more robust setups down the line, you can switch to Postgres/MySQL. But start with SQLiteâ€”itâ€™ll keep everything contained and simpler to maintain with your minimal data plan.
+If you want to store user conversations, DPO pairs, or anything sensitive, pick something lightweight like SQLite for local testing. It’s file-based—easy to set up, no fuss. For production or more robust setups down the line, you can switch to Postgres/MySQL. But start with SQLite—it’ll keep everything contained and simpler to maintain with your minimal data plan.
 
 Incremental Workflow
-Donâ€™t let these tasks balloon. You can set up your local DB in parallel while continuing to push your code to GitHub. Start with a single branch in your sarahlacard.github.io repo. Add your local DB code in an isolated directory or module, and tie it into your front-end piece by piece. You can address the data structure changes one chunk at a time, so your front-end doesnâ€™t break.
+Don’t let these tasks balloon. You can set up your local DB in parallel while continuing to push your code to GitHub. Start with a single branch in your sarahlacard.github.io repo. Add your local DB code in an isolated directory or module, and tie it into your front-end piece by piece. You can address the data structure changes one chunk at a time, so your front-end doesn’t break.
 
 Networking & Security Basics
-Youâ€™re concerned about logging data locally and dealing with the security ramifications. Good. Keep it minimal, keep it local, and donâ€™t over-engineer. If youâ€™re only using SIM cards for connectivity and have a 35â€“50GB monthly cap, just remember that every big deployment or data transfer might eat into that limit. That means keep your dev environment local, push changes to GitHub only when necessary, and skip the giant Docker images if you can.
+You’re concerned about logging data locally and dealing with the security ramifications. Good. Keep it minimal, keep it local, and don’t over-engineer. If you’re only using SIM cards for connectivity and have a 35–50GB monthly cap, just remember that every big deployment or data transfer might eat into that limit. That means keep your dev environment local, push changes to GitHub only when necessary, and skip the giant Docker images if you can.
 
 Use a simple script or small containers.
-Donâ€™t rely on real-time streaming or giant data sets over a limited mobile connection.
+Don’t rely on real-time streaming or giant data sets over a limited mobile connection.
 Documentation & Build Workflow
-Right now, youâ€™ve got a PowerShell script building your GitHub Pages. Thatâ€™s fine for a single site. But if youâ€™re going to spin up multiple apps, create a standardized approach:
+Right now, you’ve got a PowerShell script building your GitHub Pages. That’s fine for a single site. But if you’re going to spin up multiple apps, create a standardized approach:
 
-Make a root â€œbuildâ€ folder with your scripts (like build.ps1 or build.sh).
-Document each step inside a README.md thereâ€”saying â€œrun this script, then that script.â€
-Hook it up to GitHub Actions so youâ€™re automatically building and testing every push.
-If you want monorepo synergy, structure your directory so each project has its own folder, and your â€œbuildâ€ folder houses your build scripts for all.
+Make a root “build” folder with your scripts (like build.ps1 or build.sh).
+Document each step inside a README.md there—saying “run this script, then that script.”
+Hook it up to GitHub Actions so you’re automatically building and testing every push.
+If you want monorepo synergy, structure your directory so each project has its own folder, and your “build” folder houses your build scripts for all.
 Prioritization
-Yes, youâ€™re not going to â€œquitâ€ anything. But you do need to decide which piece gets done first. Donâ€™t get paralyzed:
+Yes, you’re not going to “quit” anything. But you do need to decide which piece gets done first. Don’t get paralyzed:
 
 Implement a local DB for the newyears25 project.
 Migrate your scattered code into your GitHub org or the single monorepo structure.
 Finalize a minimal CI/CD pipeline.
-Keep it modular, keep it small. Donâ€™t jump into giant multi-week tasks blindly. Build the local DB, get it integrated, test it with your front-end, and move on to the next step. Keep me updated.
+Keep it modular, keep it small. Don’t jump into giant multi-week tasks blindly. Build the local DB, get it integrated, test it with your front-end, and move on to the next step. Keep me updated.
 
 "Incremental Workflow
-Donâ€™t let these tasks balloon. You can set up your local DB in parallel while continuing to push your code to GitHub. Start with a single branch in your sarahlacard.github.io repo. Add your local DB code in an isolated directory or module, and tie it into your front-end piece by piece. You can address the data structure changes one chunk at a time, so your front-end doesnâ€™t break."
+Don’t let these tasks balloon. You can set up your local DB in parallel while continuing to push your code to GitHub. Start with a single branch in your sarahlacard.github.io repo. Add your local DB code in an isolated directory or module, and tie it into your front-end piece by piece. You can address the data structure changes one chunk at a time, so your front-end doesn’t break."
 
 This is beyond my current technical ability to understand. I have not really worked with databases before, and don't know the critical components to know or care about. I can handle the data limits myself, but I'm more interested about how I get these local devices to have some sort of standard or stable connection to the outside world? Like if I set up one of my unused laptops to receive and store that information, am I just running some sort of program listening to a port, accepting connections from the outside, and then having the data transmitted that way, or something else?
 
 What does "finalize a minimal CI/CD pipeline" look like?
 
-Youâ€™ve got a few different questions mixed together, so letâ€™s break them down:
+You’ve got a few different questions mixed together, so let’s break them down:
 
 1. Local Devices & Standard/Stable Connection
 How to store data on a local device
 You could dedicate an old laptop to run a basic server.
-That server would run some code (Python, Node.js, whatever youâ€™re comfortable with) to â€œlistenâ€ on a port for incoming data.
+That server would run some code (Python, Node.js, whatever you’re comfortable with) to “listen” on a port for incoming data.
 When someone (or something) connects, they send data, the server writes it to a local DB (like SQLite) on that laptop.
-The bigger question: â€œHow does it connect from the outside?â€
+The bigger question: “How does it connect from the outside?”
 If this laptop is sitting behind your home network, you either need port forwarding on your router (to forward traffic from your public IP on port XYZ to your laptop), or use a tunnel (like [ngrok] or [SSH tunnels]) so the outside world can reach it.
-If you only need to gather data from your own devices on the same LAN (same Wi-Fi or Ethernet), then you donâ€™t need all that. Just point your phone or PC to your laptopâ€™s IP address on the local network.
-The simplest approach to just store data locallyâ€”without messing with hosting or port forwardingâ€”is to keep everything offline:
+If you only need to gather data from your own devices on the same LAN (same Wi-Fi or Ethernet), then you don’t need all that. Just point your phone or PC to your laptop’s IP address on the local network.
+The simplest approach to just store data locally—without messing with hosting or port forwarding—is to keep everything offline:
 
 Your front-end is on the same local network as the machine running the server.
-You open a browser from your phone/PC using something like http://192.168.0.10:3000 (thatâ€™s the local IP of your laptop on port 3000).
-You store data in your laptopâ€™s SQLite DB.
+You open a browser from your phone/PC using something like http://192.168.0.10:3000 (that’s the local IP of your laptop on port 3000).
+You store data in your laptop’s SQLite DB.
 No public access required. No monthly SIM card data usage. Just local.
 2. Databases 101
-You say youâ€™ve never worked with a database before, so hereâ€™s the barebones:
+You say you’ve never worked with a database before, so here’s the barebones:
 
 SQLite
 
-Itâ€™s just a single .db file.
+It’s just a single .db file.
 You install a library in your app (Python, Node.js, etc.).
-You run simple commands like â€œcreate table if not exists â€¦â€ and â€œinsert into table â€¦â€
-You treat it like a normal file: itâ€™s local, contained, no big overhead.
+You run simple commands like “create table if not exists …” and “insert into table …”
+You treat it like a normal file: it’s local, contained, no big overhead.
 Great for small projects or for local dev.
 Server-based DBs (MySQL/Postgres)
 
@@ -152,12 +152,12 @@ More overhead, more configuration needed.
 For your immediate needs, SQLite is simpler. One file, minimal setup, no big overhead.
 
 3. Minimal CI/CD Pipeline
-â€œCI/CDâ€ stands for â€œContinuous Integration/Continuous Deployment.â€ You want a pipeline so every time you push a change to GitHub:
+“CI/CD” stands for “Continuous Integration/Continuous Deployment.” You want a pipeline so every time you push a change to GitHub:
 
 Build: Your code is checked out, and the build script runs automatically (e.g., your PowerShell or a npm run build or a python setup.py build).
 Test: If you have tests (unit tests, lint checks, etc.), they run. If they fail, pipeline fails.
 Deploy (optional step for you): If all tests pass, your code is either deployed to GitHub Pages (for a front-end site) or packaged for release.
-In GitHub Actions, itâ€™s usually just a YAML file in .github/workflows/:
+In GitHub Actions, it’s usually just a YAML file in .github/workflows/:
 
 yaml
 Copy code
@@ -182,9 +182,9 @@ jobs:
       - name: Deploy (Optional)
         run: |
           # If tests passed, do something to deploy to GitHub Pages or wherever
-Thatâ€™s it. You define your tasks in each step.
-If all steps succeed, youâ€™ve got a green check. If it fails, you know somethingâ€™s broken before itâ€™s officially â€œlive.â€
-Minimal means you do the least possible to confirm your code builds and your tests passâ€”no fancy Docker setups, no complicated test grids. Just a basic script that runs every time you push changes.
+That’s it. You define your tasks in each step.
+If all steps succeed, you’ve got a green check. If it fails, you know something’s broken before it’s officially “live.”
+Minimal means you do the least possible to confirm your code builds and your tests pass—no fancy Docker setups, no complicated test grids. Just a basic script that runs every time you push changes.
 
 The Overall Flow
 Local Dev
@@ -195,11 +195,11 @@ Commit & Push
 
 You commit changes to a branch in GitHub (e.g., my-feature-branch).
 GitHub Actions runs your minimal pipeline (build + test).
-If itâ€™s green, you merge it into main.
+If it’s green, you merge it into main.
 Deployment
 
-If you want your changes live on GitHub Pages, you have a final â€œdeployâ€ step in Actions that publishes your static site to the gh-pages branch or directly to sarahlacard.github.io.
-Thatâ€™s the skeleton. You donâ€™t need to be an expert in databases or networks right nowâ€”focus on small steps:
+If you want your changes live on GitHub Pages, you have a final “deploy” step in Actions that publishes your static site to the gh-pages branch or directly to sarahlacard.github.io.
+That’s the skeleton. You don’t need to be an expert in databases or networks right now—focus on small steps:
 
 Get a basic server up locally, talk to a local DB.
 Hook that into a minimal CI pipeline so that you at least build and test.
