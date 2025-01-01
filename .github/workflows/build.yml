@@ -10,9 +10,13 @@ on:
 jobs:
   build:
     runs-on: windows-latest
+    permissions:
+      contents: write
     
     steps:
     - uses: actions/checkout@v2
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
       
     - name: Run build script
       shell: pwsh
@@ -20,9 +24,11 @@ jobs:
         ./build.ps1
         
     - name: Commit and push changes
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
+        git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "github-actions[bot]"
         git add weblogs/ index.html
         git commit -m "Build site from new posts" || exit 0
-        git push 
+        git push origin HEAD:main 
