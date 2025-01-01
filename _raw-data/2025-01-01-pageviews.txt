@@ -1,0 +1,7 @@
+Page View Statistics
+
+[2025-01-01 13:00]
+index.html: 1
+weblogs/2024-12-31-1000.html: 1
+weblogs/2025-01-01-1205.html: 1
+dialogues/2025-01-01-1224.html: 1 
