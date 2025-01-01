@@ -1,0 +1,7 @@
+let this be the beginning
+
+This is the content of the post.
+It can span multiple lines.
+
+No HTML needed - just plain text.
+The build script will handle all formatting. 
