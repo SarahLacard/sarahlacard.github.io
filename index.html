@@ -20,6 +20,12 @@
             margin-left: 20px;
         }
 
+        .folder::before {
+            content: "📁 ";
+            display: inline-block;
+            width: 28px;
+        }
+
         .file::before {
             content: "📄 ";
             display: inline-block;
@@ -51,37 +57,28 @@
             text-decoration: underline;
         }
 
-        .weblog-entry {
-            margin: 2em 0;
-            padding: 1em;
-            border-left: 2px solid #e1e4e8;
-        }
-
         .weblog-date {
             color: #586069;
-            margin-bottom: 1em;
-        }
-
-        .weblog-content {
-            white-space: pre-wrap;
-            word-wrap: break-word;
+            display: inline-block;
+            min-width: 150px;
         }
     </style>
 </head>
 <body>
     <div class="tree">
+        <div class="folder">weblogs</div>
+        <div class="indent">
+            <div class="weblog-entry">
+                <span class="weblog-date">[2024-12-31 10:00]</span>
+                <a href="./weblogs/2024-12-31-1000.html">let this be the beginning</a>
+            </div>
+        </div>
+
         <div class="file">projects</div>
         <div class="indent">
             <a href="https://github.com/SarahLacard">github</a><br>
             <a href="https://newyears25.pages.dev/">new years 2025</a><br>
             <a href="https://dev-test.newyears25.pages.dev/">new years 2025 dev test</a><br>
-        </div>
-    </div>
-
-    <div class="weblog-entries">
-        <div class="weblog-entry">
-            <div class="weblog-date">[2024-12-31 10:00]</div>
-            <div class="weblog-content">let this be the beginning</div>
         </div>
     </div>
 </body>
