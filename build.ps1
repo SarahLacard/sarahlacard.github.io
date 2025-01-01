@@ -1,4 +1,5 @@
 # Build script for generating entries
+$ErrorActionPreference = "Stop"
 Write-Host "Building site entries..."
 
 # Ensure directories exist
@@ -83,4 +84,10 @@ $indexHtml = $indexHtml -replace '(?s)(<div class="folder">raw data</div>\s*<div
 
 $indexHtml | Out-File -FilePath "index.html" -Encoding UTF8
 
-Write-Host "Build complete!" 
+Write-Host "Build complete!"
+
+if ($LASTEXITCODE -ne 0) {
+    exit $LASTEXITCODE
+} else {
+    exit 0
+} 
