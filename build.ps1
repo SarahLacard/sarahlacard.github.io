@@ -14,7 +14,7 @@ try {
     Write-Log "Starting build..."
 
     # Ensure directories exist
-    @("weblogs", "dialogues", "_raw-data") | ForEach-Object {
+    @("weblogs", "dialogues", "raw-data") | ForEach-Object {
         Write-Log "Checking directory: $_"
         if (-not (Test-Path $_)) {
             Write-Log "Creating directory: $_"
@@ -22,16 +22,19 @@ try {
         }
     }
 
-    # Read template
-    Write-Log "Reading template file"
-    $template = Get-Content -Raw "_templates/post.html"
+    # Read templates
+    Write-Log "Reading templates"
+    $postTemplate = Get-Content -Raw "_templates/post.html"
+    $rawDataTemplate = Get-Content -Raw "_templates/raw-data.html"
 
     # Function to process entries for a section
     function Process-Section {
         param (
             [string]$sourceDir,
             [string]$outputDir,
-            [string]$sectionPattern
+            [string]$sectionPattern,
+            [string]$template = $postTemplate,
+            [switch]$isRawData
         )
         
         Write-Log "Processing section: $sourceDir -> $outputDir"
@@ -49,11 +52,16 @@ try {
                 
                 # Read content
                 $content = Get-Content -Raw $post.FullName
-                
-                # First line is title
-                $title = ($content -split "`n")[0].Trim()
-                # Rest is content
-                $postContent = ($content -split "`n", 2)[1].Trim()
+
+                if ($isRawData) {
+                    # For raw data, use first line as title and keep all content
+                    $title = $post.BaseName
+                    $postContent = $content
+                } else {
+                    # For posts/dialogues, split title and content
+                    $title = ($content -split "`n")[0].Trim()
+                    $postContent = ($content -split "`n", 2)[1].Trim()
+                }
                 
                 # Apply template
                 $html = $template `
@@ -89,7 +97,7 @@ try {
     $dialogueEntries = Process-Section "_dialogues" "dialogues" '(<div class="folder">dialogues</div>\s*<div class="indent">)(.*?)(\s*</div>\s*\s*<div class="folder">raw data</div>)'
     
     Write-Log "Processing raw data section"
-    $rawDataEntries = Process-Section "_raw-data" "_raw-data" '(<div class="folder">raw data</div>\s*<div class="indent">)(.*?)(\s*</div>\s*\s*<div class="file">)'
+    $rawDataEntries = Process-Section "_raw-data" "raw-data" '(<div class="folder">raw data</div>\s*<div class="indent">)(.*?)(\s*</div>\s*\s*<div class="file">)' -Template $rawDataTemplate -IsRawData
 
     # Update index.html
     Write-Log "Updating index.html"
