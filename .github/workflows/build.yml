@@ -3,10 +3,10 @@ name: Build Site
 on:
   push:
     paths:
-      - '_posts/**'
-      - '_dialogues/**'
-      - '_raw-data/**'
-      - '_templates/**'
+      - '_weblogs/*.txt'
+      - '_dialogues/*.txt'
+      - '_raw-data/*.txt'
+      - '_templates/*.html'
       - 'build.ps1'
       - 'index.html'
     branches:
@@ -36,5 +36,5 @@ jobs:
         git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
         git add weblogs/ dialogues/ raw-data/ index.html
-        git diff --staged --quiet || (git commit -m "Build site from content changes" && git push origin HEAD:main)
+        git diff --staged --quiet || (git commit -m "Rebuild site from content changes" && git push origin HEAD:main)
         if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE } else { exit 0 } 
