@@ -21,6 +21,30 @@ function Write-Log {
     }
 }
 
+# Function to clean up orphaned HTML files
+function Remove-OrphanedHtml {
+    param (
+        [string]$sourceDir,
+        [string]$outputDir
+    )
+    
+    Write-Log "Cleaning up orphaned HTML files in $outputDir"
+    
+    # Get all HTML files
+    if (Test-Path "$outputDir/*.html") {
+        Get-ChildItem "$outputDir/*.html" | ForEach-Object {
+            $htmlFile = $_
+            $txtFile = Join-Path $sourceDir ($htmlFile.BaseName + ".txt")
+            
+            # If corresponding txt file doesn't exist, remove the html file
+            if (-not (Test-Path $txtFile)) {
+                Write-Log "Removing orphaned file: $($htmlFile.Name)"
+                Remove-Item $htmlFile.FullName -Force
+            }
+        }
+    }
+}
+
 try {
     Write-Log "Starting build..."
 
@@ -32,6 +56,11 @@ try {
             New-Item -ItemType Directory -Path $_ -ErrorAction Stop
         }
     }
+
+    # Clean up orphaned files first
+    Remove-OrphanedHtml "_weblogs" "weblogs"
+    Remove-OrphanedHtml "_dialogues" "dialogues"
+    Remove-OrphanedHtml "_raw-data" "raw-data"
 
     # Verify template files exist
     @("_templates/post.html", "_templates/raw-data.html") | ForEach-Object {
