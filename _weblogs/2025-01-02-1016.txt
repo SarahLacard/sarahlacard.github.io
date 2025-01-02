@@ -71,3 +71,10 @@ it betrays a large discrepancy between inner world and outer portrayl.
 2025-01-02-1118
 2025-01-02-1126
 2025-01-02-1144
+2025-01-02-1155
+2025-01-02-1159
+2025-01-02-1202
+
+Starting new dialogue with o1 about APIs.
+
+2025-01-02-1208
