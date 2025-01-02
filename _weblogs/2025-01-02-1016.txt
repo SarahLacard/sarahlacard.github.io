@@ -1,0 +1,72 @@
+just had breakfast...
+
+at mcdonalds, and now I'm back
+
+I have some tape around two of my fingers, normal duct tape type tape, but split in half width wise, and then wrapped around my index fingers (that is the one to the outside of the middle fingers, yeah? if so, yes)
+
+it helps to play the kaskakas with - another name for asalatos, but the ones that I have are definitely kashakas
+
+they are relatively small wooden balls, about the size of a golf ball or so, if not a touch larger, lathed from a nice hardwood, metal pellets or beans of some variety on the inside which has been hollowed out, and then a length of black string, twine, or cord, laced between the holes that have been drilled in the two halfs of the wooden balls.
+
+i'm not quite sure the "official" way to play them, but I've been holding one of the balls in the palm of each hand, lacing the string between my two non-thumb fingers, and then rolling the ball which I hold ontop of the other one, so that it *clicks* the one i am holding on the underside of my hand, and then can catch it again on the upswing
+
+this leads to some rather interseting outcomes
+
+the first of which, is tempo limitations. 
+
+you can adjust the length of the cable or string, so that it fits your hand, but just like any sort of pendulum, that also changes the period of rotation, or whatever equivalent concept you want to use for a definiton.
+
+I have them drawn relatively tightly, so they make an upbeat clicking noise when I play them. I can play softer or slower, but it takes more effort. I can play off beats and almost like a swing or a syncopation, but again, not always, and i can also play some of the patterns really fast.
+
+most of the patterns are about alternating the hits on either side. You can clack both of them together at the same time, which does make a more distinctive sound, which can be good for emphasis, but most of the time the instruments are going to be player alternatively. which leads to its own set of interesting complications. if you're playing in time with the pacing of your steps, are you matching or alternating with your hand and foot on each pace? or maybe you're playing at a slower or smoother rhythm, or faster and more stacatco rhythm then the one you are walking at?
+
+especially when walking outside and practicing or playing, these things all affect how other people hear your music, and adjust to it, such as being able to walk in step or hold and maintain their own pattern.
+
+I don't really have anywhere that I go to truly play them alone. I can't play them in my apartment becuase the walls are very thin, and while I play them often when going out for walks, even people on the other side of the river can likely hear the notes and maybe they get distracted by them, but by far I think the most troubling thing is that I can't really slow down. I can take breaks or pause or think, but even if I'm walking slow and relaxed and at a low tempo or equivalent, my head is often thinking about and hearing the music at the elevated rate and rhythm the the asalatos would actually play at.
+
+i sent this to gpt, asking it "what do you think the author is getting on about?" --- I'll probably include that in the dialgoues section, but i think it's rather important to -- try and learn to think again without having my thoughts so directly interwoven with ai.
+
+Even the impulse to have my thoughts "checked" or confirmed or analyzed by ai is probably not a great starting point.
+
+I'll attempt to endeavour (what weasel words in case of failure) ---- I *will* keep the text in this document 100% raw and authentic pure human generated language with the power of a physical i/o device, e.g., a keyboard.
+
+i wonder if o1 can even recognize the human point of typing this text out in the first place, or how long and how subtle I'll have to be to point out to the ai what I am attempting to accomplish overall...
+
+intention matters, i suppose
+
+question here at this point --- what about inter-file timestamps? like marking the passage of time as i write?
+
+I used to do that, and should probably put it back on a hotkey. I was using ctrl+alt+t i think for timestamp, but crazily enough that turns out to be the command that opens the terminal on linux, so maybe I'll just use ctrl+shift+t this time and use the ctrl and alt buttons on the right side of the keyboard?
+
+I'm fairly certain I can set this up in cursor commands or something using some sort of vs wizardy, but I'll get to that in a moment.
+
+alright, got it working, now I can more properly keep you updated on the time in which these thoughts occured and were generated
+
+2025-01-02-1042
+
+just like that! :D
+
+also weird tho, since when I start again, if I want to timestamp when I started typing, it's ambiguous as to whether a single timestamp was when I stopped typing, or when I started?
+
+I suppose the best answer is to place two, one when I'm done, and another when i return, with the assumption that if there is only one being shown, then it was placed when i returned, and not when i finished typing...
+
+2025-01-02-1048
+2025-01-02-1051
+2025-01-02-1105
+
+okay, finally got an output from o1 that is even remotely reasonable compared to what I was looking for - it took a while to get, o1 has some difficulties summarizing or distilling information and situations in certain circumstances, and when it got close to what i was trying to convey, i asked to to reason about what they/it were already talking about, just more slowly so that they didn't diverge or switch to a different topic, but then i got five silent failures in a row, i changed the wording slightly, got a response finally, and then chained that into a response that was okay. it's not that far off, but it is, off.
+
+2025-01-02-1106
+2025-01-02-1108
+
+I suppose the difficult here is that it gets the sentiment, as expanded, as accurately as i described it in the unexpanded form, but what is it that fills in the gaps incorrectly with details I did not specify?
+
+I think the biggest differences between what I was expecting and looking to seen conveyed wasn't something about compulsion, but more about draw. there is also a deep admission, when other people see you, quiet and walking along all peaceful and zen-like, along the river and among the trees, then discontinuously hear a lone percussion track flicking along through various rhythms, tempos, and patterns...
+
+it betrays a large discrepancy between inner world and outer portrayl.
+
+(i didn't timestamp when I left...)
+
+2025-01-02-1114
+2025-01-02-1118
+2025-01-02-1126
