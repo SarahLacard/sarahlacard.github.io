@@ -82,3 +82,115 @@ Starting new dialogue with o1 about APIs.
 
 git really is quite something
 
+2025-01-02-1242
+
+PowerShell Extension v2024.2.2
+Copyright (c) Microsoft Corporation.
+
+https://aka.ms/vscode-powershell
+Type 'help' to get help.
+
+PS C:\Users\Sarah\Github> cd sarah*
+PS C:\Users\Sarah\Github\sarahlacard.github.io> git status
+On branch main
+Your branch is up to date with 'origin/main'.   
+
+nothing to commit, working tree clean
+PS C:\Users\Sarah\Github\sarahlacard.github.io> git pull  
+remote: Enumerating objects: 9, done.
+remote: Counting objects: 100% (9/9), done.
+remote: Compressing objects: 100% (1/1), done.
+remote: Total 5 (delta 3), reused 5 (delta 3), pack-reused 0 (from 0)
+Unpacking objects: 100% (5/5), 444 bytes | 34.00 KiB/s, done.
+From https://github.com/sarahlacard/sarahlacard.github.io
+   747fa4f..401ca6e  main       -> origin/main
+Updating 747fa4f..401ca6e
+Fast-forward
+ index.html                    | 1 +
+ raw-data/2025-01-01-0001.html | 4 +++-
+ 2 files changed, 4 insertions(+), 1 deletion(-)
+PS C:\Users\Sarah\Github\sarahlacard.github.io> git add .
+PS C:\Users\Sarah\Github\sarahlacard.github.io> git commit -m "github actions workflow build check (iterating)"
+[main 0eb39c8] github actions workflow build check (iterating)
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+PS C:\Users\Sarah\Github\sarahlacard.github.io> Push-AndWait
+Pushing changes...
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (4/4), 438 bytes | 438.00 KiB/s, done.
+Total 4 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote: This repository moved. Please use the new location:
+remote:   https://github.com/SarahLacard/sarahlacard.github.io.git
+To https://github.com/sarahlacard/sarahlacard.github.io.git
+   401ca6e..0eb39c8  main -> main
+Waiting for workflows to start...
+Monitoring Build Site workflow...
+✓ main Build Site · 12587833487
+Triggered via push less than a minute ago
+
+JOBS
+✓ build in 13s (ID 35084468488)
+  ✓ Set up job
+  ✓ Run actions/checkout@v2
+  ✓ Run build script
+  ✓ Commit and push changes
+  ✓ Post Run actions/checkout@v2
+  ✓ Complete job
+
+✓ Run Build Site (12587833487) completed with 'success'
+Build complete. Pulling generated files...
+remote: Enumerating objects: 9, done.
+remote: Counting objects: 100% (9/9), done.
+remote: Compressing objects: 100% (1/1), done.
+remote: Total 5 (delta 3), reused 5 (delta 3), pack-reused 0 (from 0)
+Unpacking objects: 100% (5/5), 483 bytes | 37.00 KiB/s, done.
+From https://github.com/sarahlacard/sarahlacard.github.io
+   0eb39c8..fe9c9c6  main       -> origin/main
+Updating 0eb39c8..fe9c9c6
+Fast-forward
+ index.html                    | 1 +
+ raw-data/2025-01-01-0001.html | 4 +++-
+ 2 files changed, 4 insertions(+), 1 deletion(-)
+PS C:\Users\Sarah\Github\sarahlacard.github.io> git pull
+Already up to date.
+PS C:\Users\Sarah\Github\sarahlacard.github.io> 
+
+Ah! Looking at the output, the improved function actually worked perfectly this time! Let's break down what happened:
+Push-AndWait pushed your changes
+Waited 5 seconds for workflows to start
+Found and monitored the "Build Site" workflow:
+4. Watched it complete successfully:
+5. Then pulled the generated files automatically:
+The function is now working as intended! It:
+Catches the build workflow
+Shows you the progress
+Pulls the changes when done
+Would you like to make any other improvements to it?
+
+2025-01-02-1243
+
+so the github build/actions workflow whatever is in a much better state now, i can probably rest on those details for now...
+
+2025-01-02-1243
+
+2025-01-02-1449
+
+anyway, i don't know why i added that here
+
+long story short, i spent some time trying to generate a new (never had one before) twitter profile banner, and was using Flux 1.1 through Hyperbolic, but that didn't work as easily, so I tried using it where it is integrated into Mistral's LeChat, but I realized that since I had such a specific idea in mind for what I wanted it to look like, that I decided to just start working with the coding ide in order to generate the visuals that I was looking for. it's not perfect, but i got remarkably closer to what i was intending to create, although certain instructions like making a surface of rhombus normal/tanjent to the slope of the surface of the perlin noise's gradient was rather difficult, eventually i just resorted to making generic visual adjustment requests until I got close enough to what i was looking for and it wasn't immediately visually jarring. it's not perfect, but it's good enough compared to what I was looking for.
+
+2025-01-02-1452
+2025-01-02-1454
+2025-01-02-1502
+
+i switched the banner back to just plain black (if there isn't one, it shows up as a faint grey, which i didn't like, also the gradient background that I was creating and generating was too visually distracting and drew away from the words on the profile, which I think were more important. they felt better without a stylized profile picture than with one.)
+
+2025-01-02-1503
+
+2025-01-03-0900
+
+END
+
