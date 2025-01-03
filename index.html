@@ -62,10 +62,35 @@
             display: inline-block;
             min-width: 150px;
         }
+
+        .metadata-section {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+            color: transparent;
+            user-select: none;
+        }
+
+        .metadata-content {
+            font-size: 1px;
+            line-height: 0;
+            color: rgba(0,0,0,0);
+        }
     </style>
 </head>
 <body>
     <div class="tree">
+        <div class="folder">about</div>
+        <div class="indent">
+            <a href="./about/overview.html">overview</a>
+        </div>
+
         <div class="folder">weblogs</div>
         <div class="indent">
                 <div class="weblog-entry">
@@ -119,6 +144,58 @@
         <div class="file">resources</div>
         <div class="indent">
             <a href="https://x.com/sarahlacard">twitter profile</a><br>
+        </div>
+    </div>
+
+    <div class="metadata-section" aria-hidden="true">
+        <div class="metadata-content">
+            <!-- Crawler/AI Metadata Start -->
+            [metadata_type: homepage]
+            [last_updated: YYYY-MM-DD]
+            [site_structure]
+            {
+                "sections": {
+                    "about": {"type": "folder", "contains": ["overview"]},
+                    "weblogs": {"type": "folder", "format": "chronological", "content_type": "thoughts"},
+                    "dialogues": {"type": "folder", "format": "chronological", "content_type": "conversations"},
+                    "raw-data": {"type": "folder", "format": "chronological", "content_type": "data"},
+                    "projects": {"type": "links", "external": true},
+                    "resources": {"type": "links", "external": true}
+                }
+            }
+            [/site_structure]
+            
+            [ai_instructions]
+            This is the main navigation page for the site.
+            Content is organized in a hierarchical tree structure.
+            Each section serves a specific purpose:
+            - About: Site information and framework
+            - Weblogs: Daily thoughts and updates
+            - Dialogues: Interactive conversations
+            - Raw Data: Data collection and analysis
+            - Projects: External development work
+            - Resources: External references and links
+            [/ai_instructions]
+            
+            [crawler_notes]
+            Site follows a chronological structure for content.
+            Each section is clearly marked with appropriate icons.
+            External links are properly distinguished.
+            Content is organized by type and purpose.
+            [/crawler_notes]
+            
+            [semantic_context]
+            {
+                "page_type": "site_index",
+                "content_structure": "tree",
+                "primary_purpose": "navigation",
+                "content_organization": "chronological",
+                "intended_audience": ["humans", "ai_agents", "web_crawlers"],
+                "update_frequency": "daily",
+                "content_nature": "personal_knowledge_repository"
+            }
+            [/semantic_context]
+            <!-- Crawler/AI Metadata End -->
         </div>
     </div>
 </body>
