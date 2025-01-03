@@ -60,7 +60,68 @@ They are commonly accessed over HTTP, often using structured data like JSON or X
 
 Authentication is often required, typically using tokens or API keys. This ensures only verified clients can call the API. APIs are versioned so that new changes don’t break older clients. Well-documented APIs list all available endpoints, parameters, authentication methods, and expected responses.
 
-This is the baseline of how APIs function.</pre>
+This is the baseline of how APIs function.
+
+Talk to me more about "accessed over http". I'm viewing this as like a shield, a way where you can take inputs from the clear web, and programmatically interact with them, returning data, i view this as a way to interact with an end user without compromising or letting them interact directly with my system. Is this true?
+
+I have heard some things about "reverse engineering" APIs or equivalent - how is this done? how are the details and existence of API endpoints found and determined? can this always be done? if not, why not? how and when can API functionality be hidden from discovery?
+
+Are Get, Post, Put, and Delete, basically CRUD?
+
+How does that URL end up on your machine, in the case of a local server? URL -> DNS -> your local IP? is that IP... what, exactly, your machines local IP on your local network, or the IP or your network modem/router/entry point....?
+
+How are APIs normally documented?
+
+APIs over HTTP [Hypertext Transfer Protocol] use URLs [Uniform Resource Locators] for transport. I consider an API’s HTTP interface a kind of shield, in that I only expose defined endpoints [paths + methods like GET, POST, PUT, DELETE] while keeping my underlying system and data store hidden. The end user or client sends requests to these endpoints, and I decide what information or functionality to provide in my response. The user never directly touches my internal filesystem or database. I pass them carefully controlled responses—like a guarded gate.
+
+Reverse Engineering APIs
+People sometimes want to figure out how an API works even if it’s not documented. Here’s how that’s done:
+
+Network Inspection: Tools like browser Developer Tools [e.g., Chrome DevTools], or a command-line tool like curl [“See URL”], or specialized software like Wireshark [“Why-ruh-shark”] can capture and inspect HTTP requests and responses. If my client application communicates with a server, I can watch those requests in real-time. The URLs, request methods, headers, parameters, and responses are right there in the data stream.
+
+Application Analysis: If the API is used by a mobile or desktop app, I can sometimes decompile or analyze that app’s code or resources to see what endpoints it calls. This might reveal base URLs, JSON request/response structures, tokens, etc.
+
+Guessing/Brute-forcing: If I suspect there are hidden endpoints or certain naming conventions, I can methodically try URLs (e.g., /api/user, /api/users, /api/admin) or compare common patterns (/login, /logout, /register). This is time-consuming but can reveal secret routes that weren’t publicly documented.
+
+Can an API always be reverse-engineered?
+No. If the service is fully locked down, uses encrypted communication [HTTPS], implements strict authentication, and returns nothing meaningful for unknown or incorrect routes, reverse engineering becomes much harder. Plus, code obfuscation in clients, or a server that never reveals anything not explicitly requested by a valid token, can limit what I can discover. Still, I can often see top-level URLs in the traffic even if I can’t successfully call them.
+
+Hiding API Functionality
+I can restrict or hide endpoints by:
+
+Requiring authentication or special access tokens for every request.
+Not exposing public documentation.
+Returning generic errors [e.g., 404, 403] to any request that’s not authenticated.
+Avoiding predictable endpoint names.
+Even then, traffic captures can still reveal at least the endpoints that real, authorized clients are calling. That said, only someone who has the valid credentials or who can intercept the calls can discover them.
+
+Are GET, POST, PUT, and DELETE basically CRUD?
+Yes. CRUD [Create, Read, Update, Delete] is the standard set of operations for data, and those four HTTP methods typically map as follows:
+
+GET: Read data (like CRUD’s “Read”).
+POST: Create data (like CRUD’s “Create”).
+PUT: Update an existing resource (like CRUD’s “Update”). Sometimes PATCH is used for partial updates, but PUT is the usual for a complete replace.
+DELETE: Remove data (like CRUD’s “Delete”).
+Local vs. Public URL
+When I serve an API locally (for example, if I run a local development server on my machine), the URL might be something like http://localhost:8080/api/.... In that scenario:
+
+localhost is a special hostname that resolves to 127.0.0.1 (IPv4) or ::1 (IPv6) on the same machine.
+If you’re running on a private network and want other devices in the same LAN [Local Area Network] to access your API, you could listen on your private IP, maybe something like 192.168.0.10 or 10.0.0.5. Then others on your network could call http://192.168.0.10:8080/api/....
+If you have a public IP [assigned by your ISP], your router or modem can forward inbound traffic from that public IP/port to your local IP/port. Then an outside user can call the public IP’s URL, which gets routed internally to your local server.
+How DNS or IP resolution works in the local server scenario
+
+If I type localhost in my browser, the OS recognizes it as 127.0.0.1 or ::1.
+If I type mydomain.local, it either resolves via a local DNS or it’s in my host file mapping that domain to 192.168.0.10.
+On a broader scale, if I have a real domain name [e.g., example.com], DNS maps that domain to the public IP of my router. If I set up port forwarding, the router sends traffic on a specific port [e.g., port 80 or 8080] to the listening server’s local IP/port.
+API Documentation
+APIs are normally documented using:
+
+OpenAPI/Swagger – A specification that describes endpoints, parameters, response bodies, etc., in a standardized format that can be used to generate interactive docs.
+Developer Portal/Web Docs – A website containing instructions, code samples, authentication requirements, endpoints, etc.
+README / Markdown Docs – Plain markdown files stored in a project repo describing usage.
+This documentation typically shows valid endpoints, request parameters, required headers, authentication strategies, and example responses.
+
+END</pre>
 </body>
 </html> 
 
