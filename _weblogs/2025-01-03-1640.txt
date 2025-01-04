@@ -207,5 +207,11 @@ That was the response from the coding agent that helped me build it. The pieces 
 
 i think the initial usecase is just to have a model provide commentary on what it sees happening as close to realtime as possible (when it has access to the new data and its process runs) by concatenating information to a text file, which then when pushed to the github, will build into it's own page. we have something very very similar already funcitoning in the sarahlacard.github.io repositiory, and could very likely easily adapt in order to make a section called "vera" where a language model acting as that character comments about what they see from the agregator into a specific file.
 
+===
 
+2025-01-03-1926
+
+Oh, i think we did most of this, we're on verification and testing right now.
+
+===
 
