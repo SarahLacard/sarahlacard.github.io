@@ -129,10 +129,29 @@ jobs:
                     exit 1
                 }
                 
-                if ($file.RequireHtmlStructure -and 
-                    ($content -notmatch '<!DOCTYPE html>.*<html.*>.*<head.*>.*<body.*>.*</body>.*</html>')) {
-                    Write-Error "Invalid HTML structure in: $($file.Path)"
-                    exit 1
+                if ($file.RequireHtmlStructure) {
+                    # More flexible HTML structure validation
+                    $hasDoctype = $content -match '<!DOCTYPE\s+html>'
+                    $hasHtml = $content -match '<html[^>]*>'
+                    $hasClosingHtml = $content -match '</html>'
+                    $hasHead = $content -match '<head[^>]*>'
+                    $hasClosingHead = $content -match '</head>'
+                    $hasBody = $content -match '<body[^>]*>'
+                    $hasClosingBody = $content -match '</body>'
+                    
+                    $errors = @()
+                    if (-not $hasDoctype) { $errors += "Missing DOCTYPE declaration" }
+                    if (-not $hasHtml) { $errors += "Missing opening <html> tag" }
+                    if (-not $hasClosingHtml) { $errors += "Missing closing </html> tag" }
+                    if (-not $hasHead) { $errors += "Missing opening <head> tag" }
+                    if (-not $hasClosingHead) { $errors += "Missing closing </head> tag" }
+                    if (-not $hasBody) { $errors += "Missing opening <body> tag" }
+                    if (-not $hasClosingBody) { $errors += "Missing closing </body> tag" }
+                    
+                    if ($errors) {
+                        Write-Error "Invalid HTML structure in $($file.Path):`n$($errors -join "`n")"
+                        exit 1
+                    }
                 }
                 
                 Write-Host "✓ $($file.Path) validated"
