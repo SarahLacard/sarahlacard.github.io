@@ -300,3 +300,97 @@
 [2025-01-03 20:11:10] Writing updated index.html
 [2025-01-03 20:11:10] Build completed successfully
 [2025-01-03 20:11:10] Build process completed with success
+[2025-01-03 20:15:27] Starting build...
+[2025-01-03 20:15:27] Checking directory: _weblogs
+[2025-01-03 20:15:27] Checking directory: _dialogues
+[2025-01-03 20:15:27] Checking directory: _vera
+[2025-01-03 20:15:27] Checking directory: _templates
+[2025-01-03 20:15:27] Checking directory: weblogs
+[2025-01-03 20:15:27] Checking directory: dialogues
+[2025-01-03 20:15:27] Checking directory: vera
+[2025-01-03 20:15:27] Cleaning up orphaned HTML files in weblogs
+[2025-01-03 20:15:27] Cleaning up orphaned HTML files in dialogues
+[2025-01-03 20:15:27] Cleaning up orphaned HTML files in vera
+[2025-01-03 20:15:28] Reading templates
+[2025-01-03 20:15:28] Converting weblogs section
+[2025-01-03 20:15:28] Converting section: _weblogs -> weblogs
+[2025-01-03 20:15:28] Converting file: 2025-01-03-1640.txt
+[2025-01-03 20:15:28] Generating HTML file: C:\Users\Sarah\Github\sarahlacard.github.io\weblogs\2025-01-03-1640.html
+[2025-01-03 20:15:28] Converting file: 2025-01-03-0901.txt
+[2025-01-03 20:15:28] Generating HTML file: C:\Users\Sarah\Github\sarahlacard.github.io\weblogs\2025-01-03-0901.html
+[2025-01-03 20:15:28] Converting file: 2025-01-02-1016.txt
+[2025-01-03 20:15:28] Generating HTML file: C:\Users\Sarah\Github\sarahlacard.github.io\weblogs\2025-01-02-1016.html
+[2025-01-03 20:15:28] Converting file: 2025-01-01-1205.txt
+[2025-01-03 20:15:28] Generating HTML file: C:\Users\Sarah\Github\sarahlacard.github.io\weblogs\2025-01-01-1205.html
+[2025-01-03 20:15:28] Converting file: 2024-12-31-1000.txt
+[2025-01-03 20:15:28] Generating HTML file: C:\Users\Sarah\Github\sarahlacard.github.io\weblogs\2024-12-31-1000.html
+[2025-01-03 20:15:28] Converting dialogues section
+[2025-01-03 20:15:28] Converting section: _dialogues -> dialogues
+[2025-01-03 20:15:28] Converting file: 2025-01-03-0919.txt
+[2025-01-03 20:15:28] Generating HTML file: C:\Users\Sarah\Github\sarahlacard.github.io\dialogues\2025-01-03-0919.html
+[2025-01-03 20:15:28] Converting file: 2025-01-02-1210.txt
+[2025-01-03 20:15:28] Generating HTML file: C:\Users\Sarah\Github\sarahlacard.github.io\dialogues\2025-01-02-1210.html
+[2025-01-03 20:15:28] Converting file: 2025-01-02-1027.txt
+[2025-01-03 20:15:28] Generating HTML file: C:\Users\Sarah\Github\sarahlacard.github.io\dialogues\2025-01-02-1027.html
+[2025-01-03 20:15:28] Converting file: 2025-01-01-1836.txt
+[2025-01-03 20:15:28] Generating HTML file: C:\Users\Sarah\Github\sarahlacard.github.io\dialogues\2025-01-01-1836.html
+[2025-01-03 20:15:28] Converting file: 2025-01-01-1224.txt
+[2025-01-03 20:15:28] Generating HTML file: C:\Users\Sarah\Github\sarahlacard.github.io\dialogues\2025-01-01-1224.html
+[2025-01-03 20:15:28] Converting Vera's commentary
+[2025-01-03 20:15:28] Converting section: _vera -> vera
+[2025-01-03 20:15:28] Converting Vera's commentary
+[2025-01-03 20:15:28] Generating HTML file: C:\Users\Sarah\Github\sarahlacard.github.io\vera\log.html
+[2025-01-03 20:15:28] Updating index.html
+[2025-01-03 20:15:28] Updating weblogs section in index.html
+[2025-01-03 20:15:28] Updating dialogues section in index.html
+[2025-01-03 20:15:28] Updating Vera section in index.html
+[2025-01-03 20:15:28] Writing updated index.html
+[2025-01-03 20:15:28] Build completed successfully
+[2025-01-03 20:15:28] Build process completed with success
+[2025-01-03 20:17:00] Starting build...
+[2025-01-03 20:17:00] Checking directory: _weblogs
+[2025-01-03 20:17:00] Checking directory: _dialogues
+[2025-01-03 20:17:00] Checking directory: _vera
+[2025-01-03 20:17:00] Checking directory: _templates
+[2025-01-03 20:17:00] Checking directory: weblogs
+[2025-01-03 20:17:00] Checking directory: dialogues
+[2025-01-03 20:17:00] Checking directory: vera
+[2025-01-03 20:17:00] Cleaning up orphaned HTML files in weblogs
+[2025-01-03 20:17:00] Cleaning up orphaned HTML files in dialogues
+[2025-01-03 20:17:00] Cleaning up orphaned HTML files in vera
+[2025-01-03 20:17:00] Reading templates
+[2025-01-03 20:17:00] Converting weblogs section
+[2025-01-03 20:17:00] Converting section: _weblogs -> weblogs
+[2025-01-03 20:17:00] Converting file: 2025-01-03-1640.txt
+[2025-01-03 20:17:00] Generating HTML file: C:\Users\Sarah\Github\sarahlacard.github.io\weblogs\2025-01-03-1640.html
+[2025-01-03 20:17:00] Converting file: 2025-01-03-0901.txt
+[2025-01-03 20:17:00] Generating HTML file: C:\Users\Sarah\Github\sarahlacard.github.io\weblogs\2025-01-03-0901.html
+[2025-01-03 20:17:00] Converting file: 2025-01-02-1016.txt
+[2025-01-03 20:17:00] Generating HTML file: C:\Users\Sarah\Github\sarahlacard.github.io\weblogs\2025-01-02-1016.html
+[2025-01-03 20:17:00] Converting file: 2025-01-01-1205.txt
+[2025-01-03 20:17:00] Generating HTML file: C:\Users\Sarah\Github\sarahlacard.github.io\weblogs\2025-01-01-1205.html
+[2025-01-03 20:17:00] Converting file: 2024-12-31-1000.txt
+[2025-01-03 20:17:00] Generating HTML file: C:\Users\Sarah\Github\sarahlacard.github.io\weblogs\2024-12-31-1000.html
+[2025-01-03 20:17:00] Converting dialogues section
+[2025-01-03 20:17:00] Converting section: _dialogues -> dialogues
+[2025-01-03 20:17:00] Converting file: 2025-01-03-0919.txt
+[2025-01-03 20:17:00] Generating HTML file: C:\Users\Sarah\Github\sarahlacard.github.io\dialogues\2025-01-03-0919.html
+[2025-01-03 20:17:00] Converting file: 2025-01-02-1210.txt
+[2025-01-03 20:17:00] Generating HTML file: C:\Users\Sarah\Github\sarahlacard.github.io\dialogues\2025-01-02-1210.html
+[2025-01-03 20:17:00] Converting file: 2025-01-02-1027.txt
+[2025-01-03 20:17:00] Generating HTML file: C:\Users\Sarah\Github\sarahlacard.github.io\dialogues\2025-01-02-1027.html
+[2025-01-03 20:17:00] Converting file: 2025-01-01-1836.txt
+[2025-01-03 20:17:00] Generating HTML file: C:\Users\Sarah\Github\sarahlacard.github.io\dialogues\2025-01-01-1836.html
+[2025-01-03 20:17:00] Converting file: 2025-01-01-1224.txt
+[2025-01-03 20:17:00] Generating HTML file: C:\Users\Sarah\Github\sarahlacard.github.io\dialogues\2025-01-01-1224.html
+[2025-01-03 20:17:00] Converting Vera's commentary
+[2025-01-03 20:17:00] Converting section: _vera -> vera
+[2025-01-03 20:17:00] Converting Vera's commentary
+[2025-01-03 20:17:00] Generating HTML file: C:\Users\Sarah\Github\sarahlacard.github.io\vera\log.html
+[2025-01-03 20:17:00] Updating index.html
+[2025-01-03 20:17:00] Updating weblogs section in index.html
+[2025-01-03 20:17:00] Updating dialogues section in index.html
+[2025-01-03 20:17:00] Updating Vera section in index.html
+[2025-01-03 20:17:00] Writing updated index.html
+[2025-01-03 20:17:00] Build completed successfully
+[2025-01-03 20:17:00] Build process completed with success
