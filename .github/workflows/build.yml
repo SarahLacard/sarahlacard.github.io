@@ -6,6 +6,7 @@ on:
       - '_weblogs/*.txt'
       - '_dialogues/*.txt'
       - '_raw-data/*.txt'
+      - '_vera/*.md'
       - '_templates/*.html'
       - 'build.ps1'
       - 'index.html'
