@@ -24,6 +24,18 @@ function Write-Log {
     }
 }
 
+function Write-FileInfo {
+    param([string]$FilePath)
+    if (Test-Path $FilePath) {
+        $file = Get-Item $FilePath
+        Write-Log "File: $FilePath"
+        Write-Log "  Last Write Time: $($file.LastWriteTime)"
+        Write-Log "  Size: $($file.Length) bytes"
+    } else {
+        Write-Log "File not found: $FilePath"
+    }
+}
+
 # Function to clean up orphaned HTML files
 function Remove-OrphanedHtml {
     param (
@@ -38,7 +50,7 @@ function Remove-OrphanedHtml {
         Get-ChildItem "$outputDir/*.html" | ForEach-Object {
             $htmlFile = $_
             $sourceFile = if ($sourceDir -eq "_vera") {
-                Join-Path $sourceDir "log.md"
+                Join-Path $sourceDir "log.txt"
             } else {
                 Join-Path $sourceDir ($htmlFile.BaseName + ".txt")
             }
@@ -96,9 +108,10 @@ try {
         
         if ($isVera) {
             # Handle Vera's commentary
-            $veraLog = Join-Path $sourceDir "log.md"
+            $veraLog = Join-Path $sourceDir "log.txt"
             if (Test-Path $veraLog) {
                 Write-Log "Converting Vera's commentary"
+                Write-FileInfo $veraLog
                 
                 # Read content with UTF8 encoding
                 $content = Get-Content -Raw -Encoding UTF8 $veraLog -ErrorAction Stop
@@ -116,6 +129,7 @@ try {
                 Write-Log "Generating HTML file: $outputFile"
                 # Save with UTF8 encoding without BOM
                 [System.IO.File]::WriteAllText($outputFile, $html, [System.Text.UTF8Encoding]::new($false))
+                Write-FileInfo $outputFile
                 
                 # Add to entries with current timestamp
                 $entries += @"
