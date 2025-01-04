@@ -20,26 +20,69 @@ jobs:
       contents: write
     
     steps:
-    - uses: actions/checkout@v2
+    - name: Diagnostic - Show trigger event
+      shell: pwsh
+      run: |
+        Write-Host "Event name: ${{ github.event_name }}"
+        Write-Host "Ref name: ${{ github.ref }}"
+        Write-Host "Repository: ${{ github.repository }}"
+    
+    - uses: actions/checkout@v3
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
-        fetch-depth: 0  # Get all history for proper file comparison
-      
+        fetch-depth: 0
+        persist-credentials: true
+    
+    - name: Diagnostic - Pre-build state
+      shell: pwsh
+      run: |
+        Write-Host "Current directory: $pwd"
+        Write-Host "Directory contents:"
+        Get-ChildItem -Recurse | Select-Object FullName
+        Write-Host "Git status:"
+        git status
+        Write-Host "Changed files in this push:"
+        git diff --name-only HEAD^ HEAD
+    
     - name: Run build script
       shell: pwsh
       run: |
-        Write-Host "Files changed in this push:"
-        git diff --name-only HEAD^ HEAD
+        Write-Host "Running build.ps1"
         ./build.ps1
+        
+    - name: Diagnostic - Post-build state
+      shell: pwsh
+      run: |
+        Write-Host "Directory contents after build:"
+        Get-ChildItem -Recurse | Select-Object FullName
+        Write-Host "Git status after build:"
+        git status
+        Write-Host "Changes from build:"
+        git diff --stat
+        
+    - name: Configure git
+      shell: pwsh
+      run: |
+        git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "github-actions[bot]"
+        Write-Host "Git config:"
+        git config --list
         
     - name: Commit and push changes
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       shell: pwsh
       run: |
-        git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
-        git config --local user.name "github-actions[bot]"
+        Write-Host "Adding files..."
         git add weblogs/ dialogues/ vera/ raw-data/ index.html
+        Write-Host "Git status before commit:"
         git status
-        git diff --staged --quiet || (git commit -m "Rebuild site from content changes" && git push origin HEAD:main)
-        if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE } else { exit 0 } 
+        if (git diff --staged --quiet) {
+            Write-Host "No changes to commit"
+            exit 0
+        } else {
+            Write-Host "Changes found, committing..."
+            git commit -m "Rebuild site from content changes"
+            Write-Host "Pushing changes..."
+            git push origin HEAD:main
+        } 
