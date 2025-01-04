@@ -117,7 +117,7 @@ try {
                 # Save with UTF8 encoding without BOM
                 [System.IO.File]::WriteAllText($outputFile, $html, [System.Text.UTF8Encoding]::new($false))
                 
-                # Add to entries
+                # Add to entries with current timestamp
                 $entries += @"
                 <div class="weblog-entry">
                     <span class="weblog-date">$(Get-Date -Format "[yyyy-MM-dd HH:mm]")</span>
