@@ -6,7 +6,6 @@ on:
       - '_vera/**'
       - '_weblogs/**'
       - '_dialogues/**'
-      - '_raw-data/**'
       - '_templates/**'
       - 'build.ps1'
       - 'index.html'
@@ -86,8 +85,12 @@ jobs:
     - name: Stage changes
       shell: pwsh
       run: |
-        Write-Host "Adding all generated files..."
-        git add -f vera/log.html weblogs/ dialogues/ raw-data/ index.html
+        Write-Host "Adding generated files..."
+        # Add each file individually to avoid errors with missing directories
+        git add -f vera/log.html
+        git add -f weblogs/*.html
+        git add -f dialogues/*.html
+        git add -f index.html
         Write-Host "`nGit status after staging:"
         git status
         
