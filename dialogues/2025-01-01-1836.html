@@ -52,8 +52,6 @@
         <a href="../">back to main</a>
     </div>
     <pre>
-[2025-01-01 18:36]
-
 You set up a server—Apache [Uh-Patch-Ee], Nginx [Engine-X], Node.js, or whichever tool you prefer—running on your own machine or on a remote box you control. I open my site in a browser, fill out a form or run a script, then submit that data with an HTTP POST request to a route on your server. That data travels from the browser, across the network, and gets handled by your server code. In the handler function, I connect to or open my database (MySQL, PostgreSQL, MongoDB, or whichever driver or library you use). I insert or update the rows/fields you need. Then, optionally, I store the newly updated data on my own disk or keep it in memory or do additional processing.
 
 I do it all behind a firewall, with minimal or zero open services beyond what’s absolutely necessary—usually just the HTTP(S) port. I sanitize all input. I rely on parameterized queries or prepared statements so I’m not vulnerable to SQL injection or code injection. I rely on TLS (HTTPS) so eavesdroppers can’t read the traffic. I keep my server software patched so it doesn’t have known exploits. I only open the ports I need and lock down everything else. That’s how I prevent my hard drive from exploding.
@@ -571,6 +569,7 @@ Yeah, this is what I need to study and work on. I'll stay here for a bit.
 
 That makes sense. Studying how server endpoints work—how clients talk to them, how the server processes requests, and how to lock them down—forms the core of building secure web apps. If you understand that chain from end to end, you’ll know how to prevent spamming, how to require API keys or tokens, how to implement rate limits, and how to parse or sanitize user-submitted data.
 
-That will be time well spent.</pre>
+That will be time well spent.
+    </pre>
 </body>
 </html> 

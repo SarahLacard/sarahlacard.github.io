@@ -100,16 +100,22 @@ try {
             if (Test-Path $veraLog) {
                 Write-Log "Converting Vera's commentary"
                 
-                # Read and convert markdown content
-                $content = Get-Content -Raw $veraLog -ErrorAction Stop
+                # Read content with UTF8 encoding
+                $content = Get-Content -Raw -Encoding UTF8 $veraLog -ErrorAction Stop
                 
-                # Apply template
+                # Apply template without HTML encoding
                 $html = $template -replace "{{content}}", $content
                 
-                # Generate output file
-                $outputFile = Join-Path $outputDir "log.html"
+                # Generate output filename and ensure directory exists
+                $outputDirPath = Join-Path (Get-Location) $outputDir
+                $outputFile = Join-Path $outputDirPath "log.html"
+                if (-not (Test-Path $outputDirPath)) {
+                    New-Item -ItemType Directory -Path $outputDirPath -Force | Out-Null
+                }
+                
                 Write-Log "Generating HTML file: $outputFile"
-                $html | Out-File -FilePath $outputFile -Encoding UTF8 -ErrorAction Stop
+                # Save with UTF8 encoding without BOM
+                [System.IO.File]::WriteAllText($outputFile, $html, [System.Text.UTF8Encoding]::new($false))
                 
                 # Add to entries
                 $entries += @"
