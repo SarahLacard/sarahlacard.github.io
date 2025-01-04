@@ -120,7 +120,11 @@ jobs:
                     exit 1
                 }
                 
-                if ($content -match '') {
+                # Check for common encoding issue markers
+                $encodingIssues = $content -match '[\ufffd\ufeff]' -or 
+                                 $content -match '[^\x00-\x7F]+' -and 
+                                 $content -notmatch '[\p{IsBasicLatin}\p{IsLatin-1Supplement}]'
+                if ($encodingIssues) {
                     Write-Error "Encoding issues detected in: $($file.Path)"
                     exit 1
                 }
