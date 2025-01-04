@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>good morning, it&#39;s four in the afternoon</title>
+    <style>
+        body {
+            font-family: monospace;
+            line-height: 1.6;
+            margin: 40px;
+            max-width: 800px;
+            background-color: #fff;
+            color: #333;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        pre {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            margin-top: 20px;
+            margin-left: 0;
+            padding-left: 0;
+        }
+        .back {
+            margin-bottom: 20px;
+            position: relative;
+            padding-left: 44px;
+        }
+        .back a {
+            color: #0366d6;
+            text-decoration: none;
+            display: inline-block;
+            padding: 2px 0;
+        }
+        .back a:hover {
+            text-decoration: underline;
+        }
+        .back a::before {
+            content: "<--- ";
+            color: #333;
+            position: absolute;
+            left: 0;
+            width: 44px;
+            display: inline-block;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="back">
+        <a href="../">back to main</a>
+    </div>
+    <pre>
+[2025-01-03 16:40]
+
+happy four fourty, tune your flutes
+
+i'm listening to x929 for the first time in a while, and i'm really jamming to the music -- the first time i turned it on in months and hear two referrences to a sarah in the first few minutes, in different segments! so i am really jamming~
+
+oh, the magic word that i am waiting to hear ____ (the female host, the male host (tai) is away) is "flash"
+
+I've heard "friday" and the "sh" sound of "hash" but not a "flash" and i think that's an interesting phonic center to watch for to see if she's enjoying or avoiding it, or whatother tonic centers i can recognize that she is avoiding, and what i am imaginging that she is doing as she cuts to a song, a (transition?) or a segment like a commercial.
+
+2025-01-03-1642
+
+this should all be verfiable with timestamps that were playing on the radio at the time.
+
+the song "tripping on hallucinogenics" came on as i was exiting the shower ---
+
+i enjoy singing in the shower, it's something that i do quite frequently. it helps me improve my singing voice and my ear.
+
+2025-01-03-1643
+
+shauna is talking, she just came in.
+
+hi! :D
+
+"shelters"
+
+((i decided i was going to start writing down what words are in high salience to me))
+
+2025-01-03-1644
+
+nothing
+
+2025-01-03-1644
+
+billy talent, rusted from the rain --- maybe? maybe not
+
+no i don't think so, but i do think it is billy talent
+
+i could just open this up online and see, we do have the technology
+
+oh, it's not shauna it's mariah, and the song is "try honesty" not "rusted from the rain"
+
+i do have the ability to check what song it is easily even though it is on the radio
+
+i'm listening to it off of my phone, but... i'm going to turn it down a bit, but i have it placed elsewhere in the room.
+
+2025-01-03-1646
+
+not really the vibe i'm going for, but i'm going to keep listening to the station
+
+2025-01-03-1647
+
+i thought the idea of "asking for extended payment terms" was interesting, especially in the case of a negotiation of funding, where in a multi-million dollar deal, it might be structured over a longer period of time, and that would be an easy way of smoothing into how to structure the flow of that capital through accounts with certainty and regularity.
+
+2025-01-03-1650
+
+2025-01-03-1658
+2025-01-03-1659-32
+
+okay, so now i have a way to track seconds when it is important
+
+2025-01-03-1700-40
+
+now i have an even better way of doing it
+
+2025-01-03-1700
+
+i think
+
+2025-01-03-1701-03
+
+yes, i just have to remember the hotkeys to quickly input it.
+
+okay, so i suppose the tracking should really be based on line updates in a file while it is still --- (listening to the radio)
+
+2025-01-03-1702 --> I'm trying to understand what i want to do next
+
+i was thinking about the keylogger i built earlier that tracked typo correction and mass backspacing with good displayed formatting, but that was basically a command line tool and there is no easy way to have that format auto generated as a type inside of an editor.
+
+what i really need to understand is how accessible is the unsaved file buffer in the code editor i'm currently using
+
+Let me help you understand what's possible with Cursor's file handling.
+From your question about accessing unsaved file buffers in Cursor, I should note that as an AI assistant, I can only interact with files that have been saved to disk - I cannot directly access unsaved/in-memory buffers.
+For real-time text tracking and analysis like you're describing (similar to your previous keylogger tool), you would need to:
+Save the file contents first
+Use the file reading/editing tools to interact with the saved content
+If you're looking to build something that tracks edits and typing patterns in real-time within Cursor, you would likely need to:
+Create a file save hook/trigger
+Process the saved file contents
+Analyze the changes between saves
+Would you like me to help you explore a specific approach for what you're trying to build? I can help look into file monitoring or automated save solutions that might work for your use case.
+
+yeah, but i want to have a process triggered or activated periodically as i'm typing something out, so that through out the day I don't have to "trigger" an agent automatically, if i'm making changes, it is running in the background.
+
+ugh, keep running into the commercial api and the locally hosted model divergence point. i need better intuition on how to determine what parts of the models, like open source stuff, takes up which resources on the card, especially memory, like the weights and whatnot. a shortage in my knowledge of computer systems is definitely where all the information that is needed for these massive computations is being stored and how it is being moved around, like loaded from drive to.... DRAM? VRAM? I think it's VRAM, but that's video ram and this isn't video, and there are also registers as well that pieces of that data then need to be moved further into. this seems like a good thought to send to o1.
+
+===
+
+Based on our discussion, here's what we explored trying to accomplish:
+Original Goal:
+Real-time monitoring of typing/editing in Cursor
+Automatic agent triggering based on typing patterns
+No manual intervention needed
+Constraints Found:
+Can't access unsaved buffer directly in Cursor
+Commercial APIs would send PII/sensitive data externally
+Local LLMs require deeper understanding of GPU memory/resource management
+Need to balance privacy with functionality
+Best Compromise Solution:
+Local PowerShell-based keyboard hook
+File system watcher for saved files
+Pattern-based triggers (typing speed, backspace patterns)
+Everything stays on your system
+No external API calls
+Lightweight resource usage
+The main trade-off is that we can't get real-time unsaved buffer access, but we can monitor keyboard input and file changes locally without privacy concerns. The solution isn't perfect, but it keeps everything under your control while still providing automated monitoring capabilities.
+Would you like to explore ways to improve this compromise further?
+
+===
+
+I want to set up a local pipeline that watches my keystrokes and saved file contents in real-time without ever sending my data externally. That means hooking my keyboard at the OS level, then feeding that data into something that I can process with a locally hosted model (like a smaller open-source LLM) if I need AI-based analysis. I also need to understand how my GPU memory (VRAM) is being used by that local model so I don’t choke out the system and can scale my solution accordingly.
+
+First, the real-time monitoring:
+
+Keyboard Hook
+I open PowerShell or a Python script that creates a system-wide keyboard hook using the OS’s native APIs. In Python, I might use a library like pynput or keyboard:
+
+python
+Copy code
+from pynput import keyboard
+
+def on_press(key):
+    # I store the keystroke in memory or append to a file
+    # I can track things like backspace, letter keys, modifiers, etc.
+    pass
+
+with keyboard.Listener(on_press=on_press) as listener:
+    listener.join()
+This code runs continuously in the background, capturing every press. I store the presses in a local buffer (in memory) or write them to a local log file. No unsaved editor buffer is needed because I’m watching the actual keyboard events.
+
+File Watcher
+The next piece is a file-system watcher for whenever I actually hit Ctrl+S in my editor. Windows PowerShell can do this with .NET’s FileSystemWatcher, or in Python with something like watchdog. Every time the file is saved, my script picks up the change event, then I can do whatever analysis I want (diff with previous version, etc.).
+
+Synthesizing Both
+With both the keyboard hook and the file watcher, I can detect:
+
+Keystrokes that never made it to disk (typos, backspaces, etc.)
+Saved states of the file as a reference point for a more “permanent” record
+Patterns in my typing (speed, error rates, etc.)
+Everything is local, so I keep my privacy and I can trigger some local AI agent based on thresholds or events (like big mass deletions or unusual pause times).
+
+Now, about running a local LLM and how GPU memory actually works:
+
+Disk to DRAM
+My model’s weights (the giant numeric arrays that define the LLM) are stored on disk (SSD/HDD). When I launch the model, I load those weights into my system’s main memory (DRAM).
+
+DRAM to VRAM
+From system memory, I send the model’s weights into my GPU’s VRAM. VRAM is physically on the GPU card, not on the motherboard, and it’s faster for the GPU to read from VRAM than from DRAM across the PCI Express bus. If the model is huge and doesn’t fit completely in VRAM, I get memory swapping overhead or I just can’t load the model at all without partial offloading or quantization.
+
+VRAM to GPU Registers
+When the GPU actually does a forward pass (the part that predicts tokens), it streams chunks of those weights from VRAM into the GPU’s registers (tiny, extremely fast memory on each core) to do the matrix multiplications. Once it’s done with that chunk, it may shuffle more weights and intermediate results in and out of VRAM.
+
+Managing GPU Memory
+If I run a smaller open-source LLM (like a 7B, 13B, or 34B parameter Llama2 variant) with 4-bit or 8-bit quantization, I reduce VRAM usage drastically. That might let me do real-time analysis in parallel with my usual tasks. If the model is too large, it saturates my VRAM and I risk my system freezing or drastically slowing down.
+
+Tracking Resource Usage
+I typically keep an nvidia-smi window open to see how much GPU memory is used. If I see that my VRAM usage is near the limit, I either reduce batch size, reduce the model size, or increase quantization (4-bit, 8-bit, etc.) so I don’t starve the GPU.
+
+Putting it all together:
+
+Keyboard Hook + Local Logging: Captures everything I type, in real-time, no reliance on the editor’s in-memory buffer.
+File Watcher: Detects on-disk changes the instant I save.
+Local LLM: Processes the log or partial text, runs in VRAM on my GPU, with smaller/quanted weights if necessary.
+No External APIs: I keep all my data private.
+GPU Memory: I carefully monitor usage with nvidia-smi, ensuring I load only the model size that fits.
+That’s the straightforward approach: hooking at the OS level for raw keystrokes, monitoring disk writes for “final” text, and using a local LLM that I scale to fit the VRAM I have.
+
+I think the main difficulty about making the jump to local models is resolving the tension between known capabilities with powerful and cheap commercial ai lm apis, and the unknown of how well the model will perform locally, and if this is the model that is triggering other more powerful workflows, then it needs to be one of the best, a good and strong model like o1 if an api were avaiable for a such a thing.
+
+but also, o3 api is going to be avaiable eventually, and we could look to the future about having some sort of locally hosted "strip and remove PII or irrelevant information" but save the full version anyway locally, and then have that process then send the important and relevant information to o3 with a query about like "this was typed, what should we do"?
+
+I think there is a confusion here about how it would be triggered. we wouldn't need to filter out PII if we're just typing into an editor, passwords and ssh keys and things (although i suppose those wouldn't always be typed, but things like account numbers or whatnot might be, or ip addresses)
+
+Okay, I agree with you that locally censoring PII from raw input data would be a good starting point for me to learn more. (my understanding of embedding vectors is insufficient for this level of technical discussion) Althought, we could also use Cohere's Classify model to maybe train the local model? Maybe? I don't know.
+
+Let's skip 4 for now, I don't think I would want to use sytem notifications, i would want something lightweight that pops up, and if it pops up while i'm typing, i can interact with it without having to move my hands off the keyboard, that's probably as important as it needs to be, just keep that in mind and let's talk about more important details now.
+
+I would also like to generalize this system, so that we build the core infrastructure that would be unified accross a system that followed this data source, but also another one that triggers every night at midnight based on the status of a github repo, that is the main entry point to all of my other coding projects, of which i'm going to try and make as many open source as possible.
+
+task scheduler on windows would be cool, i've never made something using that before, and i'm going to be using windows for this
+
+file watchers would be cool, especially if i could limit it to just one directory
+
+twitter would be a good api, but i don't think it is free, for now github is sufficient
+
+let's start and focus just on one, building the aggregator.
+
+come up with a list of steps that you and i will file, as i attempt to follow the steps and report back to you periodically with the progress of building this using claude sonnet and the cursor ide, locally in C:/Users/Sarah/Github/[repo name].
+
+===
+
+... much later.
+
+2025-01-03-1833
+
+That was the response from the coding agent that helped me build it. The pieces that I'm not quite sure i'm understanding, is that when i used the python script to take a look at the db files, one looked like it contained the "files that were updated --> not their contents" and also, that the github db logs were showing things like header statuses, not the diffs themselves that were made, presumably in the last day, if it's checking through the task scheduler, or upon new commit to the repository.
+
+i think the initial usecase is just to have a model provide commentary on what it sees happening as close to realtime as possible (when it has access to the new data and its process runs) by concatenating information to a text file, which then when pushed to the github, will build into it's own page. we have something very very similar already funcitoning in the sarahlacard.github.io repositiory, and could very likely easily adapt in order to make a section called "vera" where a language model acting as that character comments about what they see from the agregator into a specific file.</pre>
+</body>
+</html> 
+
