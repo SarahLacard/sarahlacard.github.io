@@ -2,6 +2,9 @@
 $ErrorActionPreference = "Stop"
 $VerbosePreference = "Continue"
 
+# Add System.Web assembly for HTML encoding
+Add-Type -AssemblyName System.Web
+
 # Verify we're in the correct directory
 if (-not (Test-Path ".git")) {
     throw "Must run from repository root directory"
@@ -133,8 +136,8 @@ try {
                     # Parse filename for date
                     $date = $post.BaseName -replace "(\d{4})-(\d{2})-(\d{2})-(\d{2})(\d{2})", '$1-$2-$3 $4:$5'
                     
-                    # Read content
-                    $content = Get-Content -Raw $post.FullName -ErrorAction Stop
+                    # Read content with UTF8 encoding
+                    $content = Get-Content -Raw -Encoding UTF8 $post.FullName -ErrorAction Stop
                     
                     # Split title and content
                     $contentParts = $content -split "`n", 2
@@ -145,24 +148,28 @@ try {
                     $title = $contentParts[0].Trim()
                     $postContent = $contentParts[1].Trim()
                     
-                    # Apply template
+                    # Apply template without HTML encoding the content
                     $html = $template `
-                        -replace "{{date}}", [System.Web.HttpUtility]::HtmlEncode($date) `
-                        -replace "{{title}}", [System.Web.HttpUtility]::HtmlEncode($title) `
+                        -replace "{{date}}", $date `
+                        -replace "{{title}}", $title `
                         -replace "{{content}}", $postContent
                     
-                    # Generate output filename
-                    $outputFile = "$outputDir/$($post.BaseName).html"
+                    # Generate output filename and ensure directory exists
+                    $outputDirPath = Join-Path (Get-Location) $outputDir
+                    $outputFile = Join-Path $outputDirPath "$($post.BaseName).html"
+                    if (-not (Test-Path $outputDirPath)) {
+                        New-Item -ItemType Directory -Path $outputDirPath -Force | Out-Null
+                    }
                     
                     Write-Log "Generating HTML file: $outputFile"
-                    # Save the file
-                    $html | Out-File -FilePath $outputFile -Encoding UTF8 -ErrorAction Stop
+                    # Save the file with UTF8 encoding without BOM
+                    [System.IO.File]::WriteAllText($outputFile, $html, [System.Text.UTF8Encoding]::new($false))
                     
-                    # Add to entries
+                    # Add to entries with minimal HTML encoding
                     $entries += @"
                     <div class="weblog-entry">
-                        <span class="weblog-date">[$([System.Web.HttpUtility]::HtmlEncode($date))]</span>
-                        <a href="./$outputDir/$($post.BaseName).html">$([System.Web.HttpUtility]::HtmlEncode($title))</a>
+                        <span class="weblog-date">[$date]</span>
+                        <a href="./$outputDir/$($post.BaseName).html">$title</a>
                     </div>
 "@
                 }
@@ -180,7 +187,7 @@ try {
     [string[]]$dialogueEntries = Convert-Section "_dialogues" "dialogues" '(<div class="folder">dialogues</div>\s*<div class="indent">)(.*?)(\s*</div>\s*\s*<div class="folder">vera</div>)'
     
     Write-Log "Converting Vera's commentary"
-    [string[]]$veraEntries = Convert-Section "_vera" "vera" '(<div class="folder">vera</div>\s*<div class="indent">)(.*?)(\s*</div>\s*\s*<div class="file">)' -Template $veraTemplate -IsVera
+    [string[]]$veraEntries = Convert-Section "_vera" "vera" '(<div class="folder">vera</div>\s*<div class="indent">)(.*?)(\s*</div>\s*\s*<div class="file">projects</div>)' -Template $veraTemplate -IsVera
 
     # Verify index.html exists
     if (-not (Test-Path "index.html")) {
@@ -201,10 +208,11 @@ try {
 
     # Update Vera section
     Write-Log "Updating Vera section in index.html"
-    $indexHtml = $indexHtml -replace '(?s)(<div class="folder">vera</div>\s*<div class="indent">)(.*?)(\s*</div>\s*\s*<div class="file">)', "`$1`n$($veraEntries -join "`n")`$3"
+    $indexHtml = $indexHtml -replace '(?s)(<div class="folder">vera</div>\s*<div class="indent">)(.*?)(\s*</div>\s*\s*<div class="file">projects</div>)', "`$1`n$($veraEntries -join "`n")`$3"
 
+    # Update index.html with UTF8 encoding
     Write-Log "Writing updated index.html"
-    $indexHtml | Out-File -FilePath "index.html" -Encoding UTF8 -ErrorAction Stop
+    [System.IO.File]::WriteAllText("index.html", $indexHtml, [System.Text.UTF8Encoding]::new($false))
 
     Write-Log "Build completed successfully"
 }

@@ -1,0 +1,255 @@
+[2025-01-03 19:58:32] Starting build...
+[2025-01-03 19:58:32] Checking directory: _weblogs
+[2025-01-03 19:58:32] Checking directory: _dialogues
+[2025-01-03 19:58:33] Checking directory: _vera
+[2025-01-03 19:58:33] Checking directory: _templates
+[2025-01-03 19:58:33] Checking directory: weblogs
+[2025-01-03 19:58:33] Checking directory: dialogues
+[2025-01-03 19:58:33] Checking directory: vera
+[2025-01-03 19:58:33] Cleaning up orphaned HTML files in weblogs
+[2025-01-03 19:58:33] Cleaning up orphaned HTML files in dialogues
+[2025-01-03 19:58:33] Cleaning up orphaned HTML files in vera
+[2025-01-03 19:58:33] Reading templates
+[2025-01-03 19:58:33] Converting weblogs section
+[2025-01-03 19:58:33] Converting section: _weblogs -> weblogs
+[2025-01-03 19:58:33] Converting file: 2025-01-03-1640.txt
+[2025-01-03 19:58:33] Error occurred: Unable to find type [System.Web.HttpUtility].
+[2025-01-03 19:59:04] Starting build...
+[2025-01-03 19:59:04] Checking directory: _weblogs
+[2025-01-03 19:59:04] Checking directory: _dialogues
+[2025-01-03 19:59:04] Checking directory: _vera
+[2025-01-03 19:59:04] Checking directory: _templates
+[2025-01-03 19:59:04] Checking directory: weblogs
+[2025-01-03 19:59:04] Checking directory: dialogues
+[2025-01-03 19:59:04] Checking directory: vera
+[2025-01-03 19:59:04] Cleaning up orphaned HTML files in weblogs
+[2025-01-03 19:59:04] Cleaning up orphaned HTML files in dialogues
+[2025-01-03 19:59:04] Cleaning up orphaned HTML files in vera
+[2025-01-03 19:59:04] Reading templates
+[2025-01-03 19:59:04] Converting weblogs section
+[2025-01-03 19:59:04] Converting section: _weblogs -> weblogs
+[2025-01-03 19:59:04] Converting file: 2025-01-03-1640.txt
+[2025-01-03 19:59:04] Generating HTML file: weblogs/2025-01-03-1640.html
+[2025-01-03 19:59:04] Converting file: 2025-01-03-0901.txt
+[2025-01-03 19:59:04] Generating HTML file: weblogs/2025-01-03-0901.html
+[2025-01-03 19:59:04] Converting file: 2025-01-02-1016.txt
+[2025-01-03 19:59:04] Generating HTML file: weblogs/2025-01-02-1016.html
+[2025-01-03 19:59:04] Converting file: 2025-01-01-1205.txt
+[2025-01-03 19:59:04] Generating HTML file: weblogs/2025-01-01-1205.html
+[2025-01-03 19:59:04] Converting file: 2024-12-31-1000.txt
+[2025-01-03 19:59:04] Generating HTML file: weblogs/2024-12-31-1000.html
+[2025-01-03 19:59:04] Converting dialogues section
+[2025-01-03 19:59:04] Converting section: _dialogues -> dialogues
+[2025-01-03 19:59:04] Converting file: 2025-01-03-0919.txt
+[2025-01-03 19:59:04] Generating HTML file: dialogues/2025-01-03-0919.html
+[2025-01-03 19:59:04] Converting file: 2025-01-02-1210.txt
+[2025-01-03 19:59:04] Generating HTML file: dialogues/2025-01-02-1210.html
+[2025-01-03 19:59:04] Converting file: 2025-01-02-1027.txt
+[2025-01-03 19:59:04] Generating HTML file: dialogues/2025-01-02-1027.html
+[2025-01-03 19:59:04] Converting file: 2025-01-01-1836.txt
+[2025-01-03 19:59:04] Generating HTML file: dialogues/2025-01-01-1836.html
+[2025-01-03 19:59:04] Converting file: 2025-01-01-1224.txt
+[2025-01-03 19:59:04] Generating HTML file: dialogues/2025-01-01-1224.html
+[2025-01-03 19:59:04] Converting Vera's commentary
+[2025-01-03 19:59:04] Converting section: _vera -> vera
+[2025-01-03 19:59:04] Converting Vera's commentary
+[2025-01-03 19:59:04] Generating HTML file: vera\log.html
+[2025-01-03 19:59:04] Updating index.html
+[2025-01-03 19:59:04] Updating weblogs section in index.html
+[2025-01-03 19:59:04] Updating dialogues section in index.html
+[2025-01-03 19:59:04] Updating Vera section in index.html
+[2025-01-03 19:59:04] Writing updated index.html
+[2025-01-03 19:59:04] Build completed successfully
+[2025-01-03 19:59:04] Build process completed with success
+[2025-01-03 20:02:08] Starting build...
+[2025-01-03 20:02:08] Checking directory: _weblogs
+[2025-01-03 20:02:08] Checking directory: _dialogues
+[2025-01-03 20:02:08] Checking directory: _vera
+[2025-01-03 20:02:08] Checking directory: _templates
+[2025-01-03 20:02:08] Checking directory: weblogs
+[2025-01-03 20:02:08] Checking directory: dialogues
+[2025-01-03 20:02:08] Checking directory: vera
+[2025-01-03 20:02:08] Cleaning up orphaned HTML files in weblogs
+[2025-01-03 20:02:08] Cleaning up orphaned HTML files in dialogues
+[2025-01-03 20:02:08] Cleaning up orphaned HTML files in vera
+[2025-01-03 20:02:08] Reading templates
+[2025-01-03 20:02:08] Converting weblogs section
+[2025-01-03 20:02:08] Converting section: _weblogs -> weblogs
+[2025-01-03 20:02:08] Converting file: 2025-01-03-1640.txt
+[2025-01-03 20:02:08] Generating HTML file: weblogs/2025-01-03-1640.html
+[2025-01-03 20:02:08] Converting file: 2025-01-03-0901.txt
+[2025-01-03 20:02:08] Generating HTML file: weblogs/2025-01-03-0901.html
+[2025-01-03 20:02:08] Converting file: 2025-01-02-1016.txt
+[2025-01-03 20:02:08] Generating HTML file: weblogs/2025-01-02-1016.html
+[2025-01-03 20:02:08] Converting file: 2025-01-01-1205.txt
+[2025-01-03 20:02:08] Generating HTML file: weblogs/2025-01-01-1205.html
+[2025-01-03 20:02:08] Converting file: 2024-12-31-1000.txt
+[2025-01-03 20:02:08] Generating HTML file: weblogs/2024-12-31-1000.html
+[2025-01-03 20:02:09] Converting dialogues section
+[2025-01-03 20:02:09] Converting section: _dialogues -> dialogues
+[2025-01-03 20:02:09] Converting file: 2025-01-03-0919.txt
+[2025-01-03 20:02:09] Generating HTML file: dialogues/2025-01-03-0919.html
+[2025-01-03 20:02:09] Converting file: 2025-01-02-1210.txt
+[2025-01-03 20:02:09] Generating HTML file: dialogues/2025-01-02-1210.html
+[2025-01-03 20:02:09] Converting file: 2025-01-02-1027.txt
+[2025-01-03 20:02:09] Generating HTML file: dialogues/2025-01-02-1027.html
+[2025-01-03 20:02:09] Converting file: 2025-01-01-1836.txt
+[2025-01-03 20:02:09] Generating HTML file: dialogues/2025-01-01-1836.html
+[2025-01-03 20:02:09] Converting file: 2025-01-01-1224.txt
+[2025-01-03 20:02:09] Generating HTML file: dialogues/2025-01-01-1224.html
+[2025-01-03 20:02:09] Converting Vera's commentary
+[2025-01-03 20:02:09] Converting section: _vera -> vera
+[2025-01-03 20:02:09] Converting Vera's commentary
+[2025-01-03 20:02:09] Generating HTML file: vera\log.html
+[2025-01-03 20:02:09] Updating index.html
+[2025-01-03 20:02:09] Updating weblogs section in index.html
+[2025-01-03 20:02:09] Updating dialogues section in index.html
+[2025-01-03 20:02:09] Updating Vera section in index.html
+[2025-01-03 20:02:09] Writing updated index.html
+[2025-01-03 20:02:09] Build completed successfully
+[2025-01-03 20:02:09] Build process completed with success
+[2025-01-03 20:02:58] Starting build...
+[2025-01-03 20:02:58] Checking directory: _weblogs
+[2025-01-03 20:02:58] Checking directory: _dialogues
+[2025-01-03 20:02:58] Checking directory: _vera
+[2025-01-03 20:02:58] Checking directory: _templates
+[2025-01-03 20:02:58] Checking directory: weblogs
+[2025-01-03 20:02:58] Checking directory: dialogues
+[2025-01-03 20:02:58] Checking directory: vera
+[2025-01-03 20:02:58] Cleaning up orphaned HTML files in weblogs
+[2025-01-03 20:02:58] Cleaning up orphaned HTML files in dialogues
+[2025-01-03 20:02:58] Cleaning up orphaned HTML files in vera
+[2025-01-03 20:02:58] Reading templates
+[2025-01-03 20:02:58] Converting weblogs section
+[2025-01-03 20:02:58] Converting section: _weblogs -> weblogs
+[2025-01-03 20:02:58] Converting file: 2025-01-03-1640.txt
+[2025-01-03 20:02:58] Generating HTML file: weblogs/2025-01-03-1640.html
+[2025-01-03 20:02:58] Converting file: 2025-01-03-0901.txt
+[2025-01-03 20:02:58] Generating HTML file: weblogs/2025-01-03-0901.html
+[2025-01-03 20:02:58] Converting file: 2025-01-02-1016.txt
+[2025-01-03 20:02:58] Generating HTML file: weblogs/2025-01-02-1016.html
+[2025-01-03 20:02:58] Converting file: 2025-01-01-1205.txt
+[2025-01-03 20:02:58] Generating HTML file: weblogs/2025-01-01-1205.html
+[2025-01-03 20:02:58] Converting file: 2024-12-31-1000.txt
+[2025-01-03 20:02:58] Generating HTML file: weblogs/2024-12-31-1000.html
+[2025-01-03 20:02:58] Converting dialogues section
+[2025-01-03 20:02:58] Converting section: _dialogues -> dialogues
+[2025-01-03 20:02:58] Converting file: 2025-01-03-0919.txt
+[2025-01-03 20:02:58] Generating HTML file: dialogues/2025-01-03-0919.html
+[2025-01-03 20:02:58] Converting file: 2025-01-02-1210.txt
+[2025-01-03 20:02:58] Generating HTML file: dialogues/2025-01-02-1210.html
+[2025-01-03 20:02:58] Converting file: 2025-01-02-1027.txt
+[2025-01-03 20:02:58] Generating HTML file: dialogues/2025-01-02-1027.html
+[2025-01-03 20:02:58] Converting file: 2025-01-01-1836.txt
+[2025-01-03 20:02:58] Generating HTML file: dialogues/2025-01-01-1836.html
+[2025-01-03 20:02:58] Converting file: 2025-01-01-1224.txt
+[2025-01-03 20:02:58] Generating HTML file: dialogues/2025-01-01-1224.html
+[2025-01-03 20:02:58] Converting Vera's commentary
+[2025-01-03 20:02:58] Converting section: _vera -> vera
+[2025-01-03 20:02:58] Converting Vera's commentary
+[2025-01-03 20:02:58] Generating HTML file: vera\log.html
+[2025-01-03 20:02:58] Updating index.html
+[2025-01-03 20:02:58] Updating weblogs section in index.html
+[2025-01-03 20:02:58] Updating dialogues section in index.html
+[2025-01-03 20:02:58] Updating Vera section in index.html
+[2025-01-03 20:02:58] Writing updated index.html
+[2025-01-03 20:02:58] Build completed successfully
+[2025-01-03 20:02:58] Build process completed with success
+[2025-01-03 20:04:50] Starting build...
+[2025-01-03 20:04:50] Checking directory: _weblogs
+[2025-01-03 20:04:50] Checking directory: _dialogues
+[2025-01-03 20:04:50] Checking directory: _vera
+[2025-01-03 20:04:50] Checking directory: _templates
+[2025-01-03 20:04:50] Checking directory: weblogs
+[2025-01-03 20:04:50] Checking directory: dialogues
+[2025-01-03 20:04:50] Checking directory: vera
+[2025-01-03 20:04:50] Cleaning up orphaned HTML files in weblogs
+[2025-01-03 20:04:50] Cleaning up orphaned HTML files in dialogues
+[2025-01-03 20:04:50] Cleaning up orphaned HTML files in vera
+[2025-01-03 20:04:50] Reading templates
+[2025-01-03 20:04:50] Converting weblogs section
+[2025-01-03 20:04:50] Converting section: _weblogs -> weblogs
+[2025-01-03 20:04:50] Converting file: 2025-01-03-1640.txt
+[2025-01-03 20:04:50] Generating HTML file: weblogs/2025-01-03-1640.html
+[2025-01-03 20:04:50] Error occurred: Exception calling "WriteAllText" with "3" argument(s): "Could not find a part of the path 'C:\Users\Sarah\Github\weblogs\2025-01-03-1640.html'."
+[2025-01-03 20:05:23] Starting build...
+[2025-01-03 20:05:23] Checking directory: _weblogs
+[2025-01-03 20:05:23] Checking directory: _dialogues
+[2025-01-03 20:05:23] Checking directory: _vera
+[2025-01-03 20:05:23] Checking directory: _templates
+[2025-01-03 20:05:23] Checking directory: weblogs
+[2025-01-03 20:05:23] Checking directory: dialogues
+[2025-01-03 20:05:23] Checking directory: vera
+[2025-01-03 20:05:23] Cleaning up orphaned HTML files in weblogs
+[2025-01-03 20:05:23] Cleaning up orphaned HTML files in dialogues
+[2025-01-03 20:05:23] Cleaning up orphaned HTML files in vera
+[2025-01-03 20:05:23] Reading templates
+[2025-01-03 20:05:23] Converting weblogs section
+[2025-01-03 20:05:23] Converting section: _weblogs -> weblogs
+[2025-01-03 20:05:23] Converting file: 2025-01-03-1640.txt
+[2025-01-03 20:05:23] Generating HTML file: C:\Users\Sarah\Github\sarahlacard.github.io\weblogs\2025-01-03-1640.html
+[2025-01-03 20:05:23] Converting file: 2025-01-03-0901.txt
+[2025-01-03 20:05:23] Error occurred: The given path's format is not supported.
+[2025-01-03 20:05:46] Starting build...
+[2025-01-03 20:05:46] Checking directory: _weblogs
+[2025-01-03 20:05:46] Checking directory: _dialogues
+[2025-01-03 20:05:46] Checking directory: _vera
+[2025-01-03 20:05:46] Checking directory: _templates
+[2025-01-03 20:05:46] Checking directory: weblogs
+[2025-01-03 20:05:46] Checking directory: dialogues
+[2025-01-03 20:05:46] Checking directory: vera
+[2025-01-03 20:05:46] Cleaning up orphaned HTML files in weblogs
+[2025-01-03 20:05:47] Cleaning up orphaned HTML files in dialogues
+[2025-01-03 20:05:47] Cleaning up orphaned HTML files in vera
+[2025-01-03 20:05:47] Reading templates
+[2025-01-03 20:05:47] Converting weblogs section
+[2025-01-03 20:05:47] Converting section: _weblogs -> weblogs
+[2025-01-03 20:05:47] Converting file: 2025-01-03-1640.txt
+[2025-01-03 20:05:47] Error occurred: A positional parameter cannot be found that accepts argument '2025-01-03-1640'.
+[2025-01-03 20:06:11] Starting build...
+[2025-01-03 20:06:11] Checking directory: _weblogs
+[2025-01-03 20:06:11] Checking directory: _dialogues
+[2025-01-03 20:06:11] Checking directory: _vera
+[2025-01-03 20:06:11] Checking directory: _templates
+[2025-01-03 20:06:11] Checking directory: weblogs
+[2025-01-03 20:06:11] Checking directory: dialogues
+[2025-01-03 20:06:11] Checking directory: vera
+[2025-01-03 20:06:11] Cleaning up orphaned HTML files in weblogs
+[2025-01-03 20:06:11] Cleaning up orphaned HTML files in dialogues
+[2025-01-03 20:06:11] Cleaning up orphaned HTML files in vera
+[2025-01-03 20:06:11] Reading templates
+[2025-01-03 20:06:11] Converting weblogs section
+[2025-01-03 20:06:11] Converting section: _weblogs -> weblogs
+[2025-01-03 20:06:11] Converting file: 2025-01-03-1640.txt
+[2025-01-03 20:06:11] Generating HTML file: C:\Users\Sarah\Github\sarahlacard.github.io\weblogs\2025-01-03-1640.html
+[2025-01-03 20:06:11] Converting file: 2025-01-03-0901.txt
+[2025-01-03 20:06:11] Generating HTML file: C:\Users\Sarah\Github\sarahlacard.github.io\weblogs\2025-01-03-0901.html
+[2025-01-03 20:06:11] Converting file: 2025-01-02-1016.txt
+[2025-01-03 20:06:11] Generating HTML file: C:\Users\Sarah\Github\sarahlacard.github.io\weblogs\2025-01-02-1016.html
+[2025-01-03 20:06:12] Converting file: 2025-01-01-1205.txt
+[2025-01-03 20:06:12] Generating HTML file: C:\Users\Sarah\Github\sarahlacard.github.io\weblogs\2025-01-01-1205.html
+[2025-01-03 20:06:12] Converting file: 2024-12-31-1000.txt
+[2025-01-03 20:06:12] Generating HTML file: C:\Users\Sarah\Github\sarahlacard.github.io\weblogs\2024-12-31-1000.html
+[2025-01-03 20:06:12] Converting dialogues section
+[2025-01-03 20:06:12] Converting section: _dialogues -> dialogues
+[2025-01-03 20:06:12] Converting file: 2025-01-03-0919.txt
+[2025-01-03 20:06:12] Generating HTML file: C:\Users\Sarah\Github\sarahlacard.github.io\dialogues\2025-01-03-0919.html
+[2025-01-03 20:06:12] Converting file: 2025-01-02-1210.txt
+[2025-01-03 20:06:12] Generating HTML file: C:\Users\Sarah\Github\sarahlacard.github.io\dialogues\2025-01-02-1210.html
+[2025-01-03 20:06:12] Converting file: 2025-01-02-1027.txt
+[2025-01-03 20:06:12] Generating HTML file: C:\Users\Sarah\Github\sarahlacard.github.io\dialogues\2025-01-02-1027.html
+[2025-01-03 20:06:12] Converting file: 2025-01-01-1836.txt
+[2025-01-03 20:06:12] Generating HTML file: C:\Users\Sarah\Github\sarahlacard.github.io\dialogues\2025-01-01-1836.html
+[2025-01-03 20:06:12] Converting file: 2025-01-01-1224.txt
+[2025-01-03 20:06:12] Generating HTML file: C:\Users\Sarah\Github\sarahlacard.github.io\dialogues\2025-01-01-1224.html
+[2025-01-03 20:06:12] Converting Vera's commentary
+[2025-01-03 20:06:12] Converting section: _vera -> vera
+[2025-01-03 20:06:12] Converting Vera's commentary
+[2025-01-03 20:06:12] Generating HTML file: vera\log.html
+[2025-01-03 20:06:12] Updating index.html
+[2025-01-03 20:06:12] Updating weblogs section in index.html
+[2025-01-03 20:06:12] Updating dialogues section in index.html
+[2025-01-03 20:06:12] Updating Vera section in index.html
+[2025-01-03 20:06:12] Writing updated index.html
+[2025-01-03 20:06:12] Build completed successfully
+[2025-01-03 20:06:12] Build process completed with success
