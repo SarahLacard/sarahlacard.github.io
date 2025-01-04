@@ -3,13 +3,14 @@ name: Build Site
 on:
   push:
     paths:
+      - '_vera/**'
       - '_weblogs/**'
       - '_dialogues/**'
       - '_raw-data/**'
-      - '_vera/**'
       - '_templates/**'
       - 'build.ps1'
       - 'index.html'
+      - '.github/workflows/build.yml'
     branches:
       - main
 
@@ -37,11 +38,21 @@ jobs:
       shell: pwsh
       run: |
         Write-Host "Current directory: $pwd"
-        Write-Host "Directory contents:"
-        Get-ChildItem -Recurse | Select-Object FullName
-        Write-Host "Git status:"
+        Write-Host "`nSource file contents (_vera/log.txt):"
+        if (Test-Path "_vera/log.txt") {
+            Get-Content "_vera/log.txt"
+        } else {
+            Write-Host "Source file not found!"
+        }
+        Write-Host "`nCurrent HTML file (vera/log.html):"
+        if (Test-Path "vera/log.html") {
+            Get-Content "vera/log.html"
+        } else {
+            Write-Host "HTML file not found!"
+        }
+        Write-Host "`nGit status:"
         git status
-        Write-Host "Changed files in this push:"
+        Write-Host "`nChanged files in this push:"
         git diff --name-only HEAD^ HEAD
     
     - name: Run build script
@@ -53,11 +64,15 @@ jobs:
     - name: Diagnostic - Post-build state
       shell: pwsh
       run: |
-        Write-Host "Directory contents after build:"
-        Get-ChildItem -Recurse | Select-Object FullName
-        Write-Host "Git status after build:"
+        Write-Host "`nNew HTML contents (vera/log.html):"
+        if (Test-Path "vera/log.html") {
+            Get-Content "vera/log.html"
+        } else {
+            Write-Host "HTML file not found after build!"
+        }
+        Write-Host "`nGit status after build:"
         git status
-        Write-Host "Changes from build:"
+        Write-Host "`nChanges from build:"
         git diff --stat
         
     - name: Configure git
@@ -68,21 +83,26 @@ jobs:
         Write-Host "Git config:"
         git config --list
         
-    - name: Commit and push changes
+    - name: Stage changes
+      shell: pwsh
+      run: |
+        Write-Host "Adding all generated files..."
+        git add -f vera/log.html weblogs/ dialogues/ raw-data/ index.html
+        Write-Host "`nGit status after staging:"
+        git status
+        
+    - name: Commit and push if changed
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       shell: pwsh
       run: |
-        Write-Host "Adding files..."
-        git add weblogs/ dialogues/ vera/ raw-data/ index.html
-        Write-Host "Git status before commit:"
-        git status
         if (git diff --staged --quiet) {
             Write-Host "No changes to commit"
             exit 0
         } else {
             Write-Host "Changes found, committing..."
             git commit -m "Rebuild site from content changes"
-            Write-Host "Pushing changes..."
+            Write-Host "`nPushing changes..."
             git push origin HEAD:main
+            Write-Host "`nPush complete"
         } 
