@@ -33,22 +33,44 @@ jobs:
         fetch-depth: 0
         persist-credentials: true
     
-    - name: Diagnostic - Pre-build state
+    - name: Pre-build validation
       shell: pwsh
       run: |
+        $ErrorActionPreference = 'Stop'
         Write-Host "Current directory: $pwd"
+        
+        # Validate required directories
+        $requiredDirs = @('_vera', '_weblogs', '_dialogues', '_templates', 'vera', 'weblogs', 'dialogues')
+        foreach ($dir in $requiredDirs) {
+            Write-Host "Checking directory: $dir"
+            if (-not (Test-Path $dir)) {
+                Write-Error "Required directory missing: $dir"
+                exit 1
+            }
+        }
+        
+        # Validate source files
         Write-Host "`nSource file contents (_vera/log.txt):"
         if (Test-Path "_vera/log.txt") {
-            Get-Content "_vera/log.txt"
+            $content = Get-Content "_vera/log.txt" -Raw -Encoding UTF8
+            if ([string]::IsNullOrWhiteSpace($content)) {
+                Write-Error "Source file is empty: _vera/log.txt"
+                exit 1
+            }
+            Write-Host $content
         } else {
-            Write-Host "Source file not found!"
+            Write-Error "Source file not found: _vera/log.txt"
+            exit 1
         }
+        
         Write-Host "`nCurrent HTML file (vera/log.html):"
         if (Test-Path "vera/log.html") {
-            Get-Content "vera/log.html"
+            $content = Get-Content "vera/log.html" -Raw
+            Write-Host $content
         } else {
-            Write-Host "HTML file not found!"
+            Write-Host "HTML file not found (will be generated)"
         }
+        
         Write-Host "`nGit status:"
         git status
         Write-Host "`nChanged files in this push:"
@@ -57,18 +79,65 @@ jobs:
     - name: Run build script
       shell: pwsh
       run: |
+        $ErrorActionPreference = 'Stop'
         Write-Host "Running build.ps1"
-        ./build.ps1
+        $output = ./build.ps1 *>&1
+        if ($LASTEXITCODE -ne 0) {
+            Write-Error "Build script failed with exit code $LASTEXITCODE`nOutput: $output"
+            exit 1
+        }
+        Write-Host $output
         
-    - name: Diagnostic - Post-build state
+    - name: Post-build validation
       shell: pwsh
       run: |
-        Write-Host "`nNew HTML contents (vera/log.html):"
-        if (Test-Path "vera/log.html") {
-            Get-Content "vera/log.html"
-        } else {
-            Write-Host "HTML file not found after build!"
+        $ErrorActionPreference = 'Stop'
+        
+        # Validate generated HTML files
+        Write-Host "`nValidating generated files..."
+        
+        $requiredFiles = @(
+            @{
+                Path = "vera/log.html"
+                MinSize = 100
+                RequireHtmlStructure = $true
+            },
+            @{
+                Path = "index.html"
+                MinSize = 500
+                RequireHtmlStructure = $true
+            }
+        )
+        
+        foreach ($file in $requiredFiles) {
+            Write-Host "Checking $($file.Path)..."
+            if (Test-Path $file.Path) {
+                $content = Get-Content $file.Path -Raw
+                $fileInfo = Get-Item $file.Path
+                
+                if ($fileInfo.Length -lt $file.MinSize) {
+                    Write-Error "File too small: $($file.Path) ($($fileInfo.Length) bytes)"
+                    exit 1
+                }
+                
+                if ($content -match '') {
+                    Write-Error "Encoding issues detected in: $($file.Path)"
+                    exit 1
+                }
+                
+                if ($file.RequireHtmlStructure -and 
+                    ($content -notmatch '<!DOCTYPE html>.*<html.*>.*<head.*>.*<body.*>.*</body>.*</html>')) {
+                    Write-Error "Invalid HTML structure in: $($file.Path)"
+                    exit 1
+                }
+                
+                Write-Host "✓ $($file.Path) validated"
+            } else {
+                Write-Error "Required file missing: $($file.Path)"
+                exit 1
+            }
         }
+        
         Write-Host "`nGit status after build:"
         git status
         Write-Host "`nChanges from build:"
@@ -85,27 +154,94 @@ jobs:
     - name: Stage changes
       shell: pwsh
       run: |
-        Write-Host "Adding generated files..."
-        # Add each file individually to avoid errors with missing directories
-        git add -f vera/log.html
-        git add -f weblogs/*.html
-        git add -f dialogues/*.html
-        git add -f index.html
-        Write-Host "`nGit status after staging:"
+        $ErrorActionPreference = 'Stop'
+        Write-Host "Checking directories and staging files..."
+        
+        $stagedFiles = @()
+        
+        # Stage files only if directories exist
+        $directories = @{
+            "vera" = "vera/log.html"
+            "weblogs" = "weblogs/*.html"
+            "dialogues" = "dialogues/*.html"
+        }
+        
+        foreach ($dir in $directories.Keys) {
+            if (Test-Path $dir) {
+                $pattern = $directories[$dir]
+                $files = Get-ChildItem -Path $pattern -ErrorAction SilentlyContinue
+                if ($files) {
+                    Write-Host "Adding files from $dir..."
+                    git add -f $pattern
+                    if ($LASTEXITCODE -ne 0) {
+                        Write-Error "Failed to add files from $dir"
+                        exit 1
+                    }
+                    $stagedFiles += $files.FullName
+                } else {
+                    Write-Warning "No files found matching pattern: $pattern"
+                }
+            } else {
+                Write-Warning "Directory not found: $dir"
+            }
+        }
+        
+        if (Test-Path "index.html") {
+            git add -f index.html
+            if ($LASTEXITCODE -ne 0) {
+                Write-Error "Failed to add index.html"
+                exit 1
+            }
+            $stagedFiles += "index.html"
+        } else {
+            Write-Error "index.html not found"
+            exit 1
+        }
+        
+        Write-Host "`nSuccessfully staged files:"
+        $stagedFiles | ForEach-Object { Write-Host "✓ $_" }
+        
+        Write-Host "`nGit status:"
         git status
+        
+        Write-Host "`nStaged files:"
+        git diff --name-only --cached
         
     - name: Commit and push if changed
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       shell: pwsh
       run: |
+        $ErrorActionPreference = 'Stop'
+        
         if (git diff --staged --quiet) {
             Write-Host "No changes to commit"
             exit 0
-        } else {
-            Write-Host "Changes found, committing..."
-            git commit -m "Rebuild site from content changes"
-            Write-Host "`nPushing changes..."
-            git push origin HEAD:main
-            Write-Host "`nPush complete"
-        } 
+        }
+        
+        # Verify staged files are valid
+        $stagedFiles = git diff --name-only --cached
+        foreach ($file in $stagedFiles) {
+            if (-not (Test-Path $file)) {
+                Write-Error "Staged file does not exist: $file"
+                exit 1
+            }
+            
+            if ($file -match '\.html$') {
+                $content = Get-Content $file -Raw
+                if ([string]::IsNullOrWhiteSpace($content)) {
+                    Write-Error "Staged HTML file is empty: $file"
+                    exit 1
+                }
+            }
+        }
+        
+        Write-Host "Changes found, committing..."
+        git commit -m "Rebuild site from content changes"
+        
+        Write-Host "`nPushing changes..."
+        git push origin HEAD:main
+        
+        Write-Host "`nPush complete"
+        Write-Host "Staged and pushed files:"
+        $stagedFiles | ForEach-Object { Write-Host "✓ $_" } 
