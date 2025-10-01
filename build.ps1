@@ -253,7 +253,7 @@ try {
                         $timestampHtml = ''
                         if ($timestamp) {
                             $encodedTimestamp = [System.Web.HttpUtility]::HtmlEncode($timestamp.ToString())
-                            $timestampHtml = "<div class=\"session-timestamp\">$encodedTimestamp</div>"
+                            $timestampHtml = '<div class="session-timestamp">{0}</div>' -f $encodedTimestamp
                         }
 
                         $sessionContent += @"
