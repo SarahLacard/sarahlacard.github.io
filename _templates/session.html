@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <style>
+        body {
+            font-family: monospace;
+            line-height: 1.6;
+            margin: 40px;
+            background-color: #fff;
+            color: #333;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .back {
+            margin-bottom: 20px;
+            position: relative;
+            padding-left: 44px;
+        }
+
+        .back a {
+            color: #0366d6;
+            text-decoration: none;
+            display: inline-block;
+            padding: 2px 0;
+        }
+
+        .back a:hover {
+            text-decoration: underline;
+        }
+
+        .back a::before {
+            content: "<--- ";
+            color: #333;
+            position: absolute;
+            left: 0;
+            width: 44px;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        h1 {
+            margin-top: 0;
+        }
+
+        .session-meta {
+            color: #586069;
+            font-size: 0.9em;
+            margin-bottom: 20px;
+        }
+
+        .session-turn {
+            border-left: 3px solid #eaecef;
+            padding-left: 12px;
+            margin-bottom: 20px;
+        }
+
+        .session-role {
+            font-weight: bold;
+            color: #24292e;
+        }
+
+        .session-timestamp {
+            color: #6a737d;
+            font-size: 0.85em;
+            margin: 4px 0;
+        }
+
+        .session-turn pre {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            background: #f6f8fa;
+            padding: 12px;
+            border-radius: 4px;
+            margin: 0;
+        }
+
+        .session-assistant .session-role {
+            color: #0550ae;
+        }
+
+        .session-user .session-role {
+            color: #8250df;
+        }
+
+        .session-system .session-role {
+            color: #cf222e;
+        }
+    </style>
+</head>
+<body>
+    <div class="back">
+        <a href="../">back to main</a>
+    </div>
+    <h1>{{title}}</h1>
+    <div class="session-meta">Recorded: {{date}}</div>
+    <div class="session-log">
+{{content}}
+    </div>
+</body>
+</html>

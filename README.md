@@ -10,18 +10,19 @@ Central hub for Sarah's projects and development work.
 ## Project Structure
 - _posts/: Weblog entries
 - _dialogues/: Conversation logs
+- _sessions/: Agent sessions in JSONL
 - _raw-data/: Raw data files
 - _templates/: HTML templates
-- weblogs/, dialogues/: Generated HTML output
+- weblogs/, dialogues/, sessions/: Generated HTML output
 - build.ps1: Build script (runs via GitHub Actions)
 - .github/workflows/: GitHub Actions configuration
 
 ## Build Process
 The site uses GitHub Actions to:
 1. Run build.ps1 automatically when changes are pushed
-2. Convert .txt files to HTML using templates
+2. Convert .txt and .jsonl files to HTML using templates
 3. Update index.html with new entries
-4. Generate proper directory structure
+4. Generate proper directory structure (including sessions)
 
 Note: Local builds are not necessary unless testing changes.
 

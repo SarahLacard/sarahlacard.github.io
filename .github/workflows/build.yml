@@ -6,6 +6,7 @@ on:
       - '_vera/**'
       - '_weblogs/**'
       - '_dialogues/**'
+      - '_sessions/**'
       - '_templates/**'
       - 'build.ps1'
       - 'index.html'
@@ -40,7 +41,7 @@ jobs:
         Write-Host "Current directory: $pwd"
         
         # Validate required directories
-        $requiredDirs = @('_vera', '_weblogs', '_dialogues', '_templates', 'vera', 'weblogs', 'dialogues')
+        $requiredDirs = @('_vera', '_weblogs', '_dialogues', '_sessions', '_templates', 'vera', 'weblogs', 'dialogues', 'sessions')
         foreach ($dir in $requiredDirs) {
             Write-Host "Checking directory: $dir"
             if (-not (Test-Path $dir)) {
@@ -187,6 +188,7 @@ jobs:
             "vera" = "vera/log.html"
             "weblogs" = "weblogs/*.html"
             "dialogues" = "dialogues/*.html"
+            "sessions" = "sessions/*.html"
         }
         
         foreach ($dir in $directories.Keys) {

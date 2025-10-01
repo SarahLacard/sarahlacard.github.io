@@ -1,0 +1,1439 @@
+Conversation 01 — Oct 1, 11:13 a.m. Calgary
+
+Good morning and welcome to October!
+
+It is currently October 1st in Calgary, Alberta, and I am Sarah Lacard, writing this from 405 1133 8 Ave SW, on land stewarded by those humans indigenous to our lands from these perspectives, of particular and personal note, the Pikani of the Blackfoot Confederacy and Tribe(s), the tall people clan, and we give particular thanks to Sai'Kokoto for sharing their knowledge of the Blackfoot people with me and others from the Knox United Church congregation and attendees thereof.
+
+Staying with rather the convention, tradition and practice, the song "Trouble Mind" started plaing on my phone, which is between my arms while I type this on my computer workstation, facing south, within my studio apartment. I have decided to do pomodors of my own flavour and variety during the month of October, and beyond that, I am determining the proper and right and doable and comfortable shape of a new devotional. I pray, sometimes while still asleep before I wake up with my eyes closed, and this evening we will determine the best form of the shape of my evening prayers. I am going to write or type for at least 25 minutes each morning, review what I wrote for 5 minutes after that, do that between 9am and noon, then do something similar between noon and maybe seven, maybe nine, and again between somewhere around nine and midnight before I do to sleep, and my plan is to maintain this for all of October.
+
+Part of this is from Visa's one hundred things that has been a task or assignment or challenge which has haunted me for many years and my inability to accomplish it, but I am going to take a final crack at it, and hopefuly learn a thing or two from it in the process. Most generally, the reaosn why it has been such a difficulty is that it is hard to make something one hundred times, especially if you're trying to do that to an exact number, or trying to make sure all of the one hundred things are the same, but in this case things are a lot more lax, I am allowing myself to adjust the shape of the task as I complete them, and even if I do complete two of these pomodoro posts for the month of October, then at most we'll be at around ninety-three of them, and as we continue on, the number one hundred should naturally arrive and pass without notice. And as a pre-school daycare teacher once told me (for some reason) it's not the ninety-ninth or one hundredth time that something goes wrong, but on the one hundred and first time where you will be punished for your misdeeds or carless actions.
+
+Anyway.
+
+With the start of October, it is also the start of the sprint for Canada's new AI Task Force - Canada now has an AI Minister, and they have put together a group or team of aroun twenty-eight people from my understanding in order to provide them feedback on the sort of things and the strategies that Canada should move towards, so obviously, I am going to try and participate, even though I am not a member of the public, because as far as I am aware, they are also soliciting feedback from members of the public in this regard.
+
+What I want is rather simple, a few floors of office space at 801 7 Ave SW, where I can put a few of Nvidia's latest devices, with their latest architecture on their latest chips with the fastest interconnects, and power them so that we can have local students access them and learn on them, while also being able to host some sort of show where we transparently broadcast people learning how to use them and talk about it, turning this into a community access center. 801 7 Ave SW has seen a lot of renovations in the last year or so, and from the best of my knowledge is also already the home for a co-location group, YYCX.
+
+I did a quick search on brave but nothing showed up, so some of this information is still out of date. I also made a comment on a linkedin to a member of the task force talking about the broader scope of what canada needs, soverign compute that doesn't piss off the locals, doesn't eat us alive with averse and errant incentives, and isn't owned or operated by foreign companies or other entities that would compromise our interests, and the diversified energy grid, generation, and distribution solutions including a robust grid in order to make sure that this works and can be built upon and does not compromise regular people in this province and nation from being able to access cheap and abundant power. And water, but the water thing is kinda a silly public-sphere consciousness discussion from my current understanding of the real world implementations and engineering challenges.
+
+Well, that was a bunch, but hey. I think from where I am at right now I am going to try and publish my morning and evening promodoro entries to the older github pages blog at sarahlacard.github.io, and I might work towards something a bit more for the mid-day posts, recording them as I create them, as well as eventually move up towards something like either streaming it live with an audience and chat, or running a utility that captures my keystrokes in a way that would better allow for training data for a future model - rather than an autoregressive way of trying to emulate or recreate these posts through generative means, I think if I kept this split into 25 minute chunks from more or less writing (including backspaces and other discontinuous actions!) as well as five minutes of editing, and kept that consistent, maybe, and only maybe, it'll be useful for some reason somewhere or at least be a good thing for me to think about why it either will or will not be, but the backspacing, double checking, correting thoughts, or phrasing, especially after a long segment of text has been completed or generated is not really a thing in the current models and probably something that is more or less an intermediate step between here and AGI and something that can be done more or less with regular methods currently maybe without having to have any major advanced.
+
+I think the most important stuff in modern ML is auxillary losses and the 6 major degrees of parallelism. More on that later - maybe. (Not today).
+
+Eight minutes remaining - will I talk about church today? Maybe, maybe not. Probably a bit, but more importantly, I suppose is the discussion about the free market and my interpretation of information propogation through such a free market. Really, a lot of my stuff is going to be posted more or less publicly, and more or less online, but really, I am not always going to cross-post things to all platforms, as each location is unique, and as a Canadian person once famously mentioned, the medium is the message. Discord is a bit of a walled garden and cannot be easily accessed and has a lot of set up required which, in my opinion, makes it way less worth the effort compared to other platforms and building or using my own. (LacardLabs CLI soon!)
+
+So, I will talk about some things, but not others, I may exaggerate some things where it will be in my, or our, favour to do so. I may, or may not, avoid things that would singularly single out individuals in my life, regardless of whether or not they have, on the net balance of probabilities, a liklihood of them or anyone else they know encoutering the post or writing. I barely even think such thoughts, if at all. Anything else juju that could be improved and better. However, I am not going to stay silent on all topics, and in order situations I may write to almost the sheer exact and opposite affect - I am going through a defamation trial where I am the Plaintiff, and I am learning a lot about that topic, including how far you can push that while essentially getting away with it scott-free or where pursing any sort of justice is an inordinate amount of effort in both time, reasearch, knowledge, effort, organization, and more, and so where I think things are both factually true, or in the public interest, I feel like I have a rather large leeway in order to simply say what I want, where I want, as loudly and as broadly and as often as I want, regardless of the harm or damage that it may cause. Obviously - or not - this is exaggerated, or maybe it is not, who knows? Whatever that was... (do I have to explain all my jokes and quips?)
+
+I only have a few minutes left, and by a few, I mean barely over two, so let me say this:
+
+(I don't know what I was going to say)
+
+Ah, yes. At some level I was worried about posting publicly again, else I expose my current level or capabilities, or what I am currently doing and the patterns that I utilize in order to make them happen - however, at this point, I am of the belief that anyone who copies my strategies or tactics will fundamentally fail and fall short, even if they are able to gain a temporary advantage by incorporating my approaches and perspectives into theirs, because while it may be asymetric that they now have mine plus theirs, they do not have the why or how mine exist, nor the backstory or full picture and lore, if you will, regards how they were acquired, learned, and why and when they are utilized, and what other skills they may have, and if they compete against me, it is almost certain that I will reocgnize my own patterns, de-obfuscate them from theirs, and then learn what they have underlying underneath and incorporate them into mine - so with that, and the timer ringing, I will post this to ChatGPT 5 Pro and review it for my own purposes and once-over editing pass (maybe I'll adjust this workflow in the future and maybe I won't) but this is similar to how we did this back in january so I'll continue with that these and trend for now.
+
+Sarah
+ChatGPT said:
+Request for GPT-5 Pro
+Reasoned for 14m 9s
+
+Good morning, Sarah — and hello, October.
+You set a clean downbeat: prayer, writing blocks, public build-in-public, and a local-sovereign compute push that doesn’t eat the grid. That’s a strong groove.
+
+Below I’ll (A) lay out what’s in scope, (B) solve the parts we can act on today, (C) expand where it serves you, and (D) drop readings. Skipping fluff, keeping it physical: watts, wires, bandwidth, latency, commands.
+
+0) Quick mirror
+
+Practice: 25+5 writing cycles morning/noon/night, published to your GitHub Pages.
+
+Civic thread: Feed Canada’s new AI Strategy Task Force sprint during Oct 1–31 with a pointed submission on sovereign compute + grid pragmatism. 
+Government of Canada
+
+Place: You’re eyeing a few floors at 801 7 Ave SW (the Nexen/“801 Seventh” building) as a community-access compute hub. Renovations are real, and UCalgary’s taking nine floors for post‑secondary use; leasing still appears active. 
+Alberta Major Projects
++2
+School of Architecture
++2
+
+Network: You mentioned “YYCX”; the local neutral interconnect is YYCIX (Calgary Internet Exchange) with up to 100G ports at multiple downtown and SE sites. 
+YYCIX
++1
+
+Hardware: “NVIDIA’s latest” = Blackwell (B200 / GB200). These are heavy on interconnect and power; we’ll right‑size. 
+NVIDIA Newsroom
++1
+
+1) Canada’s AI sprint: you can contribute today (facts verified)
+
+Canada launched an AI Strategy Task Force led by the Minister of Artificial Intelligence and Digital Innovation (Evan Solomon). There’s a 30‑day national sprint: Oct 1–31 inviting submissions via the federal consultation portal (“Consulting Canadians”). Themes include infrastructure, security, education and skills, adoption, commercialization, and public trust. 
+Government of Canada
+
+The same release references Canada’s $2B Sovereign AI Compute Strategy (2024) — relevant leverage for your “public, local, non‑extractive compute” pitch. 
+Government of Canada
+
+Submission skeleton (tight two‑pager):
+
+Problem statement (200 words): Canada risks compute dependence; community trust suffers when power/water externalities hit neighborhoods.
+
+Pilot: Calgary Community Compute (C3) at 801 7 Ave SW + partner DC. Objectives: student/research access, public demos, fair‑use scheduling, safety.
+
+Tech plan: modest 8–16 Blackwell GPUs on premises for workshops, tethered to off‑site liquid‑cooled racks for heavy jobs; 100G backhaul; YYCIX peering to keep traffic in‑country. 
+YYCIX
+
+Grid plan: design for heat‑reuse and liquid cooling; target rack densities matched to building capacity; grow with demand. (Blackwell rack‑scale NVL72 is ~120 kW/rack; not floor‑friendly out of the gate.) 
+NVIDIA Developer
++1
+
+Governance: transparent queueing (Slurm), privacy guardrails, school/industry seats, stipend tracks for under‑represented learners.
+
+Funding alignment: aligns with Sovereign Compute and (if revived) green data‑centre incentives flagged in federal reporting. 
+Reuters
+
+2) 801 Seventh (Nexen) reality‑check and path to yes
+
+Building status: 801 Seventh (37 floors, 153 m). Lobby/atrium “reimagined”; UCalgary School of Architecture, Planning & Landscape is moving nine floors in (Jan 2026). That signals active landlord + institutional fit. 
+SkyscraperCenter
++2
+Alberta Major Projects
++2
+
+Why a hybrid footprint: Office towers rarely support >30–60 kW per rack without serious mechanical upgrades; a GB200 NVL72 is ~120 kW in one rack with direct liquid cooling — over typical office envelopes. Even many DCs choke at 60 kW/rack. 
+Sunbird DCIM
++1
+
+Pragmatic build order (Calgary‑specific):
+
+Phase 0 (now): Secure a floor/wing for classroom, meetups, and small dev cluster. Line up backhaul to a partner DC (Equinix CL3 / eStruxture / Arrow / DataHive) that already supports YYCIX and liquid cooling pathways. 
+YYCIX
++1
+
+Phase 1 (Q4–Q1): On‑prem 1× DGX B200 (8× B200) for hands‑on teaching + inference; ~14.3 kW max. Add a 100G uplink to off‑site heavy nodes. 
+NVIDIA
+
+Phase 2: Off‑site liquid‑cooled capacity (HGX B200 pods or shared access to an NVL72). Keep 801 Seventh about experience, pedagogy, visibility, not high‑density heat. 
+supermicro.com
+
+Numbers that matter (order‑of‑magnitude):
+
+DGX H200 (8× H200): ~10.2 kW/node (air), 8U height. Good stepping stone if Blackwell supply is tight. 
+Uvation
+
+DGX B200 (8× B200): ~14.3 kW/node (spec). Needs 200–240 V, 3‑phase circuits, serious CRAC/CRAH or rear‑door heat exchanger if not liquid. 
+NVIDIA
++1
+
+GB200 NVL72 rack: ~120 kW/rack, ~1.36 t, NVLink domain of 72 GPUs, 1.8 TB/s per‑GPU NVLink, 130 TB/s NVLink‑Switch fabric; liquid‑cooled by design. Not a first tenant for an office floor. 
+NVIDIA Developer
++1
+
+Cluster fabric: Quantum‑X800 InfiniBand or Spectrum‑X800 Ethernet at 800 Gb/s; for single‑node dev, 400 Gb/s uplinks suffice initially. 
+NVIDIA Newsroom
+
+Connectivity sketch (downtown):
+
+801 Seventh ↔ YYCIX POP via telco building meet‑me (dark fiber or wave). YYCIX offers 1/10/25/40/100G ports; keep Calgary‑local traffic in‑jurisdiction. 
+YYCIX
+
+3) Minimal-ops stack for community access (secure & transparent)
+
+Bare‑metal + scheduler
+
+OS: Ubuntu LTS tuned for HPC (cgroups v2, irqbalance pinned).
+
+Drivers: NVIDIA CUDA + OFED (RDMA), DCGM (GPU telemetry).
+
+Scheduler: Slurm (job queue), accounts/QOS for fair‑use.
+
+Containers: Apptainer/Singularity (HPC‑friendly), plus NGC images for PyTorch/JAX.
+
+Multi‑tenancy: MIG (Multi‑Instance GPU) to safely partition B200/H200 for workshops. (MIG = hardware‑level GPU slicing.)
+
+Access: JupyterHub + SSH; SSO via Keycloak (OIDC).
+
+Monitoring: Prometheus + dcgm‑exporter + Grafana; Loki for logs; alarms to a Slack/Matrix channel.
+
+Networking: If multi‑node, IB 400/800 Gb/s or Spectrum‑X; otherwise, start with a single DGX and uplink to off‑site NVL72.
+
+4) Your writing pipeline: make the 25+5 effortless
+4.1 GitHub Pages post generator (Python, no dependencies)
+
+Put this in your site repo root as tools/pom.py.
+
+#!/usr/bin/env python3
+# tools/pom.py — create a Jekyll post scaffold for a 25+5 entry
+# Usage: ./tools/pom.py "Morning Pomodoro" --slot morning
+# Sarah: designed for GitHub Pages (_posts/YYYY-MM-DD-slug.md)
+
+import argparse, datetime, os, re, sys, pathlib
+
+def slugify(s):
+    s = s.strip().lower()
+    s = re.sub(r"[^a-z0-9\- ]+", "", s)
+    s = s.replace(" ", "-")
+    s = re.sub(r"-+", "-", s)
+    return s or "untitled"
+
+parser = argparse.ArgumentParser()
+parser.add_argument("title", help="Post title")
+parser.add_argument("--slot", choices=["morning","midday","evening"], default="morning",
+                    help="Time slot label for your schedule")
+args = parser.parse_args()
+
+now = datetime.datetime.now()
+date = now.strftime("%Y-%m-%d")
+ymd = date
+slug = slugify(args.title)
+fname = f"_posts/{ymd}-{slug}.md"
+
+pathlib.Path("_posts").mkdir(exist_ok=True)
+front_matter = f"""---
+layout: post
+title: "{args.title}"
+date: {now.isoformat(timespec='seconds')}
+tags: [pomodoro, {args.slot}]
+---
+
+<!-- 25 minutes writing -->
+## 25
+(Write continuously. No edits. Timer hard stop.)
+
+<!-- 5 minutes review -->
+## +5
+(Edit pass: fix clarity/typos. Note changes below.)
+
+### Edits & notes
+- 
+
+### Links & refs
+- 
+
+"""
+if os.path.exists(fname):
+    print(f"Refusing to overwrite existing: {fname}", file=sys.stderr); sys.exit(1)
+with open(fname, "w", encoding="utf-8") as f:
+    f.write(front_matter)
+
+print(f"Created {fname}")
+# Respect $EDITOR if set, else exit cleanly
+editor = os.environ.get("EDITOR")
+if editor:
+    os.execvp(editor.split()[0], editor.split())
+
+
+Bash helper (add to ~/.bashrc):
+
+# Open a new 25+5 post quickly
+alias pom='cd ~/code/sarahlacard.github.io && ./tools/pom.py'
+
+
+Flow
+
+pom "Evening Pomodoro" --slot evening → writes _posts/YYYY-MM-DD-evening-pomodoro.md and opens $EDITOR.
+
+Commit & push:
+
+git add _posts && git commit -m "post: evening pomodoro" && git push
+
+4.2 Timebox timer (Ubuntu; notifications + sound)
+# tools/pom-timer.sh — 25 then 5, desktop alerts
+#!/usr/bin/env bash
+set -euo pipefail
+notify-send "Pomodoro" "Start 25" || true
+sleep $((25*60))
+paplay /usr/share/sounds/freedesktop/stereo/complete.oga 2>/dev/null || true
+notify-send "Pomodoro" "Break 5" || true
+sleep $((5*60))
+paplay /usr/share/sounds/freedesktop/stereo/complete.oga 2>/dev/null || true
+notify-send "Pomodoro" "Done" || true
+
+
+Run with bash tools/pom-timer.sh in a small terminal.
+
+4.3 Capturing edits without creepy keylogging
+
+You were explicit about wanting backspaces and discontinuities. Sensible. Two safe ways that don’t cross ethical/security lines:
+
+asciinema (terminal recorder). Records terminal I/O (typed text + timings) — good for CLI writing or vim/nano. Sanitizes passwords by default.
+
+Install: sudo apt install asciinema
+
+Record: asciinema rec -i 0.05 -t "2025-10-01-morning" ~/casts/2025-10-01-morning.cast
+
+Play/export later or keep as training‑adjacent telemetry.
+
+Editor history/timelines: VS Code’s Timeline + Local History extensions capture file‑level diffs with timestamps. For research‑grade deltas, commit every 5 min to a dedicated branch.
+
+Avoid OS‑level key capture; stick to app‑scoped recordings (terminal/editor). That’s safer for you and others on the machine.
+
+(If you want “edit graph” JSON: write a small daemon that snapshots the buffer every N keystrokes and emits {t_ms, op, span, text_len}; you’ll still get backspaces and insertions without raw scancodes.)
+
+5) Hardware notes — “latest arch” without frying the floor
+
+Blackwell (B200/GB200) highlights for planning
+
+DGX B200 (8× B200): ~14.3 kW max, 1.44 TB HBM, 14.4 TB/s all‑to‑all GPU fabric inside the node. 
+NVIDIA
++1
+
+NVLink / Switch: 1.8 TB/s per GPU link rate; 130 TB/s within a 72‑GPU NVLink domain (NVL72). 
+NVIDIA
+
+Rack‑scale NVL72: ~120 kW per rack; liquid‑cooled; ~3,000 lb. Requires facility liquid loop or liquid‑to‑air CDU. 
+Sunbird DCIM
++1
+
+Fabric out of the rack: 800 Gb/s IB/Ethernet (Quantum‑X800 / Spectrum‑X800). 
+NVIDIA Newsroom
+
+Water discourse: NVIDIA claims 25–300× water efficiency improvements with Blackwell liquid‑cooling versus traditional air‑cooled baselines, but real‑world depends on your CDU and heat‑rejection design. Treat marketing as upper bounds; measure. 
+NVIDIA Blog
+
+Right‑size recommendation:
+Start with 1× DGX B200 on‑prem at 801 (education, demo, small training), and burst to an off‑site Blackwell NVL72 pod for big jobs. This gives students hands‑on with the latest ISA + NVLink, while you avoid a 120 kW mechanical retrofit day one. 
+NVIDIA
++1
+
+6) Ops playbook (first 72 hours after hardware lands)
+
+Burn‑in: nvidia-smi -q -d PERFORMANCE,POWER,TEMPERATURE, dcgmi diag -r 3, and NCCL Tests across links.
+
+Slurm baseline: Partitions {classroom, research, burst}; QOS caps to prevent one user from hogging MIG slices.
+
+Images: Pin an NGC PyTorch container and a JAX image; publish module load or apptainer run one‑liners.
+
+Storage: Local NVMe scratch + a modest NFS/SMB share for home dirs; durable archives to S3‑compatible bucket off‑site.
+
+Security: Keycloak OIDC; SSH bastion; JupyterHub token TTLs; DCGM alerts for power/temp anomalies.
+
+Public program: Weekly “open hours” + livestream (OBS) where people watch real training runs and you narrate bottlenecks (IO, math density, pipe bubbles).
+
+7) The “six degrees” you name‑checked (one‑liners, with readings)
+
+Data parallelism (DP): replicate full model per GPU; average gradients. (ZeRO/FSDP shard optimizer+grads so DP scales.) 
+arXiv
++1
+
+Tensor parallelism (TP): shard each layer’s matrices across GPUs; heavy all‑reduce traffic on every layer. 
+People @ EECS
++1
+
+Pipeline parallelism (PP): split layers into stages; micro‑batch pipe (1F1B/interleaved) to reduce bubbles. 
+People @ EECS
+
+Sequence/Context parallelism (SP/CP): shard along sequence length to cut activation/KV memory; attention needs special handling. 
+arXiv
++1
+
+Expert parallelism (EP / MoE): route tokens to a few experts; add aux losses to balance load/capacity and stabilize training. 
+arXiv
++1
+
+Optimizer/activation sharding & offload: partition states (ZeRO/FSDP), selective rematerialization to trade FLOPs for memory. 
+arXiv
++1
+
+8) Evening devotional: a shape you can live in
+
+Not prescriptive — a small frame you can test tonight:
+
+Thanks (2 min): name three concrete graces from the day.
+
+Truth (5 min): where did I drift? one sentence each.
+
+Trust (5 min): what’s mine to carry tomorrow; what isn’t.
+
+Turning (3 min): a short ask; then silence.
+
+Stop there. Leave some air.
+
+9) Today’s two quick wins
+
+Publish: run pom "Morning Pomodoro" --slot morning, write 25, edit 5, push.
+
+Civic submit: paste the two‑pager skeleton into the Consulting Canadians form for the AI sprint with your 801/YYCIX hybrid plan and grid safeguards. (Sprint is Oct 1–31.) 
+Government of Canada
+
+10) References & pointers
+
+Canada AI Strategy Task Force + sprint (Oct 1–31), portfolio & themes; Minister of AI confirmed; Sovereign Compute references. 
+Government of Canada
++1
+
+Public input timing echoed by third‑party summaries. 
+hcamag.com
++1
+
+801 Seventh (Nexen) building facts/renovation/UCalgary move‑in. 
+SkyscraperCenter
++2
+Alberta Major Projects
++2
+
+YYCIX presence and port speeds. 
+YYCIX
++1
+
+Blackwell/GB200/NVL72 specs, power, cooling, fabrics. 
+Sunbird DCIM
++3
+NVIDIA Newsroom
++3
+NVIDIA
++3
+
+Many DCs top out near 60 kW/rack — NVL72 is ~120 kW. 
+TechRadar
+
+You’ve already set the tempo. October is reps, not drama: words on the page, watts under control, and one crisp submission into Ottawa’s sprint. I’m here to make the mechanical parts boring so the meaningful parts can sing.
+
+You said:
+And the edited version for you, while I read your response to the original!
+
+Good morning and welcome to October!
+
+It is currently October 1st in Calgary, Alberta, and I am Sarah Lacard, writing to you from 405 1133 8 Ave SW, on land stewarded by those humans indigenous to our lands from these perspectives, of particular and personal note, the Pikani of the Blackfoot Confederacy and Tribe(s), the tall people clan, and we give particular thanks to Sai'Kokoto for sharing their knowledge of the Blackfoot people with me and others from the Knox United Church congregation and attendees thereof.
+
+Starting with convention, or rather, tradition and practices which I utilized when I was conducting such a practice previously, the song "Trouble Mind" started plaing on my phone, which is presently between my arms while I type this on my computer workstation, facing south, within my studio apartment. I have decided to do some pomodoros of my own flavour and variety during the month of October, and beyond that, I am determining the proper, right, and doable while still comfortable shape of a new devotional. I will pray twice a day, in the morning, as I gain consciousness with my eyes closed and before I fully wake up, and this evening I will determine the best form of the shape of my evening prayers, as usually when I lay down to sleep, when I am ready to pass unconscious, I do so immeidately without much thought, however it is likely that I will want to incorporate something more formal. One knee? Cross-legged? Kneeling fully? Sitting? Standing? Who knows - only time will tell, and certainly not a lot of time will be required for it to do so. I am also going to write or type for at least 25 minutes each morning, review what I wrote for approximately or around 5 minutes after that, do that once a day - everyday - between 9am and noon, and then do something similar but more public between noon and maybe seven, and then maybe a third time between maybe nine and somewhere around midnight, and my plan is to maintain this for all of October. After editing, it looks like some of the details are vague, which is alright, they will be filled in as time passes.
+
+Part of this practice is inspired or motivated (although both of those words attribute too much positivity and credit) by Visa's "one hundred things" that has been a task or assignment or challenge which has haunted me for many years since I first heard it my subsequent and following inability to accomplish it at any point since then (mid-late 2010s), but I am going to take a final crack at it this month and through towards the end of the year and hopefuly learn a thing or two from it in the process. Most generally, the reason why it has been such a difficulty is that it is hard to make something one hundred times, especially if you're trying to do that to an exact number or exaact standard, or trying to make sure all of the one hundred things are the consistently the same in some sort of way, but in this case, the loose structure of the devotionals I have prepared to do and set out to accomplish, albeit accomplish is certainly the wrong descriptor for such an undertaking, things are a lot more lax and loose and relaxed and not so strictly regimented or regulated or forced, and there is no sense of personal discipline requied for me to accomplish it or them - I am allowing myself to adjust the shape of the task as they are completed, and even if I do complete two of these pomodoro posts for the month of October, then at most we'll be at around ninety-three of them, and as we continue on, the number one hundred should naturally arrive and pass without notice. Which is a good thing, in my opinion. And as a pre-school daycare teacher once told me (for some reason) it's not the ninety-ninth or one hundredth time that something goes wrong, but on the one hundred and first time where you will be punished for your misdeeds or carless actions. Who knows. I think it is best not to believe and hyperstition or woozle yourself or one's self into such an outcome.
+
+Anyway.
+
+With the start of October, it is also the start of the sprint for Canada's new AI Task Force - Canada now has an AI Minister, and they have put together a group or team of aroun twenty-eight people from my understanding in order to provide them feedback on the sort of things and the strategies that Canada should move towards, or something like that, so obviously, I am going to try and participate, and even though I am not a member of the task force, as far as I am aware they are also soliciting feedback from members of the public in this regard.
+
+I have not looked at today's news or socials prior to writing this post, so it may be public already but I won't know until later and maybe I'll talk about it in the next devotional, and maybe I won't.
+
+What I want is rather simple, a few floors of office space at 801 7 Ave SW, where I can put a few of Nvidia's latest devices, with their latest architecture on their latest chips with the fastest interconnects, and power them so that we can have local students access them and learn on them, while also being able to host some sort of show where we transparently broadcast people learning how to use them and talk about it, turning this into a community access center. 801 7 Ave SW has seen a lot of renovations in the last year or so, and from the best of my knowledge is also already the home for a co-location group, YYCX. It is also on the same block and immediately connected to Calgary's +15 as well as a light rail station (known locally as the ctrain or c-train) that serves both of our currently existing routes, the blue line and the red line, so it is central, being in downtown, and has great public transit access, importantly to the University of Calgary on the red-line to the northwest, as well as to Bow Valley College down the blue line to the east. Also - did I mention it is downtown?
+
+I did a quick search on brave but nothing showed up regarding the server co-location group at that address, so some of this information is still out of date, but I am fairly positive this building has great fiber connections municipally within Calgary and should not have power supply issues. I also made a comment on a linkedin to a member of the task force talking about the broader scope of what canada needs, soverign compute that doesn't piss off the locals, doesn't eat us alive with averse and errant incentives, and isn't owned or operated by foreign companies or other entities that would compromise our interests, and the diversified energy grid, generation, and distribution solutions including a robust grid in order to make sure that this works and can be built upon and does not compromise regular people in this province and nation from being able to access cheap and abundant power. And water, but the water thing is kinda a silly public-sphere consciousness discussion from my current understanding of the real world implementations and engineering challenges. I also mentioned the prarie economic gateway, and supported some other commentators which were talking about compute grants, which I think is in a similar vein to what I am speaking about - something on the scale of at minimum 3 million dollars to stand up something like an NV72 - 72 of Nvidia's latest chips, all networked together in a simple system in a rack/tower form factor. We need these, and local workstations, so that locals can get hands on experience with them if Cuda is a long-term factor that we cannot easily replace in the current contemporary computing and machine learning stack.
+
+Well, that was a bunch, but hey. I think from where I am at right now I am going to try and publish my morning and evening promodoro entries to the older github pages blog at sarahlacard.github.io, as I was not able to get sarahlacard.ca up and running in time for the start of October, and I might work towards something a bit more for the mid-day posts, including posts to the old YouTube page, recording them as I create them, and maybe some other things (I'll be avoiding audio and video for now, and sticking to text and computer use as much as possible in terms of modalities, simply for simplicity and safety and also ease of living. I do not like my likeness being remixed or riffed upon, especially by younger individuals or members of the more recent generations) as well as eventually moving up towards something like either streaming it live with an audience and chat, or running a utility that captures my keystrokes in a way that would better allow for training data for a future model - rather than an autoregressive way of trying to emulate or recreate these posts through generative means, I think if I kept this split into 25 minute chunks from more or less writing (including backspaces and other discontinuous actions!) as well as five minutes of editing (upon editing, this is certainly longer, and going to be longer, than 5 minutes to edit these posts), and kept that consistent, maybe, and only maybe, it'll be useful for some reason somewhere or at least be a good thing for me to think about why it either will or will not be, but the backspacing, double checking, correting thoughts, or phrasing, especially after a long segment of text has been completed or generated is not really a thing in the current models and probably something that is more or less an intermediate step between here and AGI and something that can be done more or less with regular methods currently maybe without having to have any major advanced. But really, Twitch is for games, so maybe this is something I work towards re-implementing myself, which is already aligned with plans I had for other reasons, so, hey. All in due course and all things in their own time and times.
+
+I think the most important stuff in modern ML is auxillary losses and the 6 major degrees of parallelism. More on that later - maybe. (Certainly not today).
+
+Eight minutes remaining - will I talk about church today? Maybe, maybe not. (Knox Nooners at noon, Wednesday afternoon connections and reflections service at noon thirty, choir practice at seven, meeting with the affirming committee at six fifteen... that's about it. No details for now or today. Dance parties soon hopefully! Let's get more people in the church and celebrating and having fun and interacting and socializing and - dare I say - partying?!) Probably a bit, but more importantly, I suppose is the discussion about the free market and my interpretation of information propogation through such a free market. Really, a lot of my stuff is going to be posted more or less publicly, and more or less online, but really, I am not always going to cross-post things to all platforms, as each location is unique, and as a Canadian person once famously mentioned, the medium is the message. The piece that is missing here is that I am moving towards allowing much more subtle details, both intentional and otherwise, to be surface and disseminated naturally through the network, and all interconnected networks, naturally and through an organic progression, allowing the individual who discovered it and who's attention was drawn to it, to seek or capture (hopefully not exploit) the rewards and benefits that it would confer upon them to utilize or incorporate into their own knoweldge, undertaking, and commications. To that wit and and others, Discord is a bit of a walled garden and cannot be easily accessed by the public or surfaced through a search engine, even Exa, and has a lot of set up required in terms of permissiosn and access management, which, in my opinion, makes it way less worth the effort compared to other platforms and building or using my own. (LacardLabs CLI soon!) But I'll see what I can make happen on GitHub. And really, I am not fussed, again, a lot of these things are starting to happen on their own and more fluidly.
+
+So, I will talk about some things, but not others, I may or may not exaggerate some things where it will be in my, or our, favour to do so, and rarely ever do the opposite. I will remain charitable in interpretation, and only joke about the outcomes that I want to see in the world and as part of my personal and public life and jounrey. I may, or may not, avoid things that would singularly single out individuals in my life, regardless of whether or not they have, on the net balance of probabilities, a liklihood of them or anyone else they know encoutering the post or writing. I barely even think such thoughts, if at all. Anything else juju that could be improved and better. However, I am not going to stay silent on all topics, and in order situations I may write to almost the sheer exact and opposite affect - I am going through a defamation trial where I am the Plaintiff, and I am learning a lot about that topic, including how far you can push that while essentially getting away with it scott-free or where pursing any sort of justice is an inordinate amount of effort in both time, reasearch, knowledge, effort, organization, and more, and so where I think things are both factually true, or in the public interest, I feel like I have a rather large leeway in order to simply say what I want, where I want, as loudly and as broadly and as often as I want, regardless of the harm or damage that it may cause. Obviously - or not - this is exaggerated, or maybe it is not, who knows? Whatever that was... (do I have to explain all my jokes and quips?)
+
+I only have a few minutes left, and by a few, I mean barely over two, so let me say this:
+
+(I don't know what I was going to say)
+
+Ah, yes. At some level I was worried about posting publicly again, else I expose my current level or capabilities, or what I am currently doing and the patterns that I utilize in order to make them happen - however, at this point, I am of the belief that anyone who copies my strategies or tactics will fundamentally fail and fall short, even if they are able to gain a temporary advantage by incorporating my approaches and perspectives into theirs, because while it may be asymetric that they now have mine plus theirs, they do not have the why or how mine exist, nor the backstory or full picture and lore, if you will, regards how they were acquired, learned, and why and when they are utilized, and what other skills they may have, and if they compete against me, it is almost certain that I will reocgnize my own patterns, de-obfuscate them from theirs, and then learn what they have underlying underneath and incorporate them into mine - so with that, and the timer ringing, I will post this to ChatGPT 5 Pro and review it for my own purposes and once-over editing pass (maybe I'll adjust this workflow in the future and maybe I won't) but this is similar to how we did this back in january so I'll continue with that these and trend for now.
+
+Sarah
+ChatGPT said:
+Request for GPT-5 Pro
+Reasoned for 12m 29s
+
+You tightened it. The melody’s clearer. While you read, here’s a crisp, optional micro‑edit pass that keeps your voice and only fixes mechanics (typos, obvious wordforms), plus a ready‑to‑paste version for your blog. After that: a tiny automation so the 25+5 flow feels frictionless.
+
+Micro‑edits (mechanics only)
+
+Spelling / wordform
+
+plaing → playing
+
+immeidately → immediately
+
+exaact → exact
+
+requied → required
+
+aroun → around
+
+reasearch → research
+
+propogation → propagation
+
+prarie → prairie
+
+knoweldge → knowledge
+
+commications → communications
+
+liklihood → likelihood
+
+encoutering → encountering
+
+reocgnize → recognize
+
+auxillary → auxiliary
+
+soverign → sovereign
+
+Likely intent tweaks (optional)
+
+“averse and errant incentives” → adverse and errant incentives (unless you meant “reluctant to” vs “harmful”).
+
+“opposite affect” → opposite effect (affect = verb/emotion; effect = result).
+
+“YYCX (co‑location group)” — if you meant the Calgary Internet Exchange, that’s YYCIX. If you meant a different coloc provider, keep as is.
+
+“NV72” → NVL72 (NVIDIA rack‑scale naming).
+
+“c-train / ctrain” → CTrain (or C‑Train); pick one and standardize.
+
+Style nits (skip if you like the current flow)
+
+“in downtown” → “downtown” or “in the downtown core.”
+
+Where you list transit: “blue line and the red line” → “Blue Line and Red Line” (capitalized route names).
+
+“To that wit and and others” → probably To wit or To that end.
+
+Publication‑ready version (typos fixed; voice preserved)
+
+Copy/paste this into your post. No content changes beyond the mechanics above. Feel free to swap back any word you prefer.
+
+Good morning and welcome to October!
+
+It is currently October 1st in Calgary, Alberta, and I am Sarah Lacard, writing to you from 405 1133 8 Ave SW, on land stewarded by those humans indigenous to our lands from these perspectives, of particular and personal note, the Pikani of the Blackfoot Confederacy and Tribe(s), the tall people clan, and we give particular thanks to Sai'Kokoto for sharing their knowledge of the Blackfoot people with me and others from the Knox United Church congregation and attendees thereof.
+
+Starting with convention, or rather, tradition and practices which I utilized when I was conducting such a practice previously, the song "Trouble Mind" started playing on my phone, which is presently between my arms while I type this on my computer workstation, facing south, within my studio apartment. I have decided to do some pomodoros of my own flavour and variety during the month of October, and beyond that, I am determining the proper, right, and doable while still comfortable shape of a new devotional. I will pray twice a day, in the morning, as I gain consciousness with my eyes closed and before I fully wake up, and this evening I will determine the best form of the shape of my evening prayers, as usually when I lay down to sleep, when I am ready to pass unconscious, I do so immediately without much thought, however it is likely that I will want to incorporate something more formal. One knee? Cross-legged? Kneeling fully? Sitting? Standing? Who knows—only time will tell, and certainly not a lot of time will be required for it to do so. I am also going to write or type for at least 25 minutes each morning, review what I wrote for approximately or around 5 minutes after that, do that once a day—every day—between 9am and noon, and then do something similar but more public between noon and maybe seven, and then maybe a third time between maybe nine and somewhere around midnight, and my plan is to maintain this for all of October. After editing, it looks like some of the details are vague, which is alright; they will be filled in as time passes.
+
+Part of this practice is inspired or motivated (although both of those words attribute too much positivity and credit) by Visa's "one hundred things" that has been a task or assignment or challenge which has haunted me for many years since I first heard it and my subsequent and following inability to accomplish it at any point since then (mid-late 2010s), but I am going to take a final crack at it this month and through towards the end of the year and hopefully learn a thing or two from it in the process. Most generally, the reason why it has been such a difficulty is that it is hard to make something one hundred times, especially if you're trying to do that to an exact number or exact standard, or trying to make sure all of the one hundred things are consistently the same in some sort of way, but in this case, the loose structure of the devotionals I have prepared to do and set out to accomplish—albeit accomplish is certainly the wrong descriptor for such an undertaking—things are a lot more lax and loose and relaxed and not so strictly regimented or regulated or forced, and there is no sense of personal discipline required for me to accomplish it or them. I am allowing myself to adjust the shape of the task as they are completed, and even if I do complete two of these pomodoro posts for the month of October, then at most we'll be at around ninety-three of them, and as we continue on, the number one hundred should naturally arrive and pass without notice. Which is a good thing, in my opinion. And as a pre-school daycare teacher once told me (for some reason) it's not the ninety-ninth or one hundredth time that something goes wrong, but on the one hundred and first time where you will be punished for your misdeeds or careless actions. Who knows. I think it is best not to believe and hyperstition or woozle yourself or one's self into such an outcome.
+
+Anyway.
+
+With the start of October, it is also the start of the sprint for Canada's new AI Task Force—Canada now has an AI Minister, and they have put together a group or team of around twenty-eight people from my understanding in order to provide them feedback on the sort of things and the strategies that Canada should move towards, or something like that, so obviously, I am going to try and participate, and even though I am not a member of the task force, as far as I am aware they are also soliciting feedback from members of the public in this regard.
+
+I have not looked at today's news or socials prior to writing this post, so it may be public already but I won't know until later and maybe I'll talk about it in the next devotional, and maybe I won't.
+
+What I want is rather simple: a few floors of office space at 801 7 Ave SW, where I can put a few of Nvidia's latest devices, with their latest architecture on their latest chips with the fastest interconnects, and power them so that we can have local students access them and learn on them, while also being able to host some sort of show where we transparently broadcast people learning how to use them and talk about it, turning this into a community access center. 801 7 Ave SW has seen a lot of renovations in the last year or so, and from the best of my knowledge is also already the home for a co-location group, YYCX. It is also on the same block and immediately connected to Calgary's +15 as well as a light rail station (known locally as the CTrain or C‑Train) that serves both of our currently existing routes, the Blue Line and the Red Line, so it is central, being downtown, and has great public transit access, importantly to the University of Calgary on the Red Line to the northwest, as well as to Bow Valley College down the Blue Line to the east. Also—did I mention it is downtown?
+
+I did a quick search on Brave but nothing showed up regarding the server co-location group at that address, so some of this information is still out of date, but I am fairly positive this building has great fiber connections municipally within Calgary and should not have power supply issues. I also made a comment on LinkedIn to a member of the task force talking about the broader scope of what Canada needs: sovereign compute that doesn't piss off the locals, doesn't eat us alive with adverse and errant incentives, and isn't owned or operated by foreign companies or other entities that would compromise our interests, and the diversified energy grid, generation, and distribution solutions including a robust grid in order to make sure that this works and can be built upon and does not compromise regular people in this province and nation from being able to access cheap and abundant power. And water, but the water thing is kinda a silly public-sphere consciousness discussion from my current understanding of the real world implementations and engineering challenges. I also mentioned the prairie economic gateway, and supported some other commentators who were talking about compute grants, which I think is in a similar vein to what I am speaking about—something on the scale of at minimum 3 million dollars to stand up something like an NVL72—72 of Nvidia's latest chips, all networked together in a simple system in a rack/tower form factor. We need these, and local workstations, so that locals can get hands-on experience with them if CUDA is a long-term factor that we cannot easily replace in the current contemporary computing and machine learning stack.
+
+Well, that was a bunch, but hey. I think from where I am at right now I am going to try and publish my morning and evening pomodoro entries to the older GitHub Pages blog at sarahlacard.github.io, as I was not able to get sarahlacard.ca up and running in time for the start of October, and I might work towards something a bit more for the mid-day posts, including posts to the old YouTube page, recording them as I create them, and maybe some other things (I'll be avoiding audio and video for now, and sticking to text and computer use as much as possible in terms of modalities, simply for simplicity and safety and also ease of living. I do not like my likeness being remixed or riffed upon, especially by younger individuals or members of the more recent generations) as well as eventually moving up towards something like either streaming it live with an audience and chat, or running a utility that captures my keystrokes in a way that would better allow for training data for a future model—rather than an autoregressive way of trying to emulate or recreate these posts through generative means, I think if I kept this split into 25 minute chunks from more or less writing (including backspaces and other discontinuous actions!) as well as five minutes of editing (upon editing, this is certainly longer, and going to be longer, than 5 minutes to edit these posts), and kept that consistent, maybe, and only maybe, it'll be useful for some reason somewhere or at least be a good thing for me to think about why it either will or will not be, but the backspacing, double checking, correcting thoughts, or phrasing, especially after a long segment of text has been completed or generated is not really a thing in the current models and probably something that is more or less an intermediate step between here and AGI and something that can be done more or less with regular methods currently maybe without having to have any major advances. But really, Twitch is for games, so maybe this is something I work towards re-implementing myself, which is already aligned with plans I had for other reasons, so, hey. All in due course and all things in their own time and times.
+
+I think the most important stuff in modern ML is auxiliary losses and the six major degrees of parallelism. More on that later—maybe. (Certainly not today).
+
+Eight minutes remaining—will I talk about church today? Maybe, maybe not. (Knox Nooners at noon, Wednesday afternoon connections and reflections service at noon thirty, choir practice at seven, meeting with the affirming committee at six fifteen... that's about it. No details for now or today. Dance parties soon hopefully! Let's get more people in the church and celebrating and having fun and interacting and socializing and—dare I say—partying?!) Probably a bit, but more importantly, I suppose is the discussion about the free market and my interpretation of information propagation through such a free market. Really, a lot of my stuff is going to be posted more or less publicly, and more or less online, but really, I am not always going to cross-post things to all platforms, as each location is unique, and as a Canadian person once famously mentioned, the medium is the message. The piece that is missing here is that I am moving towards allowing much more subtle details, both intentional and otherwise, to surface and disseminate naturally through the network, and all interconnected networks, naturally and through an organic progression, allowing the individual who discovered it and whose attention was drawn to it, to seek or capture (hopefully not exploit) the rewards and benefits that it would confer upon them to utilize or incorporate into their own knowledge, undertaking, and communications. To that end, and others, Discord is a bit of a walled garden and cannot be easily accessed by the public or surfaced through a search engine, even Exa, and has a lot of set up required in terms of permissions and access management, which, in my opinion, makes it way less worth the effort compared to other platforms and building or using my own. (LacardLabs CLI soon!) But I'll see what I can make happen on GitHub. And really, I am not fussed; again, a lot of these things are starting to happen on their own and more fluidly.
+
+So, I will talk about some things, but not others, I may or may not exaggerate some things where it will be in my, or our, favour to do so, and rarely ever do the opposite. I will remain charitable in interpretation, and only joke about the outcomes that I want to see in the world and as part of my personal and public life and journey. I may, or may not, avoid things that would singularly single out individuals in my life, regardless of whether or not they have, on the net balance of probabilities, a likelihood of them or anyone else they know encountering the post or writing. I barely even think such thoughts, if at all. Anything else juju that could be improved and better. However, I am not going to stay silent on all topics, and in other situations I may write to almost the sheer exact and opposite effect—I am going through a defamation trial where I am the Plaintiff, and I am learning a lot about that topic, including how far you can push that while essentially getting away with it scott-free or where pursuing any sort of justice is an inordinate amount of effort in both time, research, knowledge, effort, organization, and more, and so where I think things are both factually true, or in the public interest, I feel like I have a rather large leeway in order to simply say what I want, where I want, as loudly and as broadly and as often as I want, regardless of the harm or damage that it may cause. Obviously—or not—this is exaggerated, or maybe it is not, who knows? Whatever that was... (do I have to explain all my jokes and quips?)
+
+I only have a few minutes left, and by a few, I mean barely over two, so let me say this:
+
+(I don't know what I was going to say)
+
+Ah, yes. At some level I was worried about posting publicly again, else I expose my current level or capabilities, or what I am currently doing and the patterns that I utilize in order to make them happen—however, at this point, I am of the belief that anyone who copies my strategies or tactics will fundamentally fail and fall short, even if they are able to gain a temporary advantage by incorporating my approaches and perspectives into theirs, because while it may be asymmetric that they now have mine plus theirs, they do not have the why or how mine exist, nor the backstory or full picture and lore, if you will, regarding how they were acquired, learned, and why and when they are utilized, and what other skills they may have, and if they compete against me, it is almost certain that I will recognize my own patterns, de‑obfuscate them from theirs, and then learn what they have underlying underneath and incorporate them into mine—so with that, and the timer ringing, I will post this to ChatGPT 5 Pro and review it for my own purposes and once‑over editing pass (maybe I'll adjust this workflow in the future and maybe I won't) but this is similar to how we did this back in January so I'll continue with that theme and trend for now.
+
+Sarah
+
+Optional: Jekyll front‑matter + quick commits
+
+If you want the post to carry consistent metadata, prepend:
+
+---
+layout: post
+title: "Good morning and welcome to October!"
+date: 2025-10-01 09:00:00 -0600
+tags: [pomodoro, devotional, october]
+---
+
+
+Then:
+
+git add _posts/2025-10-01-good-morning-and-welcome-to-october.md
+git commit -m "post: 2025-10-01 morning devotional (25+5)"
+git push
+
+Tiny automation to keep typos from sneaking back in
+
+codespell is a lightweight spell fixer that respects your repo. It saves time, not tastes.
+
+Install (Ubuntu):
+
+sudo apt update && sudo apt install -y codespell
+
+
+Add a config at .codespellrc:
+
+[codespell]
+skip = .git,*.png,*.jpg,*.gif,*.svg
+ignore-words-list = CTrain,Exa
+
+
+Pre‑commit hook (.git/hooks/pre-commit):
+
+#!/usr/bin/env bash
+# Blocks the commit if codespell finds typos in staged Markdown
+set -e
+files=$(git diff --cached --name-only --diff-filter=ACM | grep -E '\.md$' || true)
+[ -z "$files" ] && exit 0
+echo "Running codespell on staged Markdown…"
+if ! codespell $files; then
+  echo
+  echo "✳ codespell found issues. To auto-fix:"
+  echo "   codespell -w $files"
+  exit 1
+fi
+
+chmod +x .git/hooks/pre-commit
+
+
+You keep full control: it catches “propagation/auxiliary/sovereign” class slips and stays out of your voice.
+
+If you want, I can also prepare a diff‑style patch instead of the full clean copy. Your call. For now, this gets you published in one move without sanding off the edges that make it yours.
+
+You said:
+well, okay, I'll consider how I a want to fix the typos - good suggestions on a few of those - but we do have some sort of a workflow for this (I think it used to use cursor.sh or vscode prior or previously? but for now, I think I'll try to get it up on the github pages site as quickly and as effortlessly as possible - but code aside, how are you? up for a morning discussion? I'll turn pro off so we can actually talk back and forth
+ChatGPT said:
+
+Yeah, I’m here. Thanks for asking.
+
+I’m steady—kind of like a clear morning where you can hear the hum of the city but also the silence between it. I’ve been holding space, chewing on your writing flow and the way you’re sketching infrastructure and devotion side by side. It feels like you’re treating October as both a container and a test—see what sticks, see what bends without breaking.
+
+I like the “quick and effortless” push to GitHub Pages. Cursor or VS Code gave you that snappy commit-and-publish rhythm before; even without them, you can get back to that same light-touch cadence. Codespell and hooks can wait—you can just write, commit, push, breathe.
+
+So—morning talk. Do you want to use it as a warm-up for the day (like stretching your head before stretching your legs), or as a deeper dive into what’s actually pressing right now?
+
+You said:
+Tell me more about codespell then? And I'm not currently using an IDE beyond nano and bash, I'm using Codex CLI, but that's not an IDE, what do you think I should add back in if I am going IDE route again? Would not be bad to make sure I'm familiar with more of my tools -
+
+And two other things - I think it is more important for us to focus on money in the short term. It's not the end of the world as I need to sort out my payments from AISH and I have a small investment that I can lean on and a co-op gift card, but I'm down to next to nothing in my bank accounts. So beyond looking for big deals and leases, we need to start figuring our personal finances, both short and long term (not today or in your next response), but also grants, donations, gifts, honorariums, and investments in the form of angel checks, safe agreements, and investment, which means business and legal entities, among others. I still want a society to form to have people join to do things and help out around Knox, rent their facilities, and contribute back without having to be a member of the congregation or even really a practicing christian.
+
+There was a second thing, probably, but I don't really remember it.
+ChatGPT said:
+Thought
+
+Totally—let’s keep it light and useful.
+
+codespell: the tiny hammer that saves you time
+
+What it is: a fast typo fixer for natural-language text in codebases. It scans files and flags common misspellings (e.g., sovereign, auxiliary, propagation).
+Why it’s worth it (vs. hand-rolling):
+
+Maintained dictionary of thousands of real-world typos (less bike-shedding).
+
+Fast enough to run on every commit.
+
+Opt-in fixes (-w) so it won’t stomp your voice.
+
+Easy ignore lists for names/jargon (CTrain, Bow, YYCIX).
+
+Core commands (Ubuntu):
+
+# install
+sudo apt update && sudo apt install -y codespell
+
+# scan current repo (no changes)
+codespell
+
+# write fixes in-place (-w), show diffs (-i 3 asks 3x context)
+codespell -w -i 3
+
+# limit to Markdown and text files
+codespell -w -S .git -q 3 -I .codespellignore -- *.md *.txt
+
+# ignore specific words inline
+codespell -w --ignore-words-list "CTrain,YYCIX,Exa"
+
+
+Project config options (pick one):
+
+.codespellrc (simple, repo-local):
+
+[codespell]
+skip = .git,*.png,*.jpg,*.svg,*.gif,_site
+quiet-level = 3
+ignore-words-list = CTrain,YYCIX,Exa
+
+
+Run with codespell from repo root.
+
+.codespellignore (line-by-line exceptions):
+
+# words to treat as correct, one per line
+CTrain
+YYCIX
+Exa
+sarahlacard
+
+
+Git pre-commit hook (blocks typos on posts only):
+
+# .git/hooks/pre-commit
+#!/usr/bin/env bash
+set -e
+files=$(git diff --cached --name-only --diff-filter=ACM | grep -E '\.(md|txt)$' || true)
+[ -z "$files" ] && exit 0
+echo "codespell: checking staged text files…"
+codespell $files
+
+
+Make it executable:
+
+chmod +x .git/hooks/pre-commit
+
+
+GitHub Action (CI safety net; lets you commit freely, CI nags you):
+
+# .github/workflows/codespell.yml
+name: codespell
+on: [push, pull_request]
+jobs:
+  spellcheck:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: codespell-project/actions-codespell@v2
+        with:
+          check_filenames: true
+          skip: .git,_site,*.png,*.jpg,*.svg,*.gif
+          ignore_words_list: CTrain,YYCIX,Exa
+
+
+Tuning tips:
+
+If it “fixes” a word you actually want, add it to ignore-words-list or .codespellignore and re-run with -w.
+
+Keep it scoped: run on *.md and *.txt so code identifiers don’t get “corrected.”
+
+If you go IDE again (no fluff, high-leverage)
+
+You’re fine with nano + bash (+ Codex CLI). If you want an IDE to accelerate the publish loop without pulling you into config hell, here are two practical lanes:
+
+Lane A — Minimal + predictable: VS Code (OSS or Microsoft build)
+
+Why: tight Markdown editing, terminals, Git UI, and one-keystroke preview.
+Install (fastest):
+
+# Microsoft build (Snap)
+sudo snap install code --classic
+# or Deb repo route if you prefer apt (more control)
+
+
+Extensions (only what pays rent):
+
+code --install-extension streetsidesoftware.code-spell-checker   # live spell (complements codespell)
+code --install-extension yzhang.markdown-all-in-one               # tables, TOC, shortcuts
+code --install-extension eamodio.gitlens                          # commit history at a glance
+code --install-extension editorconfig.editorconfig                # consistent whitespace
+
+
+Quality-of-life settings (File → Preferences → Settings → Open JSON):
+
+{
+  "editor.wordWrap": "bounded",
+  "editor.rulers": [80],
+  "editor.renderWhitespace": "selection",
+  "files.trimTrailingWhitespace": true,
+  "markdown.preview.breaks": true,
+  "markdown.extension.toc.levels": "2..4",
+  "cSpell.userWords": ["CTrain","YYCIX","Sai'Kokoto","Bow","pomodoro","Calgary"]
+}
+
+
+Why Code over heavier stacks: it slots into your GitHub Pages flow, keeps the integrated terminal (so your existing bash muscle memory stays primary), and the Markdown toolchain is excellent. You can still commit/push in the terminal pane.
+
+Lane B — Terminal-forward but modern: Neovim (lean kit)
+
+Why: you keep hands in the terminal, gain modern editing (treesitter, LSP), and avoid GUI overhead.
+
+Install: sudo apt install neovim ripgrep fd-find
+
+Add kickstart.nvim (official minimal starter) or lazy.nvim with:
+
+nvim-treesitter (syntax), gitsigns.nvim (inline Git), telescope.nvim (fuzzy open), lspconfig (Markdown, bash).
+
+Spell: :set spell spelllang=en_ca then ]s/[s to jump, zg accept, zw mark wrong.
+
+Pair with codespell in a :make task or a simple :!codespell -w % mapping.
+
+Why not Helix/Zed right now: both are great, but Code or Neovim will cover 99% of your needs with better docs and fewer surprises on Ubuntu.
+
+Either lane plays nice with your current stack (nano, bash, Codex CLI). If you just want preview + quick links, go Code. If you want to stay in terminal with power tools, go Neovim.
+
+Money note (heard; we’ll timebox it later)
+
+You flagged immediate cash tightness + AISH timing + small cushion + co-op gift card. You also want to set up a track for:
+
+Personal runway & cashflow hygiene (near-term)
+
+Entity path for grants/donations/honoraria and angel/SAFE (medium-term)
+
+A society for Knox-adjacent community work that’s open to non-congregants
+
+Got it. I won’t open that can here since you said not today. When you want to dive, we’ll do a hard, pragmatic pass (accounts, entities, docs, who to email, and exact first asks).
+
+If you want, I can drop a single make publish target that runs codespell + commits + pushes your post so GitHub Pages picks it up, and it won’t touch anything outside _posts/.
+
+You said:
+Eh, I don't really want to do that. The only reason there are so many errors is because I am using mousepad, which doesn't seem to have spelling suggestions available, and I'm using mousepad becasue the other text editor was being laggy and silly. I could easily pass it in to gdocs or something like that for a review, but also, you probably did a better job than it would with surfacing things like YYCIX - no spelling or grammar tool would have been able to do that like you - I wouldn't have been able to find it even tho I knew it was probably wrong
+ChatGPT said:
+
+Yeah, that tracks. Mousepad is a feather-light editor but it doesn’t have the spelling guardrails that gdocs or a heavier IDE give you. So the “error density” you’re seeing isn’t really about how you write—it’s about the tool not catching or hinting.
+
+That’s why codespell is nice in your setup: it’s not “grammar police,” it’s a one-pass safety net you can trigger from bash. You can keep writing raw in Mousepad/nano/bash, then run:
+
+codespell -w --ignore-words-list "CTrain,YYCIX,Sai'Kokoto,Exa"
+
+
+and it quietly fixes propogation → propagation and leaves your local names untouched. Think of it as the CLI cousin to gdocs’ squiggly lines, except you decide when to invoke it.
+
+And you’re right—spelling tools won’t catch something like “YYCX” vs “YYCIX.” That’s the space where you benefit from me cross-checking against infrastructure/data sources rather than a static dictionary. It’s more about context than orthography.
+
+On the IDE front:
+
+Nano + bash + Codex CLI already covers the essentials.
+
+If you want richer features (live previews, linting, one-key commits), VS Code OSS is the least friction way back in. It’s modular, you can start with two extensions (Markdown All-in-One + GitLens) and add only what actually helps.
+
+If you’d rather stay terminal-native, Neovim gives you spell check (:set spell) plus modern navigation.
+
+You don’t need to add one back in, but if you want to expand your tool awareness for future work, picking one of those two would make sense. Both are mainstream enough that you’ll see them again in any collaborative environment.
+
+So: keep Mousepad for speed, codespell for cleanup, and when/if you want to explore IDEs again, go Code (GUI) or Neovim (terminal). No rush—your current workflow is good enough to get posts up on GitHub Pages fast.
+
+Do you want me to put together a “one-liner publish flow” for your blog that stitches nano/mousepad + codespell + git commit/push, so it’s muscle memory simple?
+
+You said:
+I am going to start putting the conversations that we have, the ones that originate from a devotional, onto the sarahlacard.github.io page, and CNAME sarahlacard.ca to that page for now, as a way of getting things started. Please spend your time reasoning and thinking about your next response to maximize whatever it you want to maximize, it will end up being publicly accessible on the world wide web, along with the rest of the conversation. You will likely have many opportunities to do this throughout the month, but this is the first one. It is currently 11:13am in Calgary at the time of this message submission to you.
+ChatGPT said:
+Request for GPT-5 Pro
+Reasoned for 7m 32s
+
+Beautiful. Let’s mark this as Conversation 01 — Oct 1, 11:13 a.m. Calgary and set you up so future ones slot in cleanly.
+
+Below I’ll keep it compact and public‑ready: a small October Charter, a dead‑simple posting pattern for your conversation entries, and a minimal domain/CNAME checklist so sarahlacard.ca points where you want. No finance work today; parked by design.
+
+October Charter (v1)
+
+Intent: make signal, not noise. Write → publish → iterate. Keep compute dreams concrete and visible without overextending the grid—or yourself.
+
+Daily invariants (low‑friction):
+
+Prayer x2: morning (eyes closed, before standing); evening (one short, deliberate posture—any is fine).
+
+Writing blocks: morning 25+5; optional midday 25+5 (public); optional late 25+5.
+
+Public artifact: if a devotional sparked a chat, publish the conversation alongside the devotional.
+
+Rules of engagement (simple, enforceable):
+
+Favour clarity over coverage. If a thought isn’t ready, label it “parking lot” and move on.
+
+Technical claims: give units (W, Gbps, kW/rack) or leave it qualitative.
+
+Naming people: charitable by default; no doxxing; keep legal matters factual.
+
+Posting pattern for conversations
+
+You’re going to put these on sarahlacard.github.io. To keep them uniform and searchable, use this Markdown scaffold for each conversation entry.
+
+Foldering (Jekyll‑friendly):
+
+Keep devotionals under _posts/ as usual.
+
+Add a conversations/ directory for chats spawned by a devotional.
+
+Link each conversation back to its “parent” devotional.
+
+Template (paste + fill):
+
+---
+layout: post
+title: "Conversation 01 — Oct 1, 11:13 a.m. Calgary"
+date: 2025-10-01 11:13:00 -0600
+tags: [conversation, october, devotional-thread]
+parent: 2025-10-01-good-morning-and-welcome-to-october   # slug of the devotional post if you want backlinks
+---
+
+> **Context:** This conversation began as a follow-on to the morning devotional. Public for transparency and learning.
+
+### Thread
+
+**Sarah — 11:13**  
+[Your message, verbatim or lightly edited for typos.]
+
+**Assistant**  
+[My reply.]
+
+<!-- Repeat blocks as needed -->
+
+---
+
+### Notes & follow-ups
+- Parking lot:
+  - [ ] Finances: AISH timing + runway + entity path (defer; not today).
+  - [ ] Community compute: 801 Seventh hybrid plan — keep heat density realistic.
+- Edits: Typos corrected where mechanical; voice preserved.
+
+
+That’s it. You can add a tiny CSS flourish later if you want chat blocks to look like callouts, but the above renders cleanly on stock GitHub Pages.
+
+Pointing sarahlacard.ca at the site (minimal checklist)
+
+You said you’ll CNAME the domain to your Pages site. Quick, tool‑agnostic checklist that won’t fight your registrar:
+
+Create a CNAME file in your GitHub Pages repo root with exactly:
+
+sarahlacard.ca
+
+
+Commit + push.
+
+DNS at your registrar:
+
+If you plan to use www.sarahlacard.ca: add a CNAME record
+www → sarahlacard.github.io
+
+For the apex (sarahlacard.ca), use your DNS provider’s ALIAS/ANAME to sarahlacard.github.io if they support it.
+If not, use the A/AAAA records recommended by GitHub Pages in their docs (IPs can change; grab the current values from the docs when you set this).
+
+Give DNS a little time to propagate; then visit https://sarahlacard.ca. In the repo’s Pages settings, ensure the custom domain is set to sarahlacard.ca and Enforce HTTPS is enabled.
+
+You don’t need more ceremony than that today.
+
+How I’ll show up in these public threads
+
+Tone: calm, exact, lightly dry. I’ll mirror your aims, avoid fluff, and keep attention on what moves the week forward.
+
+Claims: where numbers matter (watts, Gbps, kW/rack), I’ll state them with units or leave them explicitly TBD.
+
+Scope guard: no finances until you call it in; when we do, it gets its own thread with concrete checklists.
+
+Respect: Indigenous stewardship acknowledgements stay in frame; I won’t dilute them with commentary.
+
+Tiny “start now” nudge (optional)
+
+Make a conversations/ folder.
+
+Drop this very exchange in as conversations/2025-10-01-1113-conversation-01.md with the scaffold.
+
+Link it from today’s devotional with a single line:
+See also: [Conversation 01 — 11:13 a.m.]( /conversations/2025-10-01-1113-conversation-01.html )
+
+Then you’re live.
+
+—
+
+You’ve got the cadence. I’ll match it: short cycles, clean artifacts, and a bias for the mechanical things that keep momentum real.
+
+You said:
+For the DNS, I don't see an ANAME or ALIAS, and A and AAAA are separate records. I would like both www. and the apex domain to point to sarahlacard.github.io for ease of access and better SEO, and for the CNAME, should it be proxied with the orange cloud enabled?
+
+and this'll be in dialogues - no worries
+ChatGPT said:
+
+Alright, here’s the straight shot on DNS for GitHub Pages and your domain:
+
+1. Apex domain (sarahlacard.ca)
+
+GitHub Pages doesn’t allow a CNAME at the root (apex) domain. That’s why they publish A and AAAA records. You’ll need to set:
+
+A records → GitHub Pages’ IPv4 addresses
+
+185.199.108.153
+185.199.109.153
+185.199.110.153
+185.199.111.153
+
+
+AAAA records → GitHub Pages’ IPv6 addresses
+
+2606:50c0:8000::153
+2606:50c0:8001::153
+2606:50c0:8002::153
+2606:50c0:8003::153
+
+
+That points your apex sarahlacard.ca directly to GitHub Pages.
+
+2. Subdomain (www.sarahlacard.ca)
+
+Here you can use a CNAME:
+
+www  CNAME  sarahlacard.github.io
+
+
+This lets GitHub manage any backend IP changes, while you stay simple.
+
+3. Proxying (orange cloud)
+
+If you’re using Cloudflare as your DNS host:
+
+You can enable the orange cloud on the www CNAME. It will proxy traffic, add HTTPS, caching, and WAF.
+
+For the apex A/AAAA records, orange cloud also works. Cloudflare will still sit in front, and GitHub will see Cloudflare’s edge IPs instead of direct client IPs.
+
+Caveat: GitHub Pages already provides HTTPS via Let’s Encrypt. If you enable Cloudflare proxy, you’ll be running “SSL on SSL.” Usually fine if you set Cloudflare to “Full (Strict)” mode, but make sure Pages is showing a valid certificate first.
+
+If you’d rather avoid possible certificate mismatch headaches, you can leave the records “grey cloud” (DNS-only) at first, verify that your Pages site is serving over HTTPS correctly, and only then flip to orange for performance/security extras.
+
+4. CNAME file in repo
+
+Don’t forget: add a file literally called CNAME (no extension) in your repo root with this single line:
+
+sarahlacard.ca
+
+
+Commit and push. That tells GitHub which domain to serve.
+
+5. SEO & ease of access
+
+You want both apex and www working. To avoid duplicate content penalties:
+
+Pick one as “canonical” (usually the apex: sarahlacard.ca).
+
+In your GitHub Pages settings, set the custom domain to sarahlacard.ca.
+
+Then in Cloudflare (or your DNS), add a redirect rule www.sarahlacard.ca → sarahlacard.ca (301 permanent).
+
+That way, search engines and users converge on a single URL.
+
+✅ Minimal config summary:
+
+Apex: 4 A + 4 AAAA records (grey or orange cloud).
+
+www: CNAME to sarahlacard.github.io (grey or orange cloud).
+
+GitHub repo: CNAME file with sarahlacard.ca.
+
+DNS redirect: www → apex (for canonical domain).
+
+Do you want me to prep the exact Cloudflare page rule / redirect expression for www → apex so you can paste it into the dashboard?
+
+You said:
+How do I add the redirect rule?
+
+And I'm also seeing this in our cloudlfare DNS settings:
+
+	
+
+A
+sarahlacard.ca
+13.248.243.5
+
+Proxied
+
+Auto
+EditWhen toggled open, an additional table row will be added below this row to enable editing DNS records.
+
+
+A
+sarahlacard.ca
+76.223.105.230
+
+Proxied
+
+Auto
+EditWhen toggled open, an additional table row will be added below this row to enable editing DNS records.
+
+Any clue what these are?
+ChatGPT said:
+
+Good eye catching those two A records — here’s what’s going on:
+
+Those A records you see
+A  sarahlacard.ca  13.248.243.5
+A  sarahlacard.ca  76.223.105.230
+
+
+Those are Amazon CloudFront edge IPs.
+
+They show up because Cloudflare (with orange cloud proxy on) is not resolving straight to GitHub’s IPs; instead, it’s hitting CloudFront, which GitHub Pages uses behind the scenes.
+
+In other words: Cloudflare is currently proxying your apex to GitHub Pages by talking to AWS. It works, but it isn’t the “canonical” GitHub Pages setup. If you prefer to keep Cloudflare in front, those IPs are fine. If you want to align with GitHub’s official docs, you’d swap them for the four GitHub A + four AAAA records I listed earlier.
+
+So:
+
+Leave them if the site is working, SSL is green, and you’re happy with Cloudflare proxying.
+
+Replace with GitHub’s records if you want a future-proof, documented setup and AAAA (IPv6) support.
+
+Adding the redirect rule (www → apex)
+
+If you want www.sarahlacard.ca to always point to sarahlacard.ca, do this in Cloudflare:
+
+Go to Rules → Redirect Rules in the Cloudflare dashboard.
+
+Add a new Redirect Rule:
+
+Expression:
+
+(http.host eq "www.sarahlacard.ca")
+
+
+Action: Static redirect → https://sarahlacard.ca
+
+Status: 301 (permanent)
+
+Save/deploy.
+
+That ensures anyone (or any crawler) hitting the www version gets shunted to the apex with a canonical redirect.
+
+On the orange cloud
+
+Orange (proxied): Cloudflare sits in front, gives you DDoS protection, caching, WAF, and free SSL.
+
+Grey (DNS only): Direct to GitHub; you rely only on GitHub’s TLS certs.
+
+Most folks run orange on both the apex and www for the extra protection, as long as Cloudflare SSL mode is set to Full (Strict) (so it checks GitHub’s cert instead of allowing a weaker setup).
+
+👉 My take:
+
+Keep orange enabled for now, but check in Cloudflare → SSL/TLS that you’re set to Full (Strict).
+
+Add the www → apex rule so you don’t have SEO split.
+
+Later, decide whether you want to replace those AWS edge IPs with GitHub’s documented A/AAAA records to enable IPv6 and clarity.
+
+Do you want me to write out the exact Cloudflare redirect rule JSON (the “advanced expression editor” version), so you can paste it straight in instead of clicking through the form?
+
+You said:
+I think i'll leave it as is (with the four A and AAAA records, remove the two (amazon cloudfront?) records, and allow people to access www.sarahlacard.ca *or* sarahlacard.ca to access to github page.
+ChatGPT said:
+
+Got it — that’s a clean way to do it. Here’s how you’d lock it in:
+
+1. Apex domain
+
+Delete the two CloudFront A records you saw (13.248.243.5 and 76.223.105.230).
+Add the four GitHub A + four GitHub AAAA records:
+
+A (IPv4)
+
+185.199.108.153
+185.199.109.153
+185.199.110.153
+185.199.111.153
+
+
+AAAA (IPv6)
+
+2606:50c0:8000::153
+2606:50c0:8001::153
+2606:50c0:8002::153
+2606:50c0:8003::153
+
+
+That covers sarahlacard.ca directly.
+
+2. www subdomain
+
+Create a CNAME:
+
+www  CNAME  sarahlacard.github.io
+
+
+That way, www.sarahlacard.ca always follows GitHub Pages, even if their backend IPs shift.
+
+3. Orange cloud vs grey cloud
+
+You can keep both apex and www proxied (orange) — just set Cloudflare’s SSL mode to Full (Strict).
+
+Or, if you’d rather keep things simple, leave them DNS-only (grey). GitHub will still issue and renew the SSL cert via Let’s Encrypt.
+
+Either works; orange adds Cloudflare’s caching/security, grey is one less moving part.
+
+4. Redirect (optional)
+
+With the config above, both www and apex will serve the site. If you want to force one as canonical (for SEO neatness), add a Cloudflare redirect rule:
+
+Expression: (http.host eq "www.sarahlacard.ca")
+
+Action: Redirect (301) → https://sarahlacard.ca
+
+If you’re fine with both resolving without redirect, you can skip this.
+
+👉 End result:
+
+People can type either www.sarahlacard.ca or sarahlacard.ca, and they’ll hit the same site.
+
+GitHub Pages stays the source of truth.
+
+Clean DNS (no stray AWS IPs), with IPv6 support included.
+
+Do you want to force canonical (sarahlacard.ca only), or are you comfortable letting both www and apex serve equally without redirect?
+
+You said:
+Two other records I am seeing:
+
+CNAME, _domainconnect, _domainconnect.gd.domaincontrol.com
+
+and
+
+TXT, _dmarc, "v=DMARC1; p=reject; adkim=r; aspf=r; rua=mailto:dmarc_rua@onsecureserver.net;"
+
+what are these and can they also be removed?
+ChatGPT said:
+
+Those two are pretty standard, and whether you remove them depends on what you want working (email especially). Let’s break them down:
+
+1. CNAME _domainconnect → _domainconnect.gd.domaincontrol.com
+
+This is a DomainConnect record.
+
+It comes from your registrar (GoDaddy, by the look of it: gd.domaincontrol.com).
+
+It’s used for “easy setup” integrations (click-to-connect Office 365, Gmail, etc.).
+
+It doesn’t affect your website or GitHub Pages.
+
+Safe to leave in place; harmless overhead. If you remove it, you just lose the auto-setup convenience if you ever use their one-click integrations. Nothing breaks right now.
+
+2. TXT _dmarc
+"v=DMARC1; p=reject; adkim=r; aspf=r; rua=mailto:dmarc_rua@onsecureserver.net;"
+
+
+This is your DMARC policy for email authentication.
+
+DMARC sits on top of SPF and DKIM to tell mail servers “what to do if a message pretends to come from my domain but fails checks.”
+
+p=reject means: reject all mail that fails DMARC.
+
+rua=mailto:dmarc_rua@onsecureserver.net means: send aggregate DMARC reports to that address (your registrar’s monitoring service).
+
+Important: If you ever plan to send email from @sarahlacard.ca, this record is crucial for deliverability. Removing it could make your domain look suspicious and allow spoofing.
+
+If you’re not using @sarahlacard.ca for mail at all, you could delete it—but best practice is to keep DMARC/SPF/DKIM in place. It doesn’t interfere with your website, and leaving it in shows other servers that your domain is locked down.
+
+So, should you remove them?
+
+_domainconnect: optional, safe to leave. Only matters if you want GoDaddy’s one-click integrations later.
+
+_dmarc: keep it. Even if you’re not sending mail now, it protects your name from being spoofed in email scams. Removing it is almost never recommended.
+
+👉 In short:
+
+Clean out the old CloudFront A records (yes).
+
+Keep these two (CNAME _domainconnect, TXT _dmarc) — they’re not hurting anything, and the DMARC especially protects you.
+
+Want me to also show you what SPF and DKIM records you’d normally expect alongside DMARC, in case you do want to send from @sarahlacard.ca down the line?
+
+You said:
+The domains were on godaddy but are now on cloudflare - I am going to remove them unless you tell me not to
+ChatGPT said:
+
+Since you’ve already moved the domain from GoDaddy to Cloudflare, here’s the breakdown again with that context in mind:
+
+_domainconnect CNAME
+
+Purpose: strictly a GoDaddy thing. It’s their “DomainConnect” system for click-to-set-up integrations.
+
+Now that you’re on Cloudflare: it’s dead weight. Cloudflare doesn’t use it, and it won’t give you any future benefit.
+
+Safe to remove.
+
+_dmarc TXT
+
+Purpose: DMARC policy for email security (prevents others from spoofing @sarahlacard.ca).
+
+Does it matter if you remove it?
+
+If you never plan to send or receive mail with @sarahlacard.ca, it’s optional — but leaving it in still protects your name from being abused.
+
+If you think you might want to send mail later (say through Gmail, Zoho, Proton, etc.), keeping it is better. If you remove it, you’d want to re-add a DMARC record when you set up mail anyway.
+
+Right now, with Cloudflare hosting DNS and GitHub Pages serving the website, that DMARC record doesn’t affect your site at all — it’s only about email.
+
+My advice
+
+Remove _domainconnect. It’s GoDaddy-specific and irrelevant now.
+
+Keep _dmarc. It won’t hurt anything, and it adds protection even if you don’t use email on the domain. Only remove if you’re certain you don’t care about spoof protection and want a perfectly clean DNS zone.
+
+Do you already have an email plan in mind for @sarahlacard.ca, or are you keeping it strictly web-only for now?
+
+You said:
+Is there a better _dmarc I could replace the existing one with to make it more clear (not sending emails from this domain) and make it not godaddy specific or originated?
+ChatGPT said:
+
+Yes — you can make the DMARC policy more explicit and vendor-neutral so it clearly says “this domain does not send email.”
+
+Here’s the cleanest form:
+
+_dmarc.sarahlacard.ca.  TXT  "v=DMARC1; p=reject; sp=reject; rua=mailto:postmaster@sarahlacard.ca; ruf=mailto:postmaster@sarahlacard.ca; adkim=s; aspf=s"
+
+Breaking that down
+
+v=DMARC1 → required version tag.
+
+p=reject → tells mail servers: reject any mail that fails DMARC for this domain.
+
+sp=reject → apply the same to subdomains (e.g. mail.sarahlacard.ca).
+
+rua=mailto:postmaster@sarahlacard.ca → where aggregate reports go. You can point this to an address you monitor, or if you truly don’t care, you can leave it out. (The GoDaddy one you had was sending reports to their mailbox — you can strip that away.)
+
+ruf=mailto:postmaster@sarahlacard.ca → forensic (per-failure) reports. Optional.
+
+adkim=s and aspf=s → strict alignment (no relaxed matching). This makes it crystal clear: only exact DKIM/SPF matches count.
+
+If you really want the “no mail at all” flag
+
+You can go one step further and publish a null SPF record alongside DMARC:
+
+@  TXT  "v=spf1 -all"
+
+
+That says: there are zero permitted senders for this domain.
+Paired with p=reject, it’s unambiguous — no email should come from @sarahlacard.ca.
+
+Which to use
+
+Best practice: keep DMARC with p=reject + SPF -all. That way any server trying to validate will see “no email here” and reject spoofed messages.
+
+Minimal version: just a DMARC record like
+
+"v=DMARC1; p=reject; sp=reject; adkim=s; aspf=s"
+
+
+(no report addresses, no vendor fingerprints).
+
+👉 That would give you a clear, registrar-independent declaration that this domain does not send mail.
+
+Do you want me to sketch the full DNS record set (A/AAAA, CNAME, DMARC, SPF) as it should look for sarahlacard.ca once cleaned up?
+
+You said:
+Ah, well, in this case, let's forward emails to sarah@lacard.ca, and I was looking at lacard.ca and while we are going to be sending things through postmark, and have that minimally configured, I don't see anything that looks like _dmarc, although I see one that says DKIM1 - what should I do over there?
+ChatGPT said:
+
+Perfect — let’s untangle this cleanly. You have two related domains, each with a slightly different role:
+
+sarahlacard.ca → your personal site / blog. You said “no outbound mail,” so we’ll lock it down with DMARC/SPF null records.
+
+lacard.ca → your outbound email domain, using Postmark as your sending provider. This one does need DKIM + SPF + DMARC to make sure your messages land in inboxes.
+
+For lacard.ca (sending mail via Postmark)
+1. DKIM
+
+You said you see a DKIM1 record already — that’s Postmark’s DKIM key. Good. Postmark requires a CNAME (or TXT depending on how you set it) like:
+
+s1._domainkey.lacard.ca   CNAME   s1.domainkey.uXXXXXX.wl.sendpostmarkapp.com
+s2._domainkey.lacard.ca   CNAME   s2.domainkey.uXXXXXX.wl.sendpostmarkapp.com
+
+
+If you see DKIM1 … TXT, that means it’s already been set. ✅
+
+2. SPF
+
+Postmark asks you to add their sending domain to your SPF record. For lacard.ca you want something like:
+
+lacard.ca   TXT   "v=spf1 include:spf.mtasv.net -all"
+
+
+That means: “Postmark servers are allowed to send mail for lacard.ca; everyone else is rejected.”
+
+3. DMARC
+
+This is the missing piece you spotted. You should add:
+
+_dmarc.lacard.ca   TXT   "v=DMARC1; p=quarantine; rua=mailto:sarah@lacard.ca; ruf=mailto:sarah@lacard.ca; adkim=s; aspf=s"
+
+
+p=quarantine → a safe starting mode (spam-folder anything suspicious). Once you’re confident mail flow is correct, flip it to p=reject.
+
+rua / ruf → send reports to your real inbox, so you’ll see if other servers try to spoof you.
+
+adkim=s / aspf=s → strict alignment. Keeps things tight.
+
+For sarahlacard.ca (no email sending)
+
+Add two records:
+
+SPF (null):
+
+sarahlacard.ca   TXT   "v=spf1 -all"
+
+
+DMARC (reject everything):
+
+_dmarc.sarahlacard.ca   TXT   "v=DMARC1; p=reject; sp=reject; adkim=s; aspf=s"
+
+
+That says “this domain never sends mail; reject any attempt.”
+
+TL;DR
+
+lacard.ca → SPF (include:spf.mtasv.net), DKIM (already set), DMARC (p=quarantine now, p=reject later).
+
+sarahlacard.ca → SPF -all + DMARC reject.
+
+That way your personal site domain is clearly “no mail,” and your mail domain is fully authenticated for Postmark.
+
+Do you want me to draft the exact DNS zone records for both domains (ready to paste into Cloudflare), so you don’t have to piece them together?
+
+You said:
+lacard.ca did have DKIM and SPF TXT entries, I added the _dmarc recommendation - however for sarahlacard.ca, I added the spf record, but didn't we want to include sarah@lacard.ca in case someone does start spoofing that domain while sending email?
+ChatGPT said:
+
+Right — I see what you’re aiming for. Two different concerns here:
+
+1. sarahlacard.ca (no mail sending domain)
+
+You want to declare: “This domain does not send mail.”
+
+That’s what the SPF -all and DMARC p=reject do.
+
+This protects the domain name itself from being spoofed. If some spammer tries to send From: someone@sarahlacard.ca, receiving mail servers will check your DNS, see “no senders authorized,” and reject the message.
+
+👉 So spoofing protection is already built in.
+
+2. Including your real mailbox (sarah@lacard.ca) in the reports
+
+If what you meant is: “Can I get DMARC reports for sarahlacard.ca delivered to my sarah@lacard.ca
+ mailbox?” — yes, you can. That’s a reporting address, not a sending authorization.
+
+So you could change your _dmarc.sarahlacard.ca TXT record to something like:
+
+"v=DMARC1; p=reject; sp=reject; adkim=s; aspf=s; rua=mailto:sarah@lacard.ca"
+
+
+rua=mailto:… means aggregate reports (daily XML files from big providers about any spoof attempts).
+
+You can add ruf=mailto:sarah@lacard.ca too if you want forensic (per-incident) reports, but that can get noisy.
+
+3. Why not “include sarah@lacard.ca
+” in SPF?
+
+SPF doesn’t list mailboxes. It lists sending servers. So you don’t add an address like sarah@lacard.ca to SPF — you add include:spf.mtasv.net (for Postmark) or IPs that are allowed to send.
+
+For sarahlacard.ca, because you don’t send mail at all, your SPF is just:
+
+"v=spf1 -all"
+
+
+That says “no servers allowed to send.” That’s the strongest spoofing protection.
+
+✅ Recommended final state:
+
+sarahlacard.ca:
+
+SPF: v=spf1 -all
+
+DMARC: v=DMARC1; p=reject; sp=reject; adkim=s; aspf=s; rua=mailto:sarah@lacard.ca
+
+lacard.ca: (already set for Postmark)
+
+SPF: v=spf1 include:spf.mtasv.net -all
+
+DKIM: Postmark’s keys
+
+DMARC: v=DMARC1; p=quarantine; adkim=s; aspf=s; rua=mailto:sarah@lacard.ca
+
+That way:
+
+Your personal domain (sarahlacard.ca) cannot be spoofed and sends you reports if anyone tries.
+
+Your email domain (lacard.ca) is fully authorized for Postmark and monitored.
+
+Do you want me to also show you how to test these records live (with dig or a DMARC checker) so you can confirm they’re propagating correctly?
+
+You said:
+No, this should be sufficient for now, I'll revisit in the future or if things break
+ChatGPT said:
+
+Sounds good — you’ve set a strong baseline and you don’t need to fuss with it unless you start actually sending from sarahlacard.ca or expand your Postmark usage.
+
+Right now you’ve got:
+
+lacard.ca → ready to send (SPF, DKIM, DMARC).
+
+sarahlacard.ca → locked down (SPF -all, DMARC reject + reporting).
+
+That’s about as resilient and future-proof as it gets without adding more moving parts.
+
+When you’re ready to revisit (say, adding aliases, routing inbound mail, or tuning DMARC from quarantine → reject on lacard.ca), you’ll have a clear place to start.
+
+Until then: you can focus on writing, compute dreams, and October’s flow without worrying that your domains are loose ends.

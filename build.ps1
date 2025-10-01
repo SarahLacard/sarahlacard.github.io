@@ -40,7 +40,8 @@ function Write-FileInfo {
 function Remove-OrphanedHtml {
     param (
         [string]$sourceDir,
-        [string]$outputDir
+        [string]$outputDir,
+        [string]$sourceExtension = ".txt"
     )
     
     Write-Log "Cleaning up orphaned HTML files in $outputDir"
@@ -52,7 +53,7 @@ function Remove-OrphanedHtml {
             $sourceFile = if ($sourceDir -eq "_vera") {
                 Join-Path $sourceDir "log.txt"
             } else {
-                Join-Path $sourceDir ($htmlFile.BaseName + ".txt")
+                Join-Path $sourceDir ($htmlFile.BaseName + $sourceExtension)
             }
             
             # If corresponding source file doesn't exist, remove the html file
@@ -68,7 +69,7 @@ try {
     Write-Log "Starting build..."
 
     # Verify required directories exist
-    @("_weblogs", "_dialogues", "_vera", "_templates", "weblogs", "dialogues", "vera") | ForEach-Object {
+    @("_weblogs", "_dialogues", "_vera", "_sessions", "_templates", "weblogs", "dialogues", "vera", "sessions") | ForEach-Object {
         Write-Log "Checking directory: $_"
         if (-not (Test-Path $_)) {
             Write-Log "Creating directory: $_"
@@ -80,9 +81,10 @@ try {
     Remove-OrphanedHtml "_weblogs" "weblogs"
     Remove-OrphanedHtml "_dialogues" "dialogues"
     Remove-OrphanedHtml "_vera" "vera"
+    Remove-OrphanedHtml "_sessions" "sessions" ".jsonl"
 
     # Verify template files exist
-    @("_templates/post.html", "_templates/vera.html") | ForEach-Object {
+    @("_templates/post.html", "_templates/vera.html", "_templates/session.html") | ForEach-Object {
         if (-not (Test-Path $_)) {
             throw "Required template file not found: $_"
         }
@@ -92,6 +94,7 @@ try {
     Write-Log "Reading templates"
     $postTemplate = Get-Content -Raw "_templates/post.html" -ErrorAction Stop
     $veraTemplate = Get-Content -Raw "_templates/vera.html" -ErrorAction Stop
+    $sessionTemplate = Get-Content -Raw "_templates/session.html" -ErrorAction Stop
 
     # Function to convert entries for a section
     function Convert-Section {
@@ -100,7 +103,8 @@ try {
             [string]$outputDir,
             [string]$sectionPattern,
             [string]$template = $postTemplate,
-            [switch]$isVera
+            [switch]$isVera,
+            [switch]$isSessions
         )
         
         Write-Log "Converting section: $sourceDir -> $outputDir"
@@ -138,6 +142,151 @@ try {
                     <a href="./$outputDir/log.html">Vera's Commentary</a>
                 </div>
 "@
+            }
+        } elseif ($isSessions) {
+            if (Test-Path "$sourceDir/*.jsonl") {
+                $sessions = Get-ChildItem "$sourceDir/*.jsonl" -ErrorAction Stop | Sort-Object Name -Descending
+
+                foreach ($session in $sessions) {
+                    Write-Log "Converting session file: $($session.Name)"
+
+                    if ($session.BaseName -notmatch '^\d{4}-\d{2}-\d{2}-\d{4}$') {
+                        Write-Warning "Session file $($session.Name) does not match expected format YYYY-MM-DD-HHMM.jsonl"
+                        continue
+                    }
+
+                    $date = $session.BaseName -replace "(\d{4})-(\d{2})-(\d{2})-(\d{2})(\d{2})", '$1-$2-$3 $4:$5'
+
+                    $lines = Get-Content $session.FullName -Encoding UTF8 -ErrorAction Stop
+                    $messages = @()
+
+                    foreach ($line in $lines) {
+                        $trimmed = $line.Trim()
+                        if ([string]::IsNullOrWhiteSpace($trimmed)) {
+                            continue
+                        }
+
+                        try {
+                            $messages += $trimmed | ConvertFrom-Json
+                        }
+                        catch {
+                            Write-Warning "Skipping invalid JSON line in $($session.Name): $trimmed"
+                        }
+                    }
+
+                    if (-not $messages) {
+                        Write-Warning "No valid messages found in $($session.Name)"
+                        continue
+                    }
+
+                    $title = $null
+                    foreach ($msg in $messages) {
+                        if ($msg.PSObject.Properties.Match('title')) {
+                            $candidate = $msg.title
+                            if (-not [string]::IsNullOrWhiteSpace($candidate)) {
+                                $title = $candidate.Trim()
+                                break
+                            }
+                        }
+
+                        if ($msg.PSObject.Properties.Match('meta')) {
+                            $meta = $msg.meta
+                            if ($meta -and $meta.PSObject.Properties.Match('title')) {
+                                $candidate = $meta.title
+                                if (-not [string]::IsNullOrWhiteSpace($candidate)) {
+                                    $title = $candidate.Trim()
+                                    break
+                                }
+                            }
+                        }
+
+                        if ($msg.PSObject.Properties.Match('type') -and $msg.type -eq 'meta' -and $msg.PSObject.Properties.Match('summary')) {
+                            $candidate = $msg.summary
+                            if (-not [string]::IsNullOrWhiteSpace($candidate)) {
+                                $title = $candidate.Trim()
+                                break
+                            }
+                        }
+                    }
+
+                    if (-not $title) {
+                        $title = "Session $date"
+                    }
+
+                    $encodedTitle = [System.Web.HttpUtility]::HtmlEncode($title)
+
+                    $sessionContent = @()
+                    foreach ($msg in $messages) {
+                        $role = 'message'
+                        if ($msg.PSObject.Properties.Match('role')) {
+                            $role = $msg.role
+                        } elseif ($msg.PSObject.Properties.Match('type')) {
+                            $role = $msg.type
+                        }
+
+                        if ([string]::IsNullOrWhiteSpace($role)) {
+                            $role = 'message'
+                        }
+
+                        $timestamp = if ($msg.PSObject.Properties.Match('timestamp')) { $msg.timestamp } else { $null }
+
+                        $contentValue = $null
+                        if ($msg.PSObject.Properties.Match('content')) {
+                            $contentValue = $msg.content
+                        } elseif ($msg.PSObject.Properties.Match('text')) {
+                            $contentValue = $msg.text
+                        }
+
+                        if ($contentValue -is [System.Collections.IEnumerable] -and -not ($contentValue -is [string])) {
+                            $contentValue = ($contentValue | ForEach-Object { $_.ToString() }) -join "`n"
+                        }
+
+                        $contentString = if ($contentValue) { $contentValue.ToString() } else { '' }
+                        $encodedContent = [System.Web.HttpUtility]::HtmlEncode($contentString)
+                        $encodedRole = [System.Web.HttpUtility]::HtmlEncode($role)
+
+                        $roleClass = ($role -replace "[^a-zA-Z0-9]", "-").ToLowerInvariant()
+                        if ([string]::IsNullOrWhiteSpace($roleClass)) {
+                            $roleClass = "message"
+                        }
+
+                        $timestampHtml = ''
+                        if ($timestamp) {
+                            $encodedTimestamp = [System.Web.HttpUtility]::HtmlEncode($timestamp.ToString())
+                            $timestampHtml = "<div class=\"session-timestamp\">$encodedTimestamp</div>"
+                        }
+
+                        $sessionContent += @"
+        <div class="session-turn session-$roleClass">
+            <div class="session-role">$encodedRole</div>
+            $timestampHtml
+            <pre>$encodedContent</pre>
+        </div>
+"@
+                    }
+
+                    $contentHtml = $sessionContent -join ""
+
+                    $outputDirPath = Join-Path (Get-Location) $outputDir
+                    $outputFile = Join-Path $outputDirPath "$($session.BaseName).html"
+                    if (-not (Test-Path $outputDirPath)) {
+                        New-Item -ItemType Directory -Path $outputDirPath -Force | Out-Null
+                    }
+
+                    Write-Log "Generating session HTML file: $outputFile"
+                    $html = $template.Replace('{{title}}', $encodedTitle)
+                    $html = $html.Replace('{{date}}', [System.Web.HttpUtility]::HtmlEncode($date))
+                    $html = $html.Replace('{{content}}', $contentHtml)
+
+                    [System.IO.File]::WriteAllText($outputFile, $html, [System.Text.UTF8Encoding]::new($false))
+
+                    $entries += @"
+                    <div class="weblog-entry">
+                        <span class="weblog-date">[$date]</span>
+                        <a href="./$outputDir/$($session.BaseName).html">$encodedTitle</a>
+                    </div>
+"@
+                }
             }
         } else {
             # Handle regular text files
@@ -202,10 +351,13 @@ try {
     # Convert each section
     Write-Log "Converting weblogs section"
     [string[]]$weblogEntries = Convert-Section "_weblogs" "weblogs" '(<div class="folder">weblogs</div>\s*<div class="indent">)(.*?)(\s*</div>\s*\s*<div class="folder">dialogues</div>)'
-    
+
     Write-Log "Converting dialogues section"
-    [string[]]$dialogueEntries = Convert-Section "_dialogues" "dialogues" '(<div class="folder">dialogues</div>\s*<div class="indent">)(.*?)(\s*</div>\s*\s*<div class="folder">vera</div>)'
-    
+    [string[]]$dialogueEntries = Convert-Section "_dialogues" "dialogues" '(<div class="folder">dialogues</div>\s*<div class="indent">)(.*?)(\s*</div>\s*\s*<div class="folder">sessions</div>)'
+
+    Write-Log "Converting sessions section"
+    [string[]]$sessionEntries = Convert-Section "_sessions" "sessions" '(<div class="folder">sessions</div>\s*<div class="indent">)(.*?)(\s*</div>\s*\s*<div class="folder">vera</div>)' -Template $sessionTemplate -IsSessions
+
     Write-Log "Converting Vera's commentary"
     [string[]]$veraEntries = Convert-Section "_vera" "vera" '(<div class="folder">vera</div>\s*<div class="indent">)(.*?)(\s*</div>\s*\s*<div class="file">projects</div>)' -Template $veraTemplate -IsVera
 
@@ -224,7 +376,11 @@ try {
 
     # Update dialogues section
     Write-Log "Updating dialogues section in index.html"
-    $indexHtml = $indexHtml -replace '(?s)(<div class="folder">dialogues</div>\s*<div class="indent">)(.*?)(\s*</div>\s*\s*<div class="folder">vera</div>)', "`$1`n$($dialogueEntries -join "`n")`$3"
+    $indexHtml = $indexHtml -replace '(?s)(<div class="folder">dialogues</div>\s*<div class="indent">)(.*?)(\s*</div>\s*\s*<div class="folder">sessions</div>)', "`$1`n$($dialogueEntries -join "`n")`$3"
+
+    # Update sessions section
+    Write-Log "Updating sessions section in index.html"
+    $indexHtml = $indexHtml -replace '(?s)(<div class="folder">sessions</div>\s*<div class="indent">)(.*?)(\s*</div>\s*\s*<div class="folder">vera</div>)', "`$1`n$($sessionEntries -join "`n")`$3"
 
     # Update Vera section
     Write-Log "Updating Vera section in index.html"
