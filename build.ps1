@@ -316,12 +316,15 @@ try {
                     }
                     $title = $contentParts[0].Trim()
                     $postContent = $contentParts[1].Trim()
-                    
-                    # Apply template without HTML encoding the content
-                    $html = $template `
-                        -replace "{{date}}", $date `
-                        -replace "{{title}}", $title `
-                        -replace "{{content}}", $postContent
+
+                    $encodedTitle = [System.Web.HttpUtility]::HtmlEncode($title)
+                    $encodedContent = [System.Web.HttpUtility]::HtmlEncode($postContent)
+                    $encodedDate = [System.Web.HttpUtility]::HtmlEncode($date)
+
+                    # Apply template with HTML-encoded values to preserve literal characters
+                    $html = $template.Replace('{{date}}', $encodedDate)
+                    $html = $html.Replace('{{title}}', $encodedTitle)
+                    $html = $html.Replace('{{content}}', $encodedContent)
                     
                     # Generate output filename and ensure directory exists
                     $outputDirPath = Join-Path (Get-Location) $outputDir
@@ -334,11 +337,11 @@ try {
                     # Save the file with UTF8 encoding without BOM
                     [System.IO.File]::WriteAllText($outputFile, $html, [System.Text.UTF8Encoding]::new($false))
                     
-                    # Add to entries with minimal HTML encoding
+                    # Add to entries with encoded values to prevent HTML interpretation
                     $entries += @"
                     <div class="weblog-entry">
-                        <span class="weblog-date">[$date]</span>
-                        <a href="./$outputDir/$($post.BaseName).html">$title</a>
+                        <span class="weblog-date">[$encodedDate]</span>
+                        <a href="./$outputDir/$($post.BaseName).html">$encodedTitle</a>
                     </div>
 "@
                 }
