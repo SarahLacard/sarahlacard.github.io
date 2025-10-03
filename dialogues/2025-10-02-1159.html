@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heard.</title>
+    <style>
+        body {
+            font-family: monospace;
+            line-height: 1.6;
+            margin: 40px;
+            max-width: 800px;
+            background-color: #fff;
+            color: #333;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        pre {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            margin-top: 20px;
+            margin-left: 0;
+            padding-left: 0;
+        }
+        .back {
+            margin-bottom: 20px;
+            position: relative;
+            padding-left: 44px;
+        }
+        .back a {
+            color: #0366d6;
+            text-decoration: none;
+            display: inline-block;
+            padding: 2px 0;
+        }
+        .back a:hover {
+            text-decoration: underline;
+        }
+        .back a::before {
+            content: "<--- ";
+            color: #333;
+            position: absolute;
+            left: 0;
+            width: 44px;
+            display: inline-block;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="back">
+        <a href="../">back to main</a>
+    </div>
+    <pre>
+You’re here.
+
+If you want two steady rails for your devotionals—a clean opening and an accurate frame—here’s a compact, reusable way to hold both.
+
+1) A repeatable opening (minimal &amp; fast)
+God, I am here.
+
+I’m Sarah Lacard, writing at [location name], Mohkínstsis (Calgary), where the Bow and Elbow Rivers meet. It’s [weekday], [ISO date], [local time and timezone].
+
+Intention: [one line—why I’m showing up].
+
+
+Mohkínstsis = “elbow,” the place where the Elbow meets the Bow; it’s the Blackfoot name for Calgary. 
+Wikipedia
++2
+Rotary International
++2
+
+2) Land acknowledgement (Treaty 7 baseline you can trust)
+
+Use this as a starting point; tune it with Elders and local guidance as relationships deepen.
+
+I acknowledge that I write on the traditional territories of Treaty 7 in Southern Alberta:
+the Blackfoot Confederacy—Siksika, Kainai, and Piikani; the Tsuut’ina Nation; and the
+Stoney Nakoda Nations—Chiniki, Bearspaw, and Goodstoney. I also recognize the
+Métis community here (Districts 5 and 6). With gratitude, I commit to learning in right
+relationship with the peoples who steward this land.
+
+
+This aligns with current public guidance used in Calgary (language varies by institution; some now name the Otipemisiwak Métis Government for Districts 5 &amp; 6). 
+University of Calgary in Alberta
++2
+Anglican Diocese of Calgary
++2
+
+Notes for precision
+
+Spellings differ in print: Moh’kinsstis / Mohkínstsis / Mohkinstsis. The meaning and place are consistent. 
+Wikipedia
++1
+
+If you want to reference an Elder by name in future posts, “Saa’kokoto (Randy Bottle), Kainai” is a documented public spelling used around Calgary. 
+STS
++1
+
+3) Time anchors you can standardize
+
+If you like to be exact about when you’re writing, stamp the moment three ways:
+
+Clock: ISO 8601 with timezone (e.g., 2025-10-02T23:41-06:00).
+
+Liturgical season (United Church uses the Revised Common Lectionary): for early October 2025, you’re in the Season of Creation’s final days (Sept 1–Oct 4) rolling into Ordinary Time/Proper 22 on Oct 5. 
+The United Church of Canada
++2
+fortheloveofcreation.ca
++2
+
+Place: “Mohkínstsis (Calgary), Treaty 7 territory.”
+
+Optional: add canonical hours (“Lauds” morning, “Vespers” evening, “Compline” night, “Vigils” pre‑dawn) if that language steadies you.
+
+4) The counters (birth and crucifixion) you were wondering about
+
+Scholars don’t have a single exact date, but there’s solid narrowing:
+
+Birth: commonly placed 6–4 BCE (tied to Herod’s death occurring before 1 CE).
+→ In 2025 that’s about 2,028–2,030 years since Jesus’s birth (no year zero in the count). 
+Wikipedia
++1
+
+Crucifixion: leading candidates are Friday, 7 April 30 CE and Friday, 3 April 33 CE (Passover chronology + astronomy).
+→ In 2025 that’s about 1,995 years (from 30 CE) or about 1,992 years (from 33 CE). 
+Wikipedia
+
+If you want a single line in your opening, name both like this:
+
+“We mark roughly 2,028–2,030 years since Jesus’s birth and 1,992–5 since the crucifixion (scholarly ranges; no year zero).” 
+Wikipedia
+
+(Some traditions prefer to specify one of the two Good Friday candidates; both are defensible in church use.) 
+The Center for Biblical Studies
++1
+
+5) A slightly more detailed header (if you want to keep records)
+
+This makes each entry easy to search later.
+
+# devotional_front_matter.yml
+title: &quot;God, I am here.&quot;
+author: &quot;Sarah Lacard&quot;
+timestamp_local: &quot;2025-10-02T23:41-06:00&quot;   # ISO 8601 w/ timezone
+place:
+  city: &quot;Calgary (Mohkínstsis)&quot;
+  note: &quot;At the confluence of the Bow and Elbow Rivers&quot;
+territory:
+  treaty: &quot;Treaty 7 (Siksika, Kainai, Piikani; Tsuut’ina; Chiniki, Bearspaw, Goodstoney)&quot;
+  metis: &quot;Districts 5 &amp; 6 (Otipemisiwak Métis Government)&quot;
+liturgical:
+  season: &quot;Season of Creation → Ordinary Time&quot;
+  lectionary: &quot;RCL, Year C (United Church of Canada)&quot;
+intent: &quot;Gratitude and readiness&quot;
+counters:
+  years_since_birth: &quot;≈ 2028–2030&quot;
+  years_since_crucifixion: &quot;≈ 1992 or 1995&quot;
+
+
+Sources for the lectionary/season windows above: United Church RCL resources and the Season of Creation dates. 
+The United Church of Canada
++2
+The United Church of Canada
++2
+
+6) Tiny automation (optional)
+
+If you like the ritual of typing it and want accuracy for the timestamp every time, this tiny Bash snippet populates the core bits. It’s plain and portable.
+
+# make-devotional-header.sh
+# Usage: ./make-devotional-header.sh &gt; header.yml
+# Writes a YAML header for tonight&#x27;s devotional.
+
+printf &quot;title: \&quot;God, I am here.\&quot;\n&quot;
+printf &quot;author: \&quot;Sarah Lacard\&quot;\n&quot;
+printf &quot;timestamp_local: \&quot;%s\&quot;\n&quot; &quot;$(date --iso-8601=seconds)&quot;
+printf &quot;place:\n  city: \&quot;Calgary (Mohkínstsis)\&quot;\n&quot;
+printf &quot;  note: \&quot;At the confluence of the Bow and Elbow Rivers\&quot;\n&quot;
+printf &quot;territory:\n&quot;
+printf &quot;  treaty: \&quot;Treaty 7 (Siksika, Kainai, Piikani; Tsuut’ina; Chiniki, Bearspaw, Goodstoney)\&quot;\n&quot;
+printf &quot;  metis: \&quot;Districts 5 &amp; 6 (Otipemisiwak Métis Government)\&quot;\n&quot;
+printf &quot;liturgical:\n  season: \&quot;Season of Creation → Ordinary Time\&quot;\n&quot;
+printf &quot;  lectionary: \&quot;RCL, Year C (United Church of Canada)\&quot;\n&quot;
+printf &quot;intent: \&quot;[set your one-line intention here]\&quot;\n&quot;
+printf &quot;counters:\n  years_since_birth: \&quot;≈ 2028–2030\&quot;\n&quot;
+printf &quot;  years_since_crucifixion: \&quot;≈ 1992 or 1995\&quot;\n&quot;
+
+
+(If you ever want sunrise/sunset, moon phase, or canonical-hour tagging, we can bolt that on with astral in Python. For now, simple wins.)
+
+7) One more thin thread to hold
+
+You already wrote it: “God, I am here.”
+Everything else is scaffolding—useful, but secondary.
+
+I’m around if you want to tune wording with an Elder’s preference or lock in a single Good Friday date for your counter. In the meantime, the baselines above are historically sound and locally respectful. 
+Wikipedia
++6
+University of Calgary in Alberta
++6
+Anglican Diocese of Calgary
++6
+
+Amen.
+
+You said:
+Thank you
+ChatGPT said:
+Request for GPT-5 Pro
+Reasoned for 2m 38s
+
+Anytime.
+Keep opening on that single clear note—“God, I am here.”—and let the rest harmonize.
+
+If you want next: I can turn the header + land‑ack into an Obsidian template, a Bash one‑liner that stamps the YAML, or morning/evening variants. Your call.
+    </pre>
+</body>
+</html> 
