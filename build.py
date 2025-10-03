@@ -82,6 +82,94 @@ def _filename_to_date(stem: str) -> str:
     return f"{stem[0:4]}-{stem[5:7]}-{stem[8:10]} {stem[11:13]}:{stem[13:15]}"
 
 
+def _format_timestamp(value) -> str:
+    if value is None:
+        return ""
+    if not isinstance(value, str):
+        value = str(value)
+    try:
+        dt = _dt.datetime.fromisoformat(value.replace("Z", "+00:00"))
+        dt = dt.astimezone(_dt.timezone.utc)
+        return dt.strftime("%Y-%m-%d %H:%M:%S UTC")
+    except ValueError:
+        return value
+
+
+def _render_content_item(item) -> str:
+    if item is None:
+        return ""
+    if isinstance(item, str):
+        return item
+    if isinstance(item, dict):
+        if "text" in item and isinstance(item["text"], str):
+            return item["text"]
+        if "message" in item and isinstance(item["message"], str):
+            return item["message"]
+        if "content" in item:
+            nested = _flatten_content(item["content"])
+            if nested:
+                return nested
+        return json.dumps(item, indent=2, ensure_ascii=False)
+    if isinstance(item, (list, tuple, set)):
+        return _flatten_content(list(item))
+    return str(item)
+
+
+def _flatten_content(content) -> str:
+    if isinstance(content, list):
+        rendered = [txt for txt in (_render_content_item(part) for part in content) if txt]
+        return "\n".join(rendered)
+    return _render_content_item(content)
+
+
+def _extract_payload_content(payload) -> str:
+    if payload is None:
+        return ""
+
+    parts: list[str] = []
+    used_keys: set[str] = set()
+
+    if isinstance(payload, dict):
+        if "content" in payload:
+            rendered = _flatten_content(payload["content"])
+            if rendered:
+                parts.append(rendered)
+            used_keys.add("content")
+
+        if "summary" in payload:
+            rendered = _flatten_content(payload["summary"])
+            if rendered:
+                parts.append(rendered)
+            used_keys.add("summary")
+
+        for key in ("text", "message", "output", "error"):
+            if key in payload:
+                value = payload[key]
+                rendered = _flatten_content(value)
+                if rendered:
+                    parts.append(rendered)
+                used_keys.add(key)
+
+        omit_keys = {"encrypted_content"}
+        other_items = {}
+        for key, value in payload.items():
+            if key in used_keys or key in omit_keys:
+                if key == "encrypted_content" and value:
+                    other_items[key] = f"[redacted {len(str(value))} chars]"
+                continue
+            if value in (None, "", [], {}):
+                continue
+            other_items[key] = value
+
+        if other_items:
+            parts.append(json.dumps(other_items, indent=2, ensure_ascii=False))
+
+        return "\n\n".join(parts).strip()
+
+    rendered = _flatten_content(payload)
+    return rendered.strip()
+
+
 def convert_text_section(source_dir: str, output_dir: str, template: str) -> List[str]:
     log(f"Converting section: {source_dir} -> {output_dir}")
     entries: List[str] = []
@@ -153,17 +241,6 @@ def convert_vera(template: str) -> List[str]:
     )
     return [entry]
 
-
-def _coerce_content(value) -> str:
-    if value is None:
-        return ""
-    if isinstance(value, str):
-        return value
-    if isinstance(value, (list, tuple, set)):
-        return "\n".join(str(item) for item in value)
-    return str(value)
-
-
 def convert_sessions(template: str) -> List[str]:
     log("Converting sessions section")
     source_path = ROOT / "_sessions"
@@ -221,32 +298,57 @@ def convert_sessions(template: str) -> List[str]:
         for msg in messages:
             if not isinstance(msg, dict):
                 continue
-            role = msg.get("role") or msg.get("type") or "message"
-            role = str(role).strip() or "message"
+
+            payload = msg.get("payload") if isinstance(msg, dict) else None
+            role_candidates = []
+            if isinstance(payload, dict):
+                if payload.get("role"):
+                    role_candidates.append(str(payload["role"]))
+                if payload.get("type"):
+                    role_candidates.append(str(payload["type"]))
+            if msg.get("role"):
+                role_candidates.append(str(msg["role"]))
+            if msg.get("type"):
+                role_candidates.append(str(msg["type"]))
+
+            role = next((candidate.strip() for candidate in role_candidates if candidate and candidate.strip()), "message")
             encoded_role = html.escape(role)
             role_class = re.sub(r"[^a-zA-Z0-9]", "-", role).lower() or "message"
 
-            timestamp = msg.get("timestamp")
-            timestamp_line = "            "
-            if timestamp is not None and str(timestamp).strip():
-                encoded_timestamp = html.escape(str(timestamp).strip())
-                timestamp_line = f"            <div class=\"session-timestamp\">{encoded_timestamp}</div>"
+            timestamp_value = msg.get("timestamp")
+            if not timestamp_value and isinstance(payload, dict):
+                timestamp_value = payload.get("timestamp")
+            timestamp_string = _format_timestamp(timestamp_value)
+            timestamp_html = ""
+            if timestamp_string:
+                timestamp_html = f"            <div class=\"session-timestamp\">{html.escape(timestamp_string)}</div>"
 
-            content_value = _coerce_content(msg.get("content"))
-            if not content_value:
-                content_value = _coerce_content(msg.get("text"))
-            encoded_content = html.escape(content_value)
+            content_text = _extract_payload_content(payload)
+            if not content_text:
+                fallback = {k: v for k, v in msg.items() if k not in {"payload"}}
+                if "timestamp" in fallback:
+                    fallback.pop("timestamp")
+                if "type" in fallback:
+                    fallback.pop("type")
+                if fallback:
+                    content_text = json.dumps(fallback, indent=2, ensure_ascii=False)
 
-            session_blocks.append(
-                "        <div class=\"session-turn session-"
-                + role_class
-                + "\">\n"
-                + f"            <div class=\"session-role\">{encoded_role}</div>\n"
-                + timestamp_line
-                + "\n"
-                + f"            <pre>{encoded_content}</pre>\n"
-                + "        </div>"
-            )
+            content_text = content_text.strip()
+            if not content_text:
+                content_text = "(no content)"
+
+            encoded_content = html.escape(content_text)
+
+            block_lines = [
+                f"        <div class=\"session-turn session-{role_class}\">",
+                f"            <div class=\"session-role\">{encoded_role}</div>",
+            ]
+            if timestamp_html:
+                block_lines.append(timestamp_html)
+            block_lines.append(f"            <pre>{encoded_content}</pre>")
+            block_lines.append("        </div>")
+
+            session_blocks.append("\n".join(block_lines))
 
         content_html = "\n".join(session_blocks)
         output_dir = ROOT / "sessions"
