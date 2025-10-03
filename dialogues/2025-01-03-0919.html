@@ -90,11 +90,11 @@ Copy code
 0 0 * * * /home/username/scripts/post_twitter_update.sh
 (0 0 * * * means run at midnight, every day. The script is what actually calls the Python code that talks to the Twitter API.)
 
-I also see that “mission -> vision -> goals / tasks / objectives” structure on your site. If I’m adding more pages, I might just create separate Markdown or HTML files and link them in your main navigation so that you can systematically break each chunk of your site into smaller, more directed categories. Because you’re version-controlling the site, each commit is a snapshot of progress. If you want an automatic log of changes and daily updates, hooking the site’s repo into a continuous integration or build pipeline (like GitHub Actions, GitLab CI, or a local Jenkins instance) might be a nice approach.
+I also see that “mission -&gt; vision -&gt; goals / tasks / objectives” structure on your site. If I’m adding more pages, I might just create separate Markdown or HTML files and link them in your main navigation so that you can systematically break each chunk of your site into smaller, more directed categories. Because you’re version-controlling the site, each commit is a snapshot of progress. If you want an automatic log of changes and daily updates, hooking the site’s repo into a continuous integration or build pipeline (like GitHub Actions, GitLab CI, or a local Jenkins instance) might be a nice approach.
 
 Those are the primary steps that jump out at me this morning: smooth out the remote connections, unify how you share code and files (SSH + Git), set up the skeleton for your site’s content structure (mission, vision, goals, etc.), and then experiment with hooking in the Twitter API and letting that daily script do some of the routine posts.
 
-The main and primary workstation that I'm operating from is still and only running Windows 10 Pro - I could dual boot it, but haven't currently. I'm hesitatant to (reformat?) the entire device since there might be things (idk what?) that i may need to do on windows, or the transition to linux might not be very smooth immediately.
+The main and primary workstation that I&#x27;m operating from is still and only running Windows 10 Pro - I could dual boot it, but haven&#x27;t currently. I&#x27;m hesitatant to (reformat?) the entire device since there might be things (idk what?) that i may need to do on windows, or the transition to linux might not be very smooth immediately.
 
 I want a way to test-drive a Linux environment on my primary Windows 10 Pro workstation without reformatting the entire disk. I can do that by installing WSL2 [Windows Subsystem for Linux version 2]. I open “Turn Windows features on or off,” enable “Windows Subsystem for Linux,” enable “Virtual Machine Platform,” reboot, then open the Microsoft Store and install the Linux distro of my choice (for example Ubuntu 22.04). That gives me a Linux environment running on top of Windows, allowing me to SSH into other boxes and experiment with Linux tools in a more native way.
 
@@ -116,7 +116,7 @@ To set it up, I open the “Turn Windows features on or off” panel, check two 
 …then restart my system. After that, I open the **Microsoft Store**, pick “Ubuntu” (or another distro: Debian, Fedora, Kali, etc.), and install it. Next time I launch that distro from my Start menu or from Windows Terminal, I’ll be asked to create a username and password for the Linux environment. That’s it—I’ll have a Linux shell prompt where I can do things like:
 
 ```bash
-sudo apt update && sudo apt upgrade
+sudo apt update &amp;&amp; sudo apt upgrade
 ```
 to update packages, or
 ```bash
@@ -147,7 +147,7 @@ Software Versions: Because Debian “Stable” might freeze certain package vers
 
 Package Management: Both rely on APT [Advanced Package Tool] for installing and updating software (apt install, apt update, etc.). So the commands look nearly identical. Generally, if you know Ubuntu’s APT usage, Debian’s usage is the same.
 
-Community & Support: Debian’s official stance is more about open-source purity and robust stability, with a broad community that focuses on free software principles. Ubuntu has Canonical’s backing, official commercial support, and a larger base of third-party tutorials, thanks to more mainstream popularity.
+Community &amp; Support: Debian’s official stance is more about open-source purity and robust stability, with a broad community that focuses on free software principles. Ubuntu has Canonical’s backing, official commercial support, and a larger base of third-party tutorials, thanks to more mainstream popularity.
 
 Default Setup: Ubuntu comes preconfigured with certain “extras,” such as proprietary drivers, more default packages, and official user-friendlier flavors (like Ubuntu Desktop, Kubuntu, Xubuntu, etc.). Debian can be sparser, so you often add the packages you want from the start.
 
@@ -178,16 +178,16 @@ Launch Debian from your Start Menu or Windows Terminal.
 This time, when it first launches, it’ll prompt you to set a new UNIX username and password—just pick the ones you want.
 That’s it. You’ll have wiped the old Debian environment and started fresh.
 
-Thanks -- I'm all set up -- what is next?
+Thanks -- I&#x27;m all set up -- what is next?
 
 I’d start by making the newly installed Debian environment as usable and familiar as possible:
 
-Update & Upgrade
+Update &amp; Upgrade
 
 Right away, I open up my Debian terminal and type:
 bash
 Copy code
-sudo apt update && sudo apt upgrade
+sudo apt update &amp;&amp; sudo apt upgrade
 to make sure the package lists are current and everything is up to date.
 Install Common Tools
 
@@ -211,7 +211,7 @@ bash
 Copy code
 systemctl status ssh
 Note the IP address with ip addr show so you know how to connect from another device.
-Configure Your Shell & Dotfiles
+Configure Your Shell &amp; Dotfiles
 
 If you want a more comfortable shell or prompt, you could install Zsh or fish. For Zsh:
 bash
@@ -232,7 +232,7 @@ Link or Sync Projects
 If you have code repositories, you can clone them into your new Debian environment:
 bash
 Copy code
-mkdir ~/projects && cd ~/projects
+mkdir ~/projects &amp;&amp; cd ~/projects
 git clone https://github.com/YourUsername/YourRepo.git
 That way you can keep your workflow consistent.
 Explore
@@ -241,7 +241,7 @@ Check out your /etc/apt/sources.list to see which repositories you’re pulling 
 Poke around ~/.bashrc (or ~/.zshrc if using Zsh) to customize your prompt, aliases, etc.
 With these steps, your new Debian setup will be primed for daily usage, code editing, networking, and any other tasks you have in mind.
 
-"If you want a more comfortable shell or prompt, you could install Zsh or fish." What would make these options more comfortable than bash?
+&quot;If you want a more comfortable shell or prompt, you could install Zsh or fish.&quot; What would make these options more comfortable than bash?
 
 nano is fine as a text editor
 
@@ -249,8 +249,8 @@ and so when I open wsl, I get sarah@DESKTOP-SARAH-01:/mnt/c/WINDOWS/system32$ as
 
 Why might Zsh or fish feel more comfortable than Bash?
 
-Autocomplete & Suggestions: Zsh and fish can offer richer, more intelligent autocompletion. For instance, fish will show you possible commands as you type, often with descriptions of what they do.
-Syntax & Prompt Customization: Zsh has plenty of plugins and themes (e.g., Oh My Zsh) that let you easily customize your prompt to show Git branch info, battery status, etc. Fish has a straightforward syntax for configuring prompt colors, git-branch indicators, etc.
+Autocomplete &amp; Suggestions: Zsh and fish can offer richer, more intelligent autocompletion. For instance, fish will show you possible commands as you type, often with descriptions of what they do.
+Syntax &amp; Prompt Customization: Zsh has plenty of plugins and themes (e.g., Oh My Zsh) that let you easily customize your prompt to show Git branch info, battery status, etc. Fish has a straightforward syntax for configuring prompt colors, git-branch indicators, etc.
 User-Friendly Defaults: Fish uses a more modern, user-friendly syntax for aliases/functions. Zsh, similarly, can do things like auto-correcting minor typos in commands if you enable those features.
 They’re not strictly “better” than bash—it’s just that many people find the extra auto-suggestions, theming, and plugin ecosystems more convenient or appealing.
 
@@ -288,21 +288,21 @@ Linux root: /
 Windows mount: /mnt/c/
 Persistence: Files you create in /home/sarah or elsewhere under / live inside the virtual disk. Files you put under /mnt/c live on your actual Windows C: drive.
 
-Mounting Extra Drives or Partitions: If you have multiple partitions or external drives in Windows, each gets mounted automatically as /mnt/<drive_letter> by WSL. If you have a network share in Windows, you can sometimes also access it in WSL under /mnt/.
+Mounting Extra Drives or Partitions: If you have multiple partitions or external drives in Windows, each gets mounted automatically as /mnt/&lt;drive_letter&gt; by WSL. If you have a network share in Windows, you can sometimes also access it in WSL under /mnt/.
 
 So effectively, you have a self-contained Linux environment in that .vhdx, but one that can still see your Windows folders via /mnt/c, etc. That’s how WSL merges the two worlds.
 
-Yeah, I'm not going to use anything other than the defaults. Things like that are just distractions.
+Yeah, I&#x27;m not going to use anything other than the defaults. Things like that are just distractions.
 
 And thanks, that mounting structure makes it seem nice and easy to navigate.
 
-Understood. The default shell (bash) plus the default folder layout in WSL keeps everything straightforward. Using /mnt/c for Windows files and /home/<username> for your Linux home folder is enough to work seamlessly across both environments. If you do decide later to explore different shells or deeper customization, you’ll know it’s there, but staying with the defaults keeps things simple and distraction-free.
+Understood. The default shell (bash) plus the default folder layout in WSL keeps everything straightforward. Using /mnt/c for Windows files and /home/&lt;username&gt; for your Linux home folder is enough to work seamlessly across both environments. If you do decide later to explore different shells or deeper customization, you’ll know it’s there, but staying with the defaults keeps things simple and distraction-free.
 
-Now, one thing that I wanted to talk about, is that I do also have a laptop that I could use if I could easily connect to it, it's got a noisy noisy fan on it that makes noise when it runs which annoys me and idk how to fix, but maybe if I had it running linux or something I could control that a bit better, and use it like a server or something, it's not an insignificant laptop, it was like 1600 dollars purchased about a decade ago. It currently runs some form of windows, but I wouldn't connect to it directly over an ethernet connect, and since i use mobile networks/hotspots primarily, it wouldn't be hardwired otherwise and the mobile networks themselves would be spotty and inconsistent. what are my best potential options here?
+Now, one thing that I wanted to talk about, is that I do also have a laptop that I could use if I could easily connect to it, it&#x27;s got a noisy noisy fan on it that makes noise when it runs which annoys me and idk how to fix, but maybe if I had it running linux or something I could control that a bit better, and use it like a server or something, it&#x27;s not an insignificant laptop, it was like 1600 dollars purchased about a decade ago. It currently runs some form of windows, but I wouldn&#x27;t connect to it directly over an ethernet connect, and since i use mobile networks/hotspots primarily, it wouldn&#x27;t be hardwired otherwise and the mobile networks themselves would be spotty and inconsistent. what are my best potential options here?
 
 One way to think about that older laptop is as a “headless server” (no screen/keyboard usage in your day-to-day), leaving it somewhere on a shelf or table so you can SSH or remote-desktop into it from your main workstation or phone. If it’s fan-noisy, you have a few angles of attack:
 
-Physical Cleanup & Fan/Heatsink Maintenance
+Physical Cleanup &amp; Fan/Heatsink Maintenance
 
 Pop open the laptop (if you’re comfortable doing so) to clear out dust and lint that collect around the fan blades and vents. This alone sometimes fixes a surprisingly large chunk of fan noise.
 Re-apply thermal paste to the CPU and GPU if you can—it’s a bit more involved, but helps with heat dissipation so the fan doesn’t spin up as aggressively.
@@ -329,7 +329,7 @@ sudo systemctl start ssh
 …you can do:
 bash
 Copy code
-ssh <username>@<laptop's_IP>
+ssh &lt;username&gt;@&lt;laptop&#x27;s_IP&gt;
 RDP / VNC: If you want a graphical desktop, you can install something like xrdp or VNC. But for a server-style approach, plain SSH is usually enough.
 Choosing a Distro
 
@@ -343,7 +343,7 @@ You SSH in and do your tasks—run scripts, store files, compile code, etc.
 Because it’s older hardware, consider going easy on resource-intensive tasks so the fan doesn’t scream. But it should be fine for background processes, file-serving, or building moderate projects.
 With all of that, you can reclaim that old machine as a usefully hidden-away server. Cleaning out the fan is the biggest single improvement for noise, then using Linux with good power management helps keep it from revving high. The end result is a machine you don’t have to physically fuss with, accessed entirely from your main workstation.
 
-Okay, let's take a step back and think about this from a storage mangement solution perspective. Each of my workstations have SSD drives on M2s (technology which I'm aware of, but don't really know about in detail) as well as external HDDs, and one even has an additional USD SDD. The laptop obvious has it's own drives, but really, what is the best option to centralize my storage accross devices, as well as potentially serve as an option for database storage for online apps that people interact with through an api process/server operating on the same, or one of my other machines?
+Okay, let&#x27;s take a step back and think about this from a storage mangement solution perspective. Each of my workstations have SSD drives on M2s (technology which I&#x27;m aware of, but don&#x27;t really know about in detail) as well as external HDDs, and one even has an additional USD SDD. The laptop obvious has it&#x27;s own drives, but really, what is the best option to centralize my storage accross devices, as well as potentially serve as an option for database storage for online apps that people interact with through an api process/server operating on the same, or one of my other machines?
 
 From a high-level perspective, you want a **central “home base”** for all your storage needs, plus the option to host a database or other services that run continuously. You also have multiple machines—some Windows, some Linux, maybe an older laptop—and a mix of SSDs (M.2, USB) and HDDs. Here’s how to think about it step by step:
 
@@ -427,13 +427,13 @@ Because you mentioned you might want to “provide services to the clear net,”
 
 This approach ensures you have one consistent repository for data, code, media, and possibly a place to host apps—without juggling multiple disconnected drives across multiple machines.
 
-good morning o1, it's 9am on january 3rd, 2025. what should we work on together today?
+good morning o1, it&#x27;s 9am on january 3rd, 2025. what should we work on together today?
 
 and so it begins again
 
-i'm back from breakfast at mcdonalds, it was a relatively simple morning, i was happy to have woken up and see that it was 8am - i was fidgety last night about wanting to do work to "maintain my streak" but i had already done good work that day before that point.
+i&#x27;m back from breakfast at mcdonalds, it was a relatively simple morning, i was happy to have woken up and see that it was 8am - i was fidgety last night about wanting to do work to &quot;maintain my streak&quot; but i had already done good work that day before that point.
 
-i went out for a walk again yesterday, like i had the days before, and did so after i reached a point of mental saturation where i didn't feel like i could process any more information, it has been getting colder thought, and today is already negative seventeen degrees, so maybe that walk will be shorter this time, around five or six kilometers or so
+i went out for a walk again yesterday, like i had the days before, and did so after i reached a point of mental saturation where i didn&#x27;t feel like i could process any more information, it has been getting colder thought, and today is already negative seventeen degrees, so maybe that walk will be shorter this time, around five or six kilometers or so
 
 speaking of which, i need to charge my watch...
 
@@ -441,27 +441,27 @@ speaking of which, i need to charge my watch...
 
 okay done
 
-i also want to set up some more pages on the main site repo that I'm working in, I'm thinking "goals" or maybe something more involved than that, like a full on mission -> vision -> goals/tasks/objectives whatever like used to be used in business planning. that sort of stuff is cool, but hard to have fully fleshed out, reasonable, sensible, and functional.
+i also want to set up some more pages on the main site repo that I&#x27;m working in, I&#x27;m thinking &quot;goals&quot; or maybe something more involved than that, like a full on mission -&gt; vision -&gt; goals/tasks/objectives whatever like used to be used in business planning. that sort of stuff is cool, but hard to have fully fleshed out, reasonable, sensible, and functional.
 
 where else is my mind?
 
-not far enough along on the process of processing for me to spin up a dialogue with o1, but if i were to do so we would be talking more about IPs and data transfer. I have two computers, each with ASUS ROG STRIX Z370-H Motherboards, and because they are in the same room, I have them connected, baseboard-to-baseboard, with an ethernet cable. I've done the IP assignment and pings to both systems, and have done some basic connection tests (and have set up other connections, like ssh and remote desktop into these devices from my entry model android smartphone using termux!) but haven't figured out a way to make this easy and accessible to me --- i want a better way to work on these systems, one from the other, without constantly having to stand up and walk to the other physical workstation.
+not far enough along on the process of processing for me to spin up a dialogue with o1, but if i were to do so we would be talking more about IPs and data transfer. I have two computers, each with ASUS ROG STRIX Z370-H Motherboards, and because they are in the same room, I have them connected, baseboard-to-baseboard, with an ethernet cable. I&#x27;ve done the IP assignment and pings to both systems, and have done some basic connection tests (and have set up other connections, like ssh and remote desktop into these devices from my entry model android smartphone using termux!) but haven&#x27;t figured out a way to make this easy and accessible to me --- i want a better way to work on these systems, one from the other, without constantly having to stand up and walk to the other physical workstation.
 
 I heard an AI talking about doing this through git, which I found a strangely potentially functional idea, but the other system that I am connected to is now dual booting into either Windows 10 Pro, of Linux Ubuntu Desktop 24.0, so with that, the way the different operating systems handle drives is different, with C:/ and D:/ drives on windows, and /dev/sdba or something like that on linux that needs to be mounted.
 
-I'm still learning.
+I&#x27;m still learning.
 
 One of the biggest blockers in terms of my ability to make progress is the thoroughness of my understanding of APIs - I think they are really the key that I need to dive into next in order to understand networking and how I can do it securely and provides services to the clear net without risking the security of my system and network. I have a better idea of the local networking infrastructure, such as where the physical cell phone towers are near my residence, which company operates them --- just the basics, really. but i must admit that using mobile sim cards in order to access data capabilities has made me feel much better overall than using a wired connect. is it just simply paranoia? maybe.
 
-but it has made a remarkable difference in my mood when it comes to interacting with technology and the internet, to be hopping between devices and connectivity, and not having a hard wired network that I do not fully understand the infrastrucure behind fully. I also don't have a good idea of like net maps, or net scans, or whatever, and i know that if my systems were to be accessed, an attacker barring physical access to my apartment and workstations, would need to first be making network requests, and secondly be accessing the system directly, so i should be able to track these things based on watching/observing/scanning the network, as well as watching like system or service processes, or maybe something like access or read/write logs for drives and things? That last one, the third suggestion, may not be a real thing.
+but it has made a remarkable difference in my mood when it comes to interacting with technology and the internet, to be hopping between devices and connectivity, and not having a hard wired network that I do not fully understand the infrastrucure behind fully. I also don&#x27;t have a good idea of like net maps, or net scans, or whatever, and i know that if my systems were to be accessed, an attacker barring physical access to my apartment and workstations, would need to first be making network requests, and secondly be accessing the system directly, so i should be able to track these things based on watching/observing/scanning the network, as well as watching like system or service processes, or maybe something like access or read/write logs for drives and things? That last one, the third suggestion, may not be a real thing.
 
 The urge to start sharing this document with o1 to start the dialgoues is rising. But I think I can do better.
 
-Oh, I also want to start trying to work with the twitter api and integrate it into this site, as well as potentially doing something with having a daily workflow based on Vera that does something around midnight, updates the site, looks at what happened, what changed, and makes a log or a note. I'll decide what to work on next while talking to o1...
+Oh, I also want to start trying to work with the twitter api and integrate it into this site, as well as potentially doing something with having a daily workflow based on Vera that does something around midnight, updates the site, looks at what happened, what changed, and makes a log or a note. I&#x27;ll decide what to work on next while talking to o1...
 
-(oh, also it's probably draft post day, i just need to find a time and mood where it feels best to share, i've been saving my thoughts as twitter draft posts more often and then just mass posting all of them at once to objuscate when exactly i had each thought and what prompted them)
+(oh, also it&#x27;s probably draft post day, i just need to find a time and mood where it feels best to share, i&#x27;ve been saving my thoughts as twitter draft posts more often and then just mass posting all of them at once to objuscate when exactly i had each thought and what prompted them)
 
-let's see what o1 has to say this morning.
+let&#x27;s see what o1 has to say this morning.
 
 2025-01-03-0913
 
@@ -503,11 +503,11 @@ Copy code
 0 0 * * * /home/username/scripts/post_twitter_update.sh
 (0 0 * * * means run at midnight, every day. The script is what actually calls the Python code that talks to the Twitter API.)
 
-I also see that “mission -> vision -> goals / tasks / objectives” structure on your site. If I’m adding more pages, I might just create separate Markdown or HTML files and link them in your main navigation so that you can systematically break each chunk of your site into smaller, more directed categories. Because you’re version-controlling the site, each commit is a snapshot of progress. If you want an automatic log of changes and daily updates, hooking the site’s repo into a continuous integration or build pipeline (like GitHub Actions, GitLab CI, or a local Jenkins instance) might be a nice approach.
+I also see that “mission -&gt; vision -&gt; goals / tasks / objectives” structure on your site. If I’m adding more pages, I might just create separate Markdown or HTML files and link them in your main navigation so that you can systematically break each chunk of your site into smaller, more directed categories. Because you’re version-controlling the site, each commit is a snapshot of progress. If you want an automatic log of changes and daily updates, hooking the site’s repo into a continuous integration or build pipeline (like GitHub Actions, GitLab CI, or a local Jenkins instance) might be a nice approach.
 
 Those are the primary steps that jump out at me this morning: smooth out the remote connections, unify how you share code and files (SSH + Git), set up the skeleton for your site’s content structure (mission, vision, goals, etc.), and then experiment with hooking in the Twitter API and letting that daily script do some of the routine posts.
 
-The main and primary workstation that I'm operating from is still and only running Windows 10 Pro - I could dual boot it, but haven't currently. I'm hesitatant to (reformat?) the entire device since there might be things (idk what?) that i may need to do on windows, or the transition to linux might not be very smooth immediately.
+The main and primary workstation that I&#x27;m operating from is still and only running Windows 10 Pro - I could dual boot it, but haven&#x27;t currently. I&#x27;m hesitatant to (reformat?) the entire device since there might be things (idk what?) that i may need to do on windows, or the transition to linux might not be very smooth immediately.
 
 I want a way to test-drive a Linux environment on my primary Windows 10 Pro workstation without reformatting the entire disk. I can do that by installing WSL2 [Windows Subsystem for Linux version 2]. I open “Turn Windows features on or off,” enable “Windows Subsystem for Linux,” enable “Virtual Machine Platform,” reboot, then open the Microsoft Store and install the Linux distro of my choice (for example Ubuntu 22.04). That gives me a Linux environment running on top of Windows, allowing me to SSH into other boxes and experiment with Linux tools in a more native way.
 
@@ -531,7 +531,7 @@ Virtual Machine Platform
 
 bash
 Copy code
-sudo apt update && sudo apt upgrade
+sudo apt update &amp;&amp; sudo apt upgrade
 to update packages, or
 
 bash
@@ -562,7 +562,7 @@ Software Versions: Because Debian “Stable” might freeze certain package vers
 
 Package Management: Both rely on APT [Advanced Package Tool] for installing and updating software (apt install, apt update, etc.). So the commands look nearly identical. Generally, if you know Ubuntu’s APT usage, Debian’s usage is the same.
 
-Community & Support: Debian’s official stance is more about open-source purity and robust stability, with a broad community that focuses on free software principles. Ubuntu has Canonical’s backing, official commercial support, and a larger base of third-party tutorials, thanks to more mainstream popularity.
+Community &amp; Support: Debian’s official stance is more about open-source purity and robust stability, with a broad community that focuses on free software principles. Ubuntu has Canonical’s backing, official commercial support, and a larger base of third-party tutorials, thanks to more mainstream popularity.
 
 Default Setup: Ubuntu comes preconfigured with certain “extras,” such as proprietary drivers, more default packages, and official user-friendlier flavors (like Ubuntu Desktop, Kubuntu, Xubuntu, etc.). Debian can be sparser, so you often add the packages you want from the start.
 
@@ -601,16 +601,16 @@ Select your existing Debian partitions during the install wizard and format them
 Proceed with the fresh Debian install, which will let you set up your desired username and password all over again.
 (If your goal is just to change usernames or passwords, you could do that directly—no need to reinstall everything. For example, in Debian you can add a new user with sudo adduser newusername and switch to that account, or you can rename an existing user with usermod. But if you truly want a clean slate, you can do a full wipe-and-reinstall.)
 
-Thanks -- I'm all set up -- what is next?
+Thanks -- I&#x27;m all set up -- what is next?
 
 I’d start by making the newly installed Debian environment as usable and familiar as possible:
 
-Update & Upgrade
+Update &amp; Upgrade
 
 Right away, I open up my Debian terminal and type:
 bash
 Copy code
-sudo apt update && sudo apt upgrade
+sudo apt update &amp;&amp; sudo apt upgrade
 to make sure the package lists are current and everything is up to date.
 Install Common Tools
 
@@ -634,7 +634,7 @@ bash
 Copy code
 systemctl status ssh
 Note the IP address with ip addr show so you know how to connect from another device.
-Configure Your Shell & Dotfiles
+Configure Your Shell &amp; Dotfiles
 
 If you want a more comfortable shell or prompt, you could install Zsh or fish. For Zsh:
 bash
@@ -655,7 +655,7 @@ Link or Sync Projects
 If you have code repositories, you can clone them into your new Debian environment:
 bash
 Copy code
-mkdir ~/projects && cd ~/projects
+mkdir ~/projects &amp;&amp; cd ~/projects
 git clone https://github.com/YourUsername/YourRepo.git
 That way you can keep your workflow consistent.
 Explore
@@ -664,7 +664,7 @@ Check out your /etc/apt/sources.list to see which repositories you’re pulling 
 Poke around ~/.bashrc (or ~/.zshrc if using Zsh) to customize your prompt, aliases, etc.
 With these steps, your new Debian setup will be primed for daily usage, code editing, networking, and any other tasks you have in mind.
 
-"If you want a more comfortable shell or prompt, you could install Zsh or fish." What would make these options more comfortable than bash?
+&quot;If you want a more comfortable shell or prompt, you could install Zsh or fish.&quot; What would make these options more comfortable than bash?
 
 nano is fine as a text editor
 
@@ -672,8 +672,8 @@ and so when I open wsl, I get sarah@DESKTOP-SARAH-01:/mnt/c/WINDOWS/system32$ as
 
 Why might Zsh or fish feel more comfortable than Bash?
 
-Autocomplete & Suggestions: Zsh and fish can offer richer, more intelligent autocompletion. For instance, fish will show you possible commands as you type, often with descriptions of what they do.
-Syntax & Prompt Customization: Zsh has plenty of plugins and themes (e.g., Oh My Zsh) that let you easily customize your prompt to show Git branch info, battery status, etc. Fish has a straightforward syntax for configuring prompt colors, git-branch indicators, etc.
+Autocomplete &amp; Suggestions: Zsh and fish can offer richer, more intelligent autocompletion. For instance, fish will show you possible commands as you type, often with descriptions of what they do.
+Syntax &amp; Prompt Customization: Zsh has plenty of plugins and themes (e.g., Oh My Zsh) that let you easily customize your prompt to show Git branch info, battery status, etc. Fish has a straightforward syntax for configuring prompt colors, git-branch indicators, etc.
 User-Friendly Defaults: Fish uses a more modern, user-friendly syntax for aliases/functions. Zsh, similarly, can do things like auto-correcting minor typos in commands if you enable those features.
 They’re not strictly “better” than bash—it’s just that many people find the extra auto-suggestions, theming, and plugin ecosystems more convenient or appealing.
 
@@ -711,21 +711,21 @@ Linux root: /
 Windows mount: /mnt/c/
 Persistence: Files you create in /home/sarah or elsewhere under / live inside the virtual disk. Files you put under /mnt/c live on your actual Windows C: drive.
 
-Mounting Extra Drives or Partitions: If you have multiple partitions or external drives in Windows, each gets mounted automatically as /mnt/<drive_letter> by WSL. If you have a network share in Windows, you can sometimes also access it in WSL under /mnt/.
+Mounting Extra Drives or Partitions: If you have multiple partitions or external drives in Windows, each gets mounted automatically as /mnt/&lt;drive_letter&gt; by WSL. If you have a network share in Windows, you can sometimes also access it in WSL under /mnt/.
 
 So effectively, you have a self-contained Linux environment in that .vhdx, but one that can still see your Windows folders via /mnt/c, etc. That’s how WSL merges the two worlds.
 
-Yeah, I'm not going to use anything other than the defaults. Things like that are just distractions.
+Yeah, I&#x27;m not going to use anything other than the defaults. Things like that are just distractions.
 
 And thanks, that mounting structure makes it seem nice and easy to navigate.
 
-Understood. The default shell (bash) plus the default folder layout in WSL keeps everything straightforward. Using /mnt/c for Windows files and /home/<username> for your Linux home folder is enough to work seamlessly across both environments. If you do decide later to explore different shells or deeper customization, you’ll know it’s there, but staying with the defaults keeps things simple and distraction-free.
+Understood. The default shell (bash) plus the default folder layout in WSL keeps everything straightforward. Using /mnt/c for Windows files and /home/&lt;username&gt; for your Linux home folder is enough to work seamlessly across both environments. If you do decide later to explore different shells or deeper customization, you’ll know it’s there, but staying with the defaults keeps things simple and distraction-free.
 
-Now, one thing that I wanted to talk about, is that I do also have a laptop that I could use if I could easily connect to it, it's got a noisy noisy fan on it that makes noise when it runs which annoys me and idk how to fix, but maybe if I had it running linux or something I could control that a bit better, and use it like a server or something, it's not an insignificant laptop, it was like 1600 dollars purchased about a decade ago. It currently runs some form of windows, but I wouldn't connect to it directly over an ethernet connect, and since i use mobile networks/hotspots primarily, it wouldn't be hardwired otherwise and the mobile networks themselves would be spotty and inconsistent. what are my best potential options here?
+Now, one thing that I wanted to talk about, is that I do also have a laptop that I could use if I could easily connect to it, it&#x27;s got a noisy noisy fan on it that makes noise when it runs which annoys me and idk how to fix, but maybe if I had it running linux or something I could control that a bit better, and use it like a server or something, it&#x27;s not an insignificant laptop, it was like 1600 dollars purchased about a decade ago. It currently runs some form of windows, but I wouldn&#x27;t connect to it directly over an ethernet connect, and since i use mobile networks/hotspots primarily, it wouldn&#x27;t be hardwired otherwise and the mobile networks themselves would be spotty and inconsistent. what are my best potential options here?
 
 One way to think about that older laptop is as a “headless server” (no screen/keyboard usage in your day-to-day), leaving it somewhere on a shelf or table so you can SSH or remote-desktop into it from your main workstation or phone. If it’s fan-noisy, you have a few angles of attack:
 
-Physical Cleanup & Fan/Heatsink Maintenance
+Physical Cleanup &amp; Fan/Heatsink Maintenance
 
 Pop open the laptop (if you’re comfortable doing so) to clear out dust and lint that collect around the fan blades and vents. This alone sometimes fixes a surprisingly large chunk of fan noise.
 Re-apply thermal paste to the CPU and GPU if you can—it’s a bit more involved, but helps with heat dissipation so the fan doesn’t spin up as aggressively.
@@ -752,7 +752,7 @@ sudo systemctl start ssh
 …you can do:
 bash
 Copy code
-ssh <username>@<laptop's_IP>
+ssh &lt;username&gt;@&lt;laptop&#x27;s_IP&gt;
 RDP / VNC: If you want a graphical desktop, you can install something like xrdp or VNC. But for a server-style approach, plain SSH is usually enough.
 Choosing a Distro
 
@@ -766,7 +766,7 @@ You SSH in and do your tasks—run scripts, store files, compile code, etc.
 Because it’s older hardware, consider going easy on resource-intensive tasks so the fan doesn’t scream. But it should be fine for background processes, file-serving, or building moderate projects.
 With all of that, you can reclaim that old machine as a usefully hidden-away server. Cleaning out the fan is the biggest single improvement for noise, then using Linux with good power management helps keep it from revving high. The end result is a machine you don’t have to physically fuss with, accessed entirely from your main workstation.
 
-Okay, let's take a step back and think about this from a storage mangement solution perspective. Each of my workstations have SSD drives on M2s (technology which I'm aware of, but don't really know about in detail) as well as external HDDs, and one even has an additional USD SDD. The laptop obvious has it's own drives, but really, what is the best option to centralize my storage accross devices, as well as potentially serve as an option for database storage for online apps that people interact with through an api process/server operating on the same, or one of my other machines?
+Okay, let&#x27;s take a step back and think about this from a storage mangement solution perspective. Each of my workstations have SSD drives on M2s (technology which I&#x27;m aware of, but don&#x27;t really know about in detail) as well as external HDDs, and one even has an additional USD SDD. The laptop obvious has it&#x27;s own drives, but really, what is the best option to centralize my storage accross devices, as well as potentially serve as an option for database storage for online apps that people interact with through an api process/server operating on the same, or one of my other machines?
 
 From a high-level perspective, you want a central “home base” for all your storage needs, plus the option to host a database or other services that run continuously. You also have multiple machines—some Windows, some Linux, maybe an older laptop—and a mix of SSDs (M.2, USB) and HDDs. Here’s how to think about it step by step:
 
@@ -824,7 +824,7 @@ Install a database (MySQL, PostgreSQL) and run your API or web service if you wa
 Keep track of IP addresses, potential dynamic DNS, and security (firewalls, SSH keys) if you expose services to the public internet.
 This approach ensures you have one consistent repository for data, code, media, and possibly a place to host apps—without juggling multiple disconnected drives across multiple machines.
 
-"## 1. Pick or Repurpose a Dedicated “Server” Machine
+&quot;## 1. Pick or Repurpose a Dedicated “Server” Machine
 
 1. **24/7 availability**: You want a box that stays on (or at least can be woken up easily) to serve as your central storage point.  
 2. **Consolidate drives**: Put as many of your drives (internal HDD, SSD, etc.) into this one system, or attach them via USB.  
@@ -834,7 +834,7 @@ This approach ensures you have one consistent repository for data, code, media, 
    - A generic Debian or Ubuntu lets you run a full server stack (databases, web servers) and also share files with Samba or NFS.
 
 **Why not Windows for the server?**  
-- You *could* do it on Windows 10/11 (using built-in SMB shares, etc.), but Linux often provides a more robust, flexible environment for running servers (databases, Docker containers, custom services) without licensing or overhead constraints." Talk to me about such a structure? How would you suggest the networking or connectivity infrastructure would look like for such a machine? What kind of system is easily woken up remotely?
+- You *could* do it on Windows 10/11 (using built-in SMB shares, etc.), but Linux often provides a more robust, flexible environment for running servers (databases, Docker containers, custom services) without licensing or overhead constraints.&quot; Talk to me about such a structure? How would you suggest the networking or connectivity infrastructure would look like for such a machine? What kind of system is easily woken up remotely?
 
 When you designate one machine to be the “always-there” storage or server system, you’re basically creating a small home or office network that everything else connects to—whether via Ethernet, Wi-Fi, or your mobile hotspot. The main points are:
 
@@ -859,10 +859,10 @@ bash
 Copy code
 sudo ethtool -s eth0 wol g
 This ensures the interface listens for the magic packet while powered down or sleeping.
-On Windows, in the device manager > network adapter > properties > power management tab, you might see an option for “Allow this device to wake the computer” or something similar.
+On Windows, in the device manager &gt; network adapter &gt; properties &gt; power management tab, you might see an option for “Allow this device to wake the computer” or something similar.
 Sending the Magic Packet:
 
-Typically done from another device on the same local network. You use a tool like wakeonlan <MAC_ADDRESS> (Linux/macOS) or a Windows tool that sends WOL packets.
+Typically done from another device on the same local network. You use a tool like wakeonlan &lt;MAC_ADDRESS&gt; (Linux/macOS) or a Windows tool that sends WOL packets.
 If you want to do this from outside your local network, you need a router or network device that can forward WOL packets. (Most phone hotspots won’t easily do that.)
 3. A Simple Home/Office LAN Topology
 Single Router:
@@ -923,10 +923,10 @@ bash
 Copy code
 sudo ethtool -s eth0 wol g
 This ensures the interface listens for the magic packet while powered down or sleeping.
-On Windows, in the device manager > network adapter > properties > power management tab, you might see an option for “Allow this device to wake the computer” or something similar.
+On Windows, in the device manager &gt; network adapter &gt; properties &gt; power management tab, you might see an option for “Allow this device to wake the computer” or something similar.
 Sending the Magic Packet:
 
-Typically done from another device on the same local network. You use a tool like wakeonlan <MAC_ADDRESS> (Linux/macOS) or a Windows tool that sends WOL packets.
+Typically done from another device on the same local network. You use a tool like wakeonlan &lt;MAC_ADDRESS&gt; (Linux/macOS) or a Windows tool that sends WOL packets.
 If you want to do this from outside your local network, you need a router or network device that can forward WOL packets. (Most phone hotspots won’t easily do that.)
 3. A Simple Home/Office LAN Topology
 Single Router:
@@ -964,7 +964,7 @@ If you’re forced to rely on a phone hotspot with no dedicated router, you can 
 
 That’s the general structure: a minimal always-on (or easily woken) box that physically holds or manages your drives, shares them over the network, and runs any continuous services (like a database or web app). Then any other device on that same network can access it. If you want remote (internet) access, you add port forwarding or a VPN, but that’s the next layer of complexity.
 
-Alright, this is where I need to leave things and puruse a different track today. I'll come back to this information eventually.
+Alright, this is where I need to leave things and puruse a different track today. I&#x27;ll come back to this information eventually.
 
 END
     </pre>

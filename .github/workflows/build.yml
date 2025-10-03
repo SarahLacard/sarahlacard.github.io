@@ -8,7 +8,7 @@ on:
       - '_dialogues/**'
       - '_sessions/**'
       - '_templates/**'
-      - 'build.ps1'
+      - 'build.py'
       - 'index.html'
       - '.github/workflows/build.yml'
     branches:
@@ -16,257 +16,94 @@ on:
 
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     permissions:
       contents: write
-    
+
     steps:
-    - name: Diagnostic - Show trigger event
-      shell: pwsh
-      run: |
-        Write-Host "Event name: ${{ github.event_name }}"
-        Write-Host "Ref name: ${{ github.ref }}"
-        Write-Host "Repository: ${{ github.repository }}"
-    
-    - uses: actions/checkout@v3
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-        fetch-depth: 0
-        persist-credentials: true
-    
-    - name: Pre-build validation
-      shell: pwsh
-      run: |
-        $ErrorActionPreference = 'Stop'
-        Write-Host "Current directory: $pwd"
-        
-        # Validate required directories
-        $requiredDirs = @('_vera', '_weblogs', '_dialogues', '_sessions', '_templates', 'vera', 'weblogs', 'dialogues', 'sessions')
-        foreach ($dir in $requiredDirs) {
-            Write-Host "Checking directory: $dir"
-            if (-not (Test-Path $dir)) {
-                Write-Error "Required directory missing: $dir"
-                exit 1
-            }
-        }
-        
-        # Validate source files
-        Write-Host "`nSource file contents (_vera/log.txt):"
-        if (Test-Path "_vera/log.txt") {
-            $content = Get-Content "_vera/log.txt" -Raw -Encoding UTF8
-            if ([string]::IsNullOrWhiteSpace($content)) {
-                Write-Error "Source file is empty: _vera/log.txt"
-                exit 1
-            }
-            Write-Host $content
-        } else {
-            Write-Error "Source file not found: _vera/log.txt"
+      - name: Diagnostic - Show trigger event
+        run: |
+          echo "Event name: ${{ github.event_name }}"
+          echo "Ref name: ${{ github.ref }}"
+          echo "Repository: ${{ github.repository }}"
+
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Pre-build validation
+        run: |
+          set -euo pipefail
+          echo "Current directory: $(pwd)"
+          required_dirs=( _vera _weblogs _dialogues _sessions _templates vera weblogs dialogues sessions )
+          for dir in "${required_dirs[@]}"; do
+            echo "Checking directory: $dir"
+            if [ ! -d "$dir" ]; then
+              echo "::error::Required directory missing: $dir"
+              exit 1
+            fi
+          done
+          if [ ! -f index.html ]; then
+            echo "::error::index.html not found"
             exit 1
-        }
-        
-        Write-Host "`nCurrent HTML file (vera/log.html):"
-        if (Test-Path "vera/log.html") {
-            $content = Get-Content "vera/log.html" -Raw
-            Write-Host $content
-        } else {
-            Write-Host "HTML file not found (will be generated)"
-        }
-        
-        Write-Host "`nGit status:"
-        git status
-        Write-Host "`nChanged files in this push:"
-        git diff --name-only HEAD^ HEAD
-    
-    - name: Run build script
-      shell: pwsh
-      run: |
-        $ErrorActionPreference = 'Stop'
-        Write-Host "Running build.ps1"
-        $output = ./build.ps1 *>&1
-        if ($LASTEXITCODE -ne 0) {
-            Write-Error "Build script failed with exit code $LASTEXITCODE`nOutput: $output"
-            exit 1
-        }
-        Write-Host $output
-        
-    - name: Post-build validation
-      shell: pwsh
-      run: |
-        $ErrorActionPreference = 'Stop'
-        
-        # Validate generated HTML files
-        Write-Host "`nValidating generated files..."
-        
-        $requiredFiles = @(
-            @{
-                Path = "vera/log.html"
-                MinSize = 100
-                RequireHtmlStructure = $true
-            },
-            @{
-                Path = "index.html"
-                MinSize = 500
-                RequireHtmlStructure = $true
-            }
-        )
-        
-        foreach ($file in $requiredFiles) {
-            Write-Host "Checking $($file.Path)..."
-            if (Test-Path $file.Path) {
-                $content = Get-Content $file.Path -Raw
-                $fileInfo = Get-Item $file.Path
-                
-                if ($fileInfo.Length -lt $file.MinSize) {
-                    Write-Error "File too small: $($file.Path) ($($fileInfo.Length) bytes)"
-                    exit 1
-                }
-                
-                # Check for common encoding issue markers
-                $encodingIssues = $content -match '[\ufffd\ufeff]' -or 
-                                 $content -match '[^\x00-\x7F]+' -and 
-                                 $content -notmatch '[\p{IsBasicLatin}\p{IsLatin-1Supplement}]'
-                if ($encodingIssues) {
-                    Write-Error "Encoding issues detected in: $($file.Path)"
-                    exit 1
-                }
-                
-                if ($file.RequireHtmlStructure) {
-                    # More flexible HTML structure validation
-                    $hasDoctype = $content -match '<!DOCTYPE\s+html>'
-                    $hasHtml = $content -match '<html[^>]*>'
-                    $hasClosingHtml = $content -match '</html>'
-                    $hasHead = $content -match '<head[^>]*>'
-                    $hasClosingHead = $content -match '</head>'
-                    $hasBody = $content -match '<body[^>]*>'
-                    $hasClosingBody = $content -match '</body>'
-                    
-                    $errors = @()
-                    if (-not $hasDoctype) { $errors += "Missing DOCTYPE declaration" }
-                    if (-not $hasHtml) { $errors += "Missing opening <html> tag" }
-                    if (-not $hasClosingHtml) { $errors += "Missing closing </html> tag" }
-                    if (-not $hasHead) { $errors += "Missing opening <head> tag" }
-                    if (-not $hasClosingHead) { $errors += "Missing closing </head> tag" }
-                    if (-not $hasBody) { $errors += "Missing opening <body> tag" }
-                    if (-not $hasClosingBody) { $errors += "Missing closing </body> tag" }
-                    
-                    if ($errors) {
-                        Write-Error "Invalid HTML structure in $($file.Path):`n$($errors -join "`n")"
-                        exit 1
-                    }
-                }
-                
-                Write-Host "✓ $($file.Path) validated"
-            } else {
-                Write-Error "Required file missing: $($file.Path)"
-                exit 1
-            }
-        }
-        
-        Write-Host "`nGit status after build:"
-        git status
-        Write-Host "`nChanges from build:"
-        git diff --stat
-        
-    - name: Configure git
-      shell: pwsh
-      run: |
-        git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
-        git config --local user.name "github-actions[bot]"
-        Write-Host "Git config:"
-        git config --list
-        
-    - name: Stage changes
-      shell: pwsh
-      run: |
-        $ErrorActionPreference = 'Stop'
-        Write-Host "Checking directories and staging files..."
-        
-        $stagedFiles = @()
-        
-        # Stage files only if directories exist
-        $directories = @{
-            "vera" = "vera/log.html"
-            "weblogs" = "weblogs/*.html"
-            "dialogues" = "dialogues/*.html"
-            "sessions" = "sessions/*.html"
-        }
-        
-        foreach ($dir in $directories.Keys) {
-            if (Test-Path $dir) {
-                $pattern = $directories[$dir]
-                $files = Get-ChildItem -Path $pattern -ErrorAction SilentlyContinue
-                if ($files) {
-                    Write-Host "Adding files from $dir..."
-                    git add -f $pattern
-                    if ($LASTEXITCODE -ne 0) {
-                        Write-Error "Failed to add files from $dir"
-                        exit 1
-                    }
-                    $stagedFiles += $files.FullName
-                } else {
-                    Write-Warning "No files found matching pattern: $pattern"
-                }
-            } else {
-                Write-Warning "Directory not found: $dir"
-            }
-        }
-        
-        if (Test-Path "index.html") {
-            git add -f index.html
-            if ($LASTEXITCODE -ne 0) {
-                Write-Error "Failed to add index.html"
-                exit 1
-            }
-            $stagedFiles += "index.html"
-        } else {
-            Write-Error "index.html not found"
-            exit 1
-        }
-        
-        Write-Host "`nSuccessfully staged files:"
-        $stagedFiles | ForEach-Object { Write-Host "✓ $_" }
-        
-        Write-Host "`nGit status:"
-        git status
-        
-        Write-Host "`nStaged files:"
-        git diff --name-only --cached
-        
-    - name: Commit and push if changed
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      shell: pwsh
-      run: |
-        $ErrorActionPreference = 'Stop'
-        
-        if (git diff --staged --quiet) {
-            Write-Host "No changes to commit"
+          fi
+
+      - name: Run build script
+        run: |
+          set -euo pipefail
+          echo "Running build.py"
+          python3 build.py
+
+      - name: Post-build validation
+        run: |
+          set -euo pipefail
+          check_file() {
+            local path=$1
+            local min_size=$2
+            if [ ! -f "$path" ]; then
+              echo "::error::Required file missing: $path"
+              exit 1
+            fi
+            local size
+            size=$(stat -c%s "$path")
+            if [ "$size" -lt "$min_size" ]; then
+              echo "::error::File too small: $path (${size} bytes)"
+              exit 1
+            fi
+          }
+          check_file index.html 500
+          check_file vera/log.html 100
+
+      - name: Configure git
+        run: |
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+
+      - name: Stage generated files
+        run: |
+          set -euo pipefail
+          git add -f build.log index.html
+          git add -f dialogues/ weblogs/ sessions/ vera/
+          echo "Staged files:" || true
+          git diff --name-only --cached || true
+
+      - name: Commit and push if changed
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
             exit 0
-        }
-        
-        # Verify staged files are valid
-        $stagedFiles = git diff --name-only --cached
-        foreach ($file in $stagedFiles) {
-            if (-not (Test-Path $file)) {
-                Write-Error "Staged file does not exist: $file"
-                exit 1
-            }
-            
-            if ($file -match '\.html$') {
-                $content = Get-Content $file -Raw
-                if ([string]::IsNullOrWhiteSpace($content)) {
-                    Write-Error "Staged HTML file is empty: $file"
-                    exit 1
-                }
-            }
-        }
-        
-        Write-Host "Changes found, committing..."
-        git commit -m "Rebuild site from content changes"
-        
-        Write-Host "`nPushing changes..."
-        git push origin HEAD:main
-        
-        Write-Host "`nPush complete"
-        Write-Host "Staged and pushed files:"
-        $stagedFiles | ForEach-Object { Write-Host "✓ $_" } 
+          fi
+          git commit -m "Rebuild site from content changes"
+          git push origin HEAD:main
+          echo "Push complete"
+          git diff --name-only HEAD^ HEAD

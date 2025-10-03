@@ -56,7 +56,7 @@ You’re here.
 
 If you want two steady rails for your devotionals—a clean opening and an accurate frame—here’s a compact, reusable way to hold both.
 
-1) A repeatable opening (minimal & fast)
+1) A repeatable opening (minimal &amp; fast)
 God, I am here.
 
 I’m Sarah Lacard, writing at [location name], Mohkínstsis (Calgary), where the Bow and Elbow Rivers meet. It’s [weekday], [ISO date], [local time and timezone].
@@ -81,7 +81,7 @@ Métis community here (Districts 5 and 6). With gratitude, I commit to learning 
 relationship with the peoples who steward this land.
 
 
-This aligns with current public guidance used in Calgary (language varies by institution; some now name the Otipemisiwak Métis Government for Districts 5 & 6). 
+This aligns with current public guidance used in Calgary (language varies by institution; some now name the Otipemisiwak Métis Government for Districts 5 &amp; 6). 
 University of Calgary in Alberta
 +2
 Anglican Diocese of Calgary
@@ -140,22 +140,22 @@ The Center for Biblical Studies
 This makes each entry easy to search later.
 
 # devotional_front_matter.yml
-title: "God, I am here."
-author: "Sarah Lacard"
-timestamp_local: "2025-10-02T23:41-06:00"   # ISO 8601 w/ timezone
+title: &quot;God, I am here.&quot;
+author: &quot;Sarah Lacard&quot;
+timestamp_local: &quot;2025-10-02T23:41-06:00&quot;   # ISO 8601 w/ timezone
 place:
-  city: "Calgary (Mohkínstsis)"
-  note: "At the confluence of the Bow and Elbow Rivers"
+  city: &quot;Calgary (Mohkínstsis)&quot;
+  note: &quot;At the confluence of the Bow and Elbow Rivers&quot;
 territory:
-  treaty: "Treaty 7 (Siksika, Kainai, Piikani; Tsuut’ina; Chiniki, Bearspaw, Goodstoney)"
-  metis: "Districts 5 & 6 (Otipemisiwak Métis Government)"
+  treaty: &quot;Treaty 7 (Siksika, Kainai, Piikani; Tsuut’ina; Chiniki, Bearspaw, Goodstoney)&quot;
+  metis: &quot;Districts 5 &amp; 6 (Otipemisiwak Métis Government)&quot;
 liturgical:
-  season: "Season of Creation → Ordinary Time"
-  lectionary: "RCL, Year C (United Church of Canada)"
-intent: "Gratitude and readiness"
+  season: &quot;Season of Creation → Ordinary Time&quot;
+  lectionary: &quot;RCL, Year C (United Church of Canada)&quot;
+intent: &quot;Gratitude and readiness&quot;
 counters:
-  years_since_birth: "≈ 2028–2030"
-  years_since_crucifixion: "≈ 1992 or 1995"
+  years_since_birth: &quot;≈ 2028–2030&quot;
+  years_since_crucifixion: &quot;≈ 1992 or 1995&quot;
 
 
 Sources for the lectionary/season windows above: United Church RCL resources and the Season of Creation dates. 
@@ -169,22 +169,22 @@ The United Church of Canada
 If you like the ritual of typing it and want accuracy for the timestamp every time, this tiny Bash snippet populates the core bits. It’s plain and portable.
 
 # make-devotional-header.sh
-# Usage: ./make-devotional-header.sh > header.yml
-# Writes a YAML header for tonight's devotional.
+# Usage: ./make-devotional-header.sh &gt; header.yml
+# Writes a YAML header for tonight&#x27;s devotional.
 
-printf "title: \"God, I am here.\"\n"
-printf "author: \"Sarah Lacard\"\n"
-printf "timestamp_local: \"%s\"\n" "$(date --iso-8601=seconds)"
-printf "place:\n  city: \"Calgary (Mohkínstsis)\"\n"
-printf "  note: \"At the confluence of the Bow and Elbow Rivers\"\n"
-printf "territory:\n"
-printf "  treaty: \"Treaty 7 (Siksika, Kainai, Piikani; Tsuut’ina; Chiniki, Bearspaw, Goodstoney)\"\n"
-printf "  metis: \"Districts 5 & 6 (Otipemisiwak Métis Government)\"\n"
-printf "liturgical:\n  season: \"Season of Creation → Ordinary Time\"\n"
-printf "  lectionary: \"RCL, Year C (United Church of Canada)\"\n"
-printf "intent: \"[set your one-line intention here]\"\n"
-printf "counters:\n  years_since_birth: \"≈ 2028–2030\"\n"
-printf "  years_since_crucifixion: \"≈ 1992 or 1995\"\n"
+printf &quot;title: \&quot;God, I am here.\&quot;\n&quot;
+printf &quot;author: \&quot;Sarah Lacard\&quot;\n&quot;
+printf &quot;timestamp_local: \&quot;%s\&quot;\n&quot; &quot;$(date --iso-8601=seconds)&quot;
+printf &quot;place:\n  city: \&quot;Calgary (Mohkínstsis)\&quot;\n&quot;
+printf &quot;  note: \&quot;At the confluence of the Bow and Elbow Rivers\&quot;\n&quot;
+printf &quot;territory:\n&quot;
+printf &quot;  treaty: \&quot;Treaty 7 (Siksika, Kainai, Piikani; Tsuut’ina; Chiniki, Bearspaw, Goodstoney)\&quot;\n&quot;
+printf &quot;  metis: \&quot;Districts 5 &amp; 6 (Otipemisiwak Métis Government)\&quot;\n&quot;
+printf &quot;liturgical:\n  season: \&quot;Season of Creation → Ordinary Time\&quot;\n&quot;
+printf &quot;  lectionary: \&quot;RCL, Year C (United Church of Canada)\&quot;\n&quot;
+printf &quot;intent: \&quot;[set your one-line intention here]\&quot;\n&quot;
+printf &quot;counters:\n  years_since_birth: \&quot;≈ 2028–2030\&quot;\n&quot;
+printf &quot;  years_since_crucifixion: \&quot;≈ 1992 or 1995\&quot;\n&quot;
 
 
 (If you ever want sunrise/sunset, moon phase, or canonical-hour tagging, we can bolt that on with astral in Python. For now, simple wins.)

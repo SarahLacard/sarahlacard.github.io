@@ -56,11 +56,11 @@ You set up a server—Apache [Uh-Patch-Ee], Nginx [Engine-X], Node.js, or whiche
 
 I do it all behind a firewall, with minimal or zero open services beyond what’s absolutely necessary—usually just the HTTP(S) port. I sanitize all input. I rely on parameterized queries or prepared statements so I’m not vulnerable to SQL injection or code injection. I rely on TLS (HTTPS) so eavesdroppers can’t read the traffic. I keep my server software patched so it doesn’t have known exploits. I only open the ports I need and lock down everything else. That’s how I prevent my hard drive from exploding.
 
-can't someone with developer tools find out what the command is and then find my ip and port?
+can&#x27;t someone with developer tools find out what the command is and then find my ip and port?
 
 Yes, they can see where their browser is making requests. When they open their browser’s “Developer Tools,” they see the exact network calls going out, including the endpoint’s domain name or IP address and port. This is how modern browsers work: it’s transparent to the user which URLs get hit. I can’t hide that if I need the user to reach my server over the public internet.
 
-The real protection is locking down the server itself. I never rely on “they can’t see my IP” for security because they eventually can—through DNS lookups, network inspection, or simply watching where the request is going in DevTools. Instead, I put my server behind a firewall or router that only allows traffic on the ports I explicitly open (HTTP[S] typically), use strong authentication if needed, only accept properly formatted requests (via parameterized queries or sanitization), log everything so I can see suspicious behavior, and keep my software updated so known vulnerabilities are patched. As long as the server is configured securely, them knowing my IP address and port doesn't give them the ability to blow up my machine.
+The real protection is locking down the server itself. I never rely on “they can’t see my IP” for security because they eventually can—through DNS lookups, network inspection, or simply watching where the request is going in DevTools. Instead, I put my server behind a firewall or router that only allows traffic on the ports I explicitly open (HTTP[S] typically), use strong authentication if needed, only accept properly formatted requests (via parameterized queries or sanitization), log everything so I can see suspicious behavior, and keep my software updated so known vulnerabilities are patched. As long as the server is configured securely, them knowing my IP address and port doesn&#x27;t give them the ability to blow up my machine.
 
 so this is what i need to do then, test red teaming against myself to understand network defense and security, my technical competence is way ahead of my cybersecurity understanding and practices, but at the same time, I still want to make consumer grade apps
 
@@ -109,9 +109,9 @@ Handle all user data with strong sanitization and safe database queries.
 Log suspicious activity and keep an eye on metrics.
 It’s all about defense-in-depth: I assume that any piece of information—my IP address, the port I run on, the names of my routes, the versions of my software—will be discovered if someone inspects traffic or runs scans. My job is to ensure that even with that knowledge, there’s no trivial exploit or path to compromise.
 
-Okay, I've got a laptop I could use for this, set up as like an intermediary or something?
+Okay, I&#x27;ve got a laptop I could use for this, set up as like an intermediary or something?
 
-But if that laptop is just using a cell phone's wireless modem connection or something like that, and other devices are also on the network, doesn't mean that cell phone is the primary attack vector, or at least the network it is broadcasting?
+But if that laptop is just using a cell phone&#x27;s wireless modem connection or something like that, and other devices are also on the network, doesn&#x27;t mean that cell phone is the primary attack vector, or at least the network it is broadcasting?
 
 Yes, if your cell phone is acting as a hotspot or gateway and other devices rely on it for connectivity, then that phone—and the network it broadcasts—is indeed a potential or even primary attack vector. Think of it as the single doorway to your internal network: if someone pops the lock on that phone’s software or intercepts traffic through the hotspot, they might gain access to anything else on that network.
 
@@ -122,7 +122,7 @@ The cell phone providing the network (OS vulnerabilities, hotspot settings, firm
 The devices that connect to that hotspot.
 You want each layer to be locked down in its own right. Keep the phone up to date, configure the hotspot with strong WPA2 or WPA3 security, don’t leave default passwords or open admin pages, treat that phone like any other piece of networking gear (i.e., keep it patched, watch for potential exploits). Then harden the laptop in the same way, so if the phone falls, the laptop isn’t trivially compromised next.
 
-okay, so I don't even know where to begin then to secure my network, I'm rather decentralized, I have three different data enabled phones, one smart two flip, and then two primary work stations, and a laptop. I used to have wired internet with a modem/router all-in-one thing but I got rid of that in favour of just using mobile hotspots. I'm rather mobile and might have to move in the next two months, so keeping that in mind would and will be an important factor for me. (maybe add this to memory?)
+okay, so I don&#x27;t even know where to begin then to secure my network, I&#x27;m rather decentralized, I have three different data enabled phones, one smart two flip, and then two primary work stations, and a laptop. I used to have wired internet with a modem/router all-in-one thing but I got rid of that in favour of just using mobile hotspots. I&#x27;m rather mobile and might have to move in the next two months, so keeping that in mind would and will be an important factor for me. (maybe add this to memory?)
 
 I treat each device as if it were its own server or gateway. I secure them individually, then check how they connect and interact. These are the steps I take:
 
@@ -169,11 +169,11 @@ Because you might move soon, your setup will be in flux. This is a reason to kee
 
 This approach ensures that each phone, laptop, and workstation is individually hardened. If one device falls into the wrong hands or a hotspot gets compromised, the rest of your fleet is still locked down.
 
-I don't have access to the flip phones firmware or OS, but that would be nice if I could do such a thing, I just don't think it is feasible for me. OS updates are sure, but the new updates could also be compromised.
+I don&#x27;t have access to the flip phones firmware or OS, but that would be nice if I could do such a thing, I just don&#x27;t think it is feasible for me. OS updates are sure, but the new updates could also be compromised.
 
-And there are a lot of details to cover, no way to be sure you've covered them all, aware of them all, or that you even did it correctly.
+And there are a lot of details to cover, no way to be sure you&#x27;ve covered them all, aware of them all, or that you even did it correctly.
 
-And I'm not concerned about people picking up the wifi signal, but people accessing data on my drives or remoting into my systems through said connection.
+And I&#x27;m not concerned about people picking up the wifi signal, but people accessing data on my drives or remoting into my systems through said connection.
 
 8 and 9 are definitely things we could think more about.
 
@@ -184,7 +184,7 @@ I keep track of what’s happening on each device so I can spot suspicious activ
 
 On Windows:
 
-I open the Event Viewer by pressing <kbd>Win+R</kbd> and typing eventvwr.
+I open the Event Viewer by pressing &lt;kbd&gt;Win+R&lt;/kbd&gt; and typing eventvwr.
 I expand Windows Logs → System and Security to see warnings and errors, login events, privilege escalations, or anything that indicates a break-in attempt.
 I also check firewall logs. I open Windows Defender Firewall → Advanced Settings → Monitoring → Firewall. If I want to enable detailed logging, I go to Properties → Private/Public Profile → Logging. I pick where to store the logs, then review them in a text editor.
 On Linux:
@@ -197,7 +197,7 @@ Flip phones often have no direct method to view system logs. I can only watch th
 On Android, I might use adb logcat (if I enable Developer Options and USB debugging) or an app like [MatLog] to see some system logs. But typically I just rely on the built-in hotspot list to see who’s connected.
 Checking network connections in real-time:
 
-On Windows, I press <kbd>Win+R</kbd>, type cmd, then run:
+On Windows, I press &lt;kbd&gt;Win+R&lt;/kbd&gt;, type cmd, then run:
 
 bat
 Copy code
@@ -277,11 +277,11 @@ I check firewall logs or run a quick netstat from time to time, or glance at Eve
 
 These five moves go a long way. They don’t consume your life with red-teaming your own systems all day, but they ensure you’re covering the major entry points. If at any point you suspect an incident or want more reassurance, you can do a deeper scan or analysis. Otherwise, you keep building your apps with more confidence.
 
-I don't need generic security advice like strong passwords and software updates, I get the basics, but I'm not worried about attackers using basic attack vectors. 
+I don&#x27;t need generic security advice like strong passwords and software updates, I get the basics, but I&#x27;m not worried about attackers using basic attack vectors. 
 
 Like, what does this mean?
 
-C:\Users\Sarah>netstat
+C:\Users\Sarah&gt;netstat
 
 Active Connections
 
@@ -303,7 +303,7 @@ Active Connections
   TCP    192.168.245.133:51653  104.18.32.47:https     ESTABLISHED
   TCP    192.168.245.133:51660  104.18.32.47:https     ESTABLISHED
 
-And if I uploaded the conversation transcript of this interaction to a public github, would any of the information I've shared compromise my setup?
+And if I uploaded the conversation transcript of this interaction to a public github, would any of the information I&#x27;ve shared compromise my setup?
 
 Let me parse the netstat output line by line and explain what’s going on:
 
@@ -350,7 +350,7 @@ Your hostname DESKTOP-SARAH-01 is fairly generic info. By itself, it’s not typ
 Could it be used maliciously?
 
 An attacker would need more than just these local IP addresses and some ephemeral ports to do anything real. They’d need your actual public IP plus a known exploitable service. Right now, you only revealed local loopback connections and your private LAN IP. That’s not usually a big deal.
-If you want to err on the side of caution, you can always redact the private IP addresses or machine name from the logs before pushing them to public GitHub. But the data as shown here is fairly benign. It doesn't reveal your home’s public IP or an obviously exploitable port.
+If you want to err on the side of caution, you can always redact the private IP addresses or machine name from the logs before pushing them to public GitHub. But the data as shown here is fairly benign. It doesn&#x27;t reveal your home’s public IP or an obviously exploitable port.
 
 Bottom Line
 Most of the entries are normal loopback or ephemeral outbound connections to common services (Cloudflare, Google, etc.).
@@ -403,13 +403,13 @@ But if, for example, you posted:
 
 then you’d be handing an attacker a direct exploit path. That’s where real compromise can occur.
 
-"Database credentials: If your DB user/password is in a public GitHub repo or visible logs, an attacker might directly connect to your database." This I don't really understand.
+&quot;Database credentials: If your DB user/password is in a public GitHub repo or visible logs, an attacker might directly connect to your database.&quot; This I don&#x27;t really understand.
 
-"Services running on known vulnerable ports: If you have an outdated or misconfigured service listening on the internet, an attacker can scan for it and exploit it." This I don't really get.
+&quot;Services running on known vulnerable ports: If you have an outdated or misconfigured service listening on the internet, an attacker can scan for it and exploit it.&quot; This I don&#x27;t really get.
 
-I don't really know what kubernetes is yet (and now is not the time to teach me).
+I don&#x27;t really know what kubernetes is yet (and now is not the time to teach me).
 
-6 and 7, the misconfigured firewalls and acls (whatever those are) + RCE vectors, and just generic spying from entities like intelligence angencies i would at least want default protection against. I don't really plan on setting up admin dashboards and things with public facing frontends or interfaces to handle and manage.
+6 and 7, the misconfigured firewalls and acls (whatever those are) + RCE vectors, and just generic spying from entities like intelligence angencies i would at least want default protection against. I don&#x27;t really plan on setting up admin dashboards and things with public facing frontends or interfaces to handle and manage.
 
 Database credentials in public GitHub
 If you post a file containing something like:
@@ -448,7 +448,7 @@ Keep your firewalls locked down.
 Avoid scenarios where external data can automatically run code on your box.
 That’s how you stay out of trouble, even if you’re not hosting an “admin dashboard” or typical public-facing app.
 
-so like, i've got a website that takes a conversation data and stores it, but i with a browser, couldn't people just find that end point, and spam it, forcing my server to add a bunch of nonsense logs even if they never accessed my system itself?
+so like, i&#x27;ve got a website that takes a conversation data and stores it, but i with a browser, couldn&#x27;t people just find that end point, and spam it, forcing my server to add a bunch of nonsense logs even if they never accessed my system itself?
 
 Yes. If your site exposes an endpoint (for example, POST /api/log-conversation) that any browser can call, then anyone with that endpoint URL can spam it with junk. This doesn’t necessarily mean they compromise your system, but they could fill your database or logs with garbage and eat up bandwidth and processing time.
 
@@ -505,31 +505,31 @@ If I have an Express [Ex-Press] server, I do:
 
 js
 Copy code
-// "express" is a Node.js framework for building web servers
-const express = require('express');
+// &quot;express&quot; is a Node.js framework for building web servers
+const express = require(&#x27;express&#x27;);
 const app = express();
 
 // Middleware that helps parse JSON from the request body
 app.use(express.json());
 
 // Define an endpoint for POST /api/conversations
-app.post('/api/conversations', (req, res) => {
+app.post(&#x27;/api/conversations&#x27;, (req, res) =&gt; {
   // I get the data from req.body
   const conversationData = req.body;
   
   // I store it in a database or do something with it
-  // For demonstration, I'm just console.logging
-  console.log("Received conversation:", conversationData);
+  // For demonstration, I&#x27;m just console.logging
+  console.log(&quot;Received conversation:&quot;, conversationData);
 
   // I send a success response
-  res.status(201).json({ message: 'Conversation saved!' });
+  res.status(201).json({ message: &#x27;Conversation saved!&#x27; });
 });
 
 // Start listening on some port
-app.listen(3000, () => {
-  console.log('Server listening on port 3000');
+app.listen(3000, () =&gt; {
+  console.log(&#x27;Server listening on port 3000&#x27;);
 });
-app.post('/api/conversations'...): This is the endpoint.
+app.post(&#x27;/api/conversations&#x27;...): This is the endpoint.
 When the browser (or any HTTP client) sends a POST request to http://myserver.com/api/conversations, the code in the callback runs.
 How an Endpoint Gets Called
 Client-Side
@@ -537,10 +537,10 @@ Client-Side
 From a browser, I might do:
 js
 Copy code
-fetch('http://myserver.com/api/conversations', {
-  method: 'POST',
-  headers: { 'Content-Type': 'application/json' },
-  body: JSON.stringify({ user: 'Alice', text: 'Hello' })
+fetch(&#x27;http://myserver.com/api/conversations&#x27;, {
+  method: &#x27;POST&#x27;,
+  headers: { &#x27;Content-Type&#x27;: &#x27;application/json&#x27; },
+  body: JSON.stringify({ user: &#x27;Alice&#x27;, text: &#x27;Hello&#x27; })
 });
 Network Transmission
 
@@ -561,11 +561,11 @@ Rate Limiting
 Limit how many requests a single IP or user can make per minute.
 Input Validation
 Discard nonsense or repeated spammy data.
-Logging & Monitoring
+Logging &amp; Monitoring
 If I see a spike in requests, I can block abusive IPs or implement a captcha.
 That’s the foundation. An API endpoint is basically a door: I define where it is (path), how the door opens (HTTP method), and what happens when someone walks in (the handler code). If it’s open to the public internet, anyone can knock. That’s where security layers come in.
 
-Yeah, this is what I need to study and work on. I'll stay here for a bit.
+Yeah, this is what I need to study and work on. I&#x27;ll stay here for a bit.
 
 That makes sense. Studying how server endpoints work—how clients talk to them, how the server processes requests, and how to lock them down—forms the core of building secure web apps. If you understand that chain from end to end, you’ll know how to prevent spamming, how to require API keys or tokens, how to implement rate limits, and how to parse or sanitize user-submitted data.
 
